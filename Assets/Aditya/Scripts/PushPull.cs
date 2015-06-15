@@ -64,7 +64,12 @@ public class PushPull : MonoBehaviour {
 		if(collision.collider.attachedRigidbody != null && Input.GetKey(KeyCode.LeftShift) && collision.collider.attachedRigidbody.tag == "grabbable")
 		{
 			body2 = collision.collider.attachedRigidbody;
-			flag = 1;
+			flag=1;
+			if(v==1)
+			{
+				self.velocity = Vector3.zero;
+			}
+
 
 		}
 
