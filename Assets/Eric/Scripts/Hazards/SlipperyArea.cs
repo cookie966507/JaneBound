@@ -7,10 +7,12 @@ namespace Assets.Scripts.Hazards
 	{
 		void OnTriggerEnter(Collider _col)
 		{
-			if(_col.tag.Equals("Player"))
-			{
-				_col.GetComponent<Player.PlayerMovement>().Slip(this.transform.forward);
-			}
+			if(_col.tag.Equals("Player")) _col.GetComponent<Player.PlayerMovement>().Slip(this.transform.forward);
+		}
+
+		void OnTriggerExit(Collider _col)
+		{
+			if(_col.tag.Equals("Player")) _col.GetComponent<Player.PlayerMovement>().StopSlipping();
 		}
 	}
 }

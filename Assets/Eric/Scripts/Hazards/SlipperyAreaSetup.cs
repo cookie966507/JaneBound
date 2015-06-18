@@ -10,10 +10,19 @@ namespace Assets.Scripts.Hazards
 
 		private Transform _colliderObject;
 
+		public GameObject _beg;
+		public GameObject _mid;
+		public GameObject _end;
+		public Canvas _worldCanvas;
+
+		private float _waterSegmentLength = 0.5f;
+
 		void Start()
 		{
 			_point1 = this.transform.FindChild("Point_1");
 			_point2 = this.transform.FindChild("Point_2");
+
+			_point1.LookAt(_point2);
 
 			_colliderObject = this.transform.FindChild("Slip_Trigger");
 
@@ -41,6 +50,29 @@ namespace Assets.Scripts.Hazards
 			_colliderObject.position = _midPoint;
 			_colliderObject.LookAt(_point2);
 			_colliderObject.localScale = new Vector3(1f, 0.1f, _size);
+
+			float _steps = _size/_waterSegmentLength;
+			Debug.Log(_steps);
+			for(int i = 0; i < _steps; i++)
+			{
+				if(i > 0)
+				{
+					GameObject _newSegment;
+
+					Vector3 _nextPoint = (_point2.position - _point1.position) * (i/_steps);
+					_nextPoint += _point1.position;
+
+					if(i >= _steps - 1) _newSegment = (GameObject)Instantiate(_end, _nextPoint, _point1.transform.rotation);
+					else _newSegment = (GameObject)Instantiate(_mid, _nextPoint, _point1.transform.rotation);
+
+					_newSegment.transform.parent = _worldCanvas.transform;
+				}
+				else
+				{
+					GameObject _newBeginning = (GameObject)Instantiate(_beg, _point1.transform.position, _point1.transform.rotation);
+					_newBeginning.transform.parent = _worldCanvas.transform;
+				}
+			}
 		}
 	}
 }

@@ -105,6 +105,12 @@ namespace Assets.Scripts.Player
 			_anim.speed = 1.5f;
 		}
 
+		public void StopSlipping()
+		{
+			_anim.SetBool("Slip", false);
+			_anim.speed = 1.0f;
+		}
+
 		public void EnableRagdoll()
 		{
 			_rigidbody.isKinematic = true;
