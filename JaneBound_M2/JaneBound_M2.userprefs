@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BubbleBlowing.cs">
+    <Files>
+      <File FileName="Assets\Scripts\BubbleBlowing.cs" Line="60" Column="60" />
+      <File FileName="Assets\Scripts\BubbleColide.cs" Line="6" Column="27" />
+      <File FileName="Assets\Scripts\PlayerMove.cs" Line="121" Column="54" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

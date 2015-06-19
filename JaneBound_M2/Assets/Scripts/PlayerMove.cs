@@ -33,7 +33,8 @@ public class PlayerMove : MonoBehaviour
 	public float jumpLeniancy = 0.17f;						//how early before hitting the ground you can press jump, and still have it work
 	[HideInInspector]
 	public int onEnemyBounce;					
-	
+	public bool lockedMovement = false;
+
 	private int onJump;
 	private bool grounded;
 	private Transform[] floorCheckers;
@@ -112,20 +113,31 @@ public class PlayerMove : MonoBehaviour
 	{
 		//are we grounded
 		grounded = IsGrounded ();
-		//move, rotate, manage speed
-		characterMotor.MoveTo (moveDirection, curAccel, 0.7f, true);
-		if (rotateSpeed != 0 && direction.magnitude != 0)
-			characterMotor.RotateToDirection (moveDirection , curRotateSpeed * 5, true);
-		characterMotor.ManageSpeed (curDecel, maxSpeed + movingObjSpeed.magnitude, true);
-		//set animation values
-		if(animator)
-		{
-			animator.SetFloat("DistanceToTarget", characterMotor.DistanceToTarget);
-			animator.SetBool("Grounded", grounded);
-			animator.SetFloat("YVelocity", GetComponent<Rigidbody>().velocity.y);
-			float speed = Mathf.Abs (Input.GetAxisRaw("Horizontal")) + Mathf.Abs (Input.GetAxisRaw ("Vertical"));
-			animator.SetFloat("Speed", speed);
+		Vector3 lookDirection = transform.position + mainCam.forward;
+
+		//Chris: added ability to lock player movement to just rotation (for shooting bubbles)
+		if(lockedMovement && grounded){
+			characterMotor.RotateToDirection (lookDirection, curRotateSpeed * 20, true);
+			GetComponent<Rigidbody>().velocity = Vector3.zero;
+			animator.SetFloat("Speed", 0f);
 		}
+		else{
+			//move, rotate, manage speed
+			if (rotateSpeed != 0 && direction.magnitude != 0)
+				characterMotor.RotateToDirection (moveDirection , curRotateSpeed * 5, true);
+			characterMotor.MoveTo (moveDirection, curAccel, 0.7f, true);
+			characterMotor.ManageSpeed (curDecel, maxSpeed + movingObjSpeed.magnitude, true);
+			//set animation values
+			if(animator)
+			{
+				animator.SetFloat("DistanceToTarget", characterMotor.DistanceToTarget);
+				animator.SetBool("Grounded", grounded);
+				animator.SetFloat("YVelocity", GetComponent<Rigidbody>().velocity.y);
+				float speed = Mathf.Abs (Input.GetAxisRaw("Horizontal")) + Mathf.Abs (Input.GetAxisRaw ("Vertical"));
+				animator.SetFloat("Speed", speed);
+			}
+		}
+
 	}
 	
 	//prevents rigidbody from sliding down slight slopes (read notes in characterMotor class for more info on friction)
