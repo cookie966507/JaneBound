@@ -1,0 +1,4 @@
+1. Make sure the item to be pushed has a high mass (>60000 or something :P)
+2. The object to be pushed should have Is kinematic set to false and it should have a tag as "grabbable"
+3. Attach the box move script to the object to be moved
+4. attach the pushpullgrunt sound file to the script
