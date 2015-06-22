@@ -34,7 +34,7 @@ namespace Assets.Scripts.Player
 		[HideInInspector]
 		public int onEnemyBounce;					
 		public bool lockedMovement = false;
-
+		
 		private int onJump;
 		public bool grounded;
 		private Transform[] floorCheckers;
@@ -45,27 +45,27 @@ namespace Assets.Scripts.Player
 		private CharacterMotor characterMotor;
 		private Bounce bounce;
 		public bool isMoving;
-	
+		
 		#region SABRINA
-
+		
 		public bool isCrawling = false;
 		[HideInInspector]
 		public BoxCollider box;
 		public BoxCollider crawlUnder;
-
+		
 		#endregion
-	
-	#region ERIC
-
+		
+		#region ERIC
+		
 		static int _slipState = Animator.StringToHash("Base Layer.Slip");
 		private AnimatorStateInfo _currentBaseState;
-
+		
 		private Vector3 _slipVector;
 		private float _slipSpeed = 10f;
-
+		
 		public GameObject _ragdoll;
 		public GameObject _model;
-
+		
 		//setting up events
 		void OnEnable()
 		{
@@ -76,7 +76,7 @@ namespace Assets.Scripts.Player
 		{
 			PlayerLife.PlayerDie -= EnableRagdoll;
 		}
-
+		
 		public void EnableRagdoll()
 		{
 			this.GetComponent<Rigidbody>().isKinematic = true;
@@ -88,12 +88,12 @@ namespace Assets.Scripts.Player
 			_model.gameObject.SetActive(false);
 			_ragdoll.gameObject.SetActive(true);
 		}
-
+		
 		public void Slip(Vector3 _direction)
 		{
 			this.GetComponent<Rigidbody>().velocity = Vector3.zero;
 			animator.SetBool("Slip", true);
-			_slipVector = _direction;
+			_slipVector = _direction * _slipSpeed;
 			animator.speed = 1.5f;
 		}
 		
@@ -101,15 +101,15 @@ namespace Assets.Scripts.Player
 		{
 			animator.SetBool("Slip", false);
 			animator.speed = 1.0f;
-			_slipVector = Vector3.zero;
+			//_slipVector = Vector3.zero;
 		}
 		#endregion
-
+		
 		//setup
 		void Awake()
 		{
 			box = GetComponent<BoxCollider> ();
-
+			
 			//animator = GetComponent <Animator> ();
 			//create single floorcheck in centre of object, if none are assigned
 			if(!floorChecks)
@@ -151,7 +151,7 @@ namespace Assets.Scripts.Player
 			curAccel = (grounded) ? accel : airAccel;
 			curDecel = (grounded) ? decel : airDecel;
 			curRotateSpeed = (grounded) ? rotateSpeed : airRotateSpeed;
-					
+			
 			//get movement axis relative to camera
 			screenMovementSpace = Quaternion.Euler (0, mainCam.eulerAngles.y, 0);
 			screenMovementForward = screenMovementSpace * Vector3.forward;
@@ -160,22 +160,22 @@ namespace Assets.Scripts.Player
 			//get movement input, set direction to move in
 			float h = Input.GetAxisRaw ("Horizontal");
 			float v = Input.GetAxisRaw ("Vertical");
-
-
-
+			
+			
+			
 			//crawl with the key "c" pressed down
-
+			
 			if (Input.GetKey (KeyCode.C)) {
 				Crawl ();
 			} else {
 				StopCrawl();
 			}
-
+			
 			//only apply vertical input to movemement, if player is not sidescroller
 			
 			direction = (screenMovementForward * v) + (screenMovementRight * h);
 			moveDirection = transform.position + direction;
-
+			
 			//SHAWN 
 			if (h != 0 || v != 0) {
 				isMoving = true;
@@ -190,12 +190,13 @@ namespace Assets.Scripts.Player
 			//are we grounded
 			grounded = IsGrounded ();
 			Vector3 lookDirection = transform.position + mainCam.forward;
-
+			
 			#region ERIC
-
+			
 			if(_currentBaseState.fullPathHash == _slipState)
 			{
-				this.GetComponent<Rigidbody>().velocity = _slipVector * _slipSpeed;
+				_slipVector = new Vector3(_slipVector.x, this.GetComponent<Rigidbody>().velocity.y, _slipVector.z);
+				this.GetComponent<Rigidbody>().velocity = _slipVector;
 			}
 			#endregion
 			if(_currentBaseState.fullPathHash != _slipState)
@@ -213,8 +214,8 @@ namespace Assets.Scripts.Player
 						characterMotor.RotateToDirection (moveDirection , curRotateSpeed * 5, true);
 					characterMotor.MoveTo (moveDirection, curAccel, 0.7f, true);
 					characterMotor.ManageSpeed (curDecel, maxSpeed + movingObjSpeed.magnitude, true);
-
-
+					
+					
 					//set animation values
 					if(animator)
 					{
@@ -314,7 +315,10 @@ namespace Assets.Scripts.Player
 					onJump = (groundedCount < jumpDelay) ? Mathf.Min(2, onJump + 1) : 0;
 					//execute the correct jump (like in mario64, jumping 3 times quickly will do higher jumps)
 					if (onJump == 0)
-							Jump (jumpForce);
+					{
+						Jump (jumpForce);
+						StopSlipping();
+					}
 				}
 			}
 		}
@@ -332,15 +336,15 @@ namespace Assets.Scripts.Player
 			GetComponent<Rigidbody>().AddRelativeForce (jumpVelocity, ForceMode.Impulse);
 			airPressTime = 0f;
 		}
-
+		
 		#region SABRINA
 		public void Crawl() {
 			maxSpeed = 3.0f;
 			box.size = new Vector3 (box.size.x, 1.0f, box.size.z);
 			box.center = new Vector3 (box.center.x, 0.5f, box.center.z);
 			isCrawling = true;
-
-
+			
+			
 		}
 		
 		public void StopCrawl() {
@@ -358,7 +362,7 @@ namespace Assets.Scripts.Player
 				}
 			}
 		}*/
-
+			
 			if (crawlUnder != null) {
 				isStuck = box.bounds.Intersects (crawlUnder.bounds);
 			}
@@ -370,8 +374,8 @@ namespace Assets.Scripts.Player
 				box.center = new Vector3 (box.center.x, 0.5f, box.center.z);
 			}
 		}
-
+		
 		#endregion
-
+		
 	}
 }
