@@ -13,6 +13,7 @@ namespace Assets.Scripts.Player
 		//componenets to manage
 		private PlayerMove _movement;
 		private PlayerLife _life;
+		private PushPull _pushPull;
 
 		//public delegate events to assign this controller to all listening components
 		public delegate void AssignmentEvent(PlayerController _controller);
@@ -31,7 +32,9 @@ namespace Assets.Scripts.Player
 				//run all components
 				_life.Run();
 				if(_life.Health > 0)
+				{
 					_movement.Run();
+				}
 			}
 		}
 
@@ -42,7 +45,10 @@ namespace Assets.Scripts.Player
 			{
 				//run all fixed components for physics
 				if(_life.Health > 0)
+				{
 					_movement.FixedRun();
+					_pushPull.FixedRun();
+				}
 			}
 		}
 
@@ -52,6 +58,7 @@ namespace Assets.Scripts.Player
 			//get all components to manage
 			_movement = this.GetComponent<PlayerMove>();
 			_life = this.GetComponent<PlayerLife>();
+			_pushPull = this.GetComponent<PushPull>();
 
 			//tell all components this is their controller
 			AssignController(this);
@@ -64,6 +71,10 @@ namespace Assets.Scripts.Player
 		public PlayerLife Life
 		{
 			get { return _life; }
+		}
+		public PushPull GetPushPull
+		{
+			get { return _pushPull; }
 		}
 	}
 }
