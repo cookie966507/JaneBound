@@ -35,7 +35,7 @@ public class BubbleBlowing : MonoBehaviour {
 			CreateNewBubble();
 			shooting = true;
 			print ("RB - DOWN");
-			playerMoveScript.lockedMovement = true;
+//			playerMoveScript.lockedMovement = true;
 		}
 
 		//If im still holding down the button, grow the bubble

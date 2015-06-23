@@ -59,16 +59,6 @@ public class CameraFollow : MonoBehaviour
 		if (!target)
 			return;
 
-		// Chris: if right button is held down, freelook
-		if(Input.GetButton ("RB")){
-			mouseFreelook = true;
-			targetOffset = aimOffset;
-		}
-		if(Input.GetButtonUp ("RB")){
-			mouseFreelook = false;
-			targetOffset = followOffset;
-		}
-
 		SmoothFollow ();
 		if(rotateDamping > 0)
 			SmoothLookAt();
@@ -93,21 +83,10 @@ public class CameraFollow : MonoBehaviour
 		followTarget.Translate(targetOffset, Space.Self);
 		if (lockRotation)
 			followTarget.rotation = target.rotation;
-
-		if(mouseFreelook)
-		{
-			//mouse look
-			float axisX = Input.GetAxis ("Mouse X") * inputRotationSpeed * Time.deltaTime;
-			followTarget.RotateAround (target.position, Vector3.up, axisX);
-			float axisY = Input.GetAxis ("Mouse Y") * inputRotationSpeed * Time.deltaTime;
-			followTarget.RotateAround (target.position, transform.right, -axisY);
-		}
-		else
-		{
-			//keyboard camera rotation look
-			float axis = Input.GetAxis ("CamHorizontal") * inputRotationSpeed * Time.deltaTime;
-			followTarget.RotateAround (target.position, Vector3.up, axis);
-		}
+		float axisX = Input.GetAxis ("Mouse X") * inputRotationSpeed * Time.deltaTime;
+		followTarget.RotateAround (target.position, Vector3.up, axisX);
+		float axisY = Input.GetAxis ("Mouse Y") * inputRotationSpeed * Time.deltaTime;
+		followTarget.RotateAround (target.position, transform.right, -axisY);
 		
 		//where should the camera be next frame?
 		Vector3 nextFramePosition = Vector3.Lerp(transform.position, followTarget.position, followSpeed * Time.deltaTime);
