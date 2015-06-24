@@ -58,6 +58,7 @@ public class CameraFollow : MonoBehaviour
 	//run our camera functions each frame
 	void Update()
 	{
+		Cursor.lockState = CursorLockMode.Locked;
 		if (!target)
 			return;
 

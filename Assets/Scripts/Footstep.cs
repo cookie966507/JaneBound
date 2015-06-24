@@ -5,7 +5,7 @@ using Assets.Scripts.Player;
 public class Footstep : MonoBehaviour {
 
 	PlayerMove cc;
-	AudioSource audio;
+	new AudioSource audio;
 
 	void Start () {
 		cc = GetComponent<PlayerMove> ();
