@@ -19,27 +19,26 @@ public class BubbleBlowing : MonoBehaviour {
 	private GameObject bubble;
 	private PlayerMove playerMoveScript;
 	private bool shooting;
-	private Transform mainCam;
+	private GameObject mainCam;
+	private CameraFollow cameraFollowScript;
 
 	// Use this for initialization
 	void Start () {
 		playerMoveScript = GetComponent<PlayerMove>();
-		mainCam = GameObject.FindGameObjectWithTag("MainCamera").transform;
+		mainCam = GameObject.FindGameObjectWithTag("MainCamera");
+		cameraFollowScript = mainCam.GetComponent<CameraFollow>();
 	}
 
 	void Update () {
 
 		//First time i right click
-		if (Input.GetButtonDown ("RB") && playerMoveScript.grounded){
-
-			CreateNewBubble();
-			shooting = true;
-			print ("RB - DOWN");
-//			playerMoveScript.lockedMovement = true;
+		if (Input.GetButtonDown ("RB")){
+			shooting = !shooting;
+			ToggleBlowing ();
 		}
 
 		//If im still holding down the button, grow the bubble
-		if(Input.GetButton ("RB")){
+		if(shooting){
 			if(bubble != null && current_scale < max_scale){
 				bubble.transform.localScale = Vector3.one * current_scale;
 				current_scale += growth_rate * Time.deltaTime;
@@ -53,20 +52,33 @@ public class BubbleBlowing : MonoBehaviour {
 		}
 
 		//If you press fire while holding the bubble button down, you fire the bubble
-		if (Input.GetButtonDown ("LB") && Input.GetButton ("RB")){
+		if (Input.GetButtonDown ("LB") && shooting){
 			print ("FIRE");
 			shooting = false;
+			playerMoveScript.lockedMovement = false;
+			cameraFollowScript.aiming = false;
 			FireBubble();
 			ResetBubbleBlowing();
 		}
+	}
 
-		//if you release the bubble button at any time, you reset
-		if(Input.GetButtonUp("RB")){
-			print ("RB - UP");
-			if(shooting) Destroy(bubble);
+
+	void ToggleBlowing(){
+		if(shooting){
+			print ("Shooting: ON");
+			playerMoveScript.lockedMovement = true;
+			cameraFollowScript.aiming = true;
+			CreateNewBubble();
+		}
+		else{
+			print ("Shooting: OFF");
+			Destroy(bubble);
+			playerMoveScript.lockedMovement = false;
+			cameraFollowScript.aiming = false;
 			ResetBubbleBlowing();
 		}
 	}
+
 
 	//Chris: creates new bubble new the players location
 	void CreateNewBubble(){
@@ -85,20 +97,20 @@ public class BubbleBlowing : MonoBehaviour {
 		bubble.transform.localScale = Vector3.one;
 	}
 
+
 	void FireBubble(){
 		if(bubble == null){
 			ResetBubbleBlowing();
 		}
 		Rigidbody bubble_body = bubble.AddComponent<Rigidbody>();
-		bubble_body.AddForce(mainCam.forward * bubble_force);
+		bubble_body.AddForce(mainCam.transform.forward * bubble_force);
 		bubble.GetComponent<Bounce>().collisionEnter = true;
 	}
+
 
 	//Chris: resets parameters so a new bubble can be blown
 	void ResetBubbleBlowing(){
 		if(bubble != null){
-			print ("RESET");
-			playerMoveScript.lockedMovement = false;	
 			current_scale = start_scale;
 			current_bubble_distance = start_bubble_distance;
 			bubble.transform.parent = this.transform.parent;
