@@ -5,7 +5,6 @@ namespace Assets.Scripts.Player
 {
 	//handles player movement, utilising the CharacterMotor class
 	[RequireComponent(typeof(CharacterMotor))]
-	[RequireComponent(typeof(Bounce))]
 	[RequireComponent(typeof(AudioSource))]
 	public class PlayerMove : PlayerControllerObject 
 	{

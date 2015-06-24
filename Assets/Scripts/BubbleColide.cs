@@ -4,11 +4,6 @@ using System.Collections;
 public class BubbleColide : MonoBehaviour {
 
 	private Rigidbody myBody;
-
-	// Use this for initialization
-	void Start () {
-
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,7 +17,10 @@ public class BubbleColide : MonoBehaviour {
 			{
 				print ("bubble collide");
 				myBody.isKinematic = true;
+				//GameObject go = new GameObject();
 				Destroy (myBody);
+				//go.transform.parent = col.transform;
+				//this.transform.parent = go.transform;
 			}
 		}
 	}
