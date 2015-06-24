@@ -59,6 +59,7 @@ public class CameraFollow : MonoBehaviour
 	void Update()
 	{
 		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 		if (!target)
 			return;
 
