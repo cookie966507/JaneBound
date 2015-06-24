@@ -160,7 +160,9 @@ namespace Assets.Scripts.Player
 			//get movement input, set direction to move in
 			float h = Input.GetAxisRaw ("Horizontal");
 			float v = Input.GetAxisRaw ("Vertical");
-
+			
+			
+			
 			//crawl with the key "c" pressed down
 			
 			if (Input.GetKey (KeyCode.C)) {
@@ -168,7 +170,8 @@ namespace Assets.Scripts.Player
 			} else {
 				StopCrawl();
 			}
-			
+
+
 			//only apply vertical input to movemement, if player is not sidescroller
 			
 			direction = (screenMovementForward * v) + (screenMovementRight * h);
@@ -324,17 +327,15 @@ namespace Assets.Scripts.Player
 		//push player at jump force
 		public void Jump(Vector3 jumpVelocity)
 		{
-			if(!lockedMovement){
-				if(jumpSound)
-				{
-					GetComponent<AudioSource>().volume = 1;
-					GetComponent<AudioSource>().clip = jumpSound;
-					GetComponent<AudioSource>().Play ();
-				}
-				GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, 0f, GetComponent<Rigidbody>().velocity.z);
-				GetComponent<Rigidbody>().AddRelativeForce (jumpVelocity, ForceMode.Impulse);
-				airPressTime = 0f;
+			if(jumpSound)
+			{
+				GetComponent<AudioSource>().volume = 1;
+				GetComponent<AudioSource>().clip = jumpSound;
+				GetComponent<AudioSource>().Play ();
 			}
+			GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, 0f, GetComponent<Rigidbody>().velocity.z);
+			GetComponent<Rigidbody>().AddRelativeForce (jumpVelocity, ForceMode.Impulse);
+			airPressTime = 0f;
 		}
 		
 		#region SABRINA
