@@ -14,7 +14,7 @@ public class Footstep : MonoBehaviour {
 
 	void Update () {
 		//Temp for grass sound only
-		if(cc.grounded == true && cc.isMoving && GetComponent<AudioSource>().isPlaying == false){
+		if(cc.grounded == true && cc.lockedMovement == false && cc.isMoving && GetComponent<AudioSource>().isPlaying == false){
 			audio.clip = cc.grassSound;
 			audio.volume = Random.Range (0.8f, 1);
 			audio.pitch = 2f;

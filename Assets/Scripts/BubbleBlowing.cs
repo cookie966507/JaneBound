@@ -58,24 +58,21 @@ public class BubbleBlowing : MonoBehaviour {
 				currentLoc.y += bubble_height + current_bubble_distance * 0.1f;
 				bubble.transform.position = currentLoc;
 			}
-
 		}
-
-		//If you press fire while holding the bubble button down, you fire the bubble
-		if (Input.GetButtonDown ("LB") && Input.GetButton ("RB") && number>0){
 
 		if (Input.GetButtonDown ("LB") && shooting){
-			print ("FIRE");
-			shooting = false;
-			playerMoveScript.lockedMovement = false;
-			cameraFollowScript.aiming = false;
-			FireBubble();
-			ResetBubbleBlowing();
-			number--;
-			print ("Number of bubbles left: " +number);
+			//makes it so the bubble has to be max size
+			if(current_scale >= max_scale){
+				print ("FIRE");
+				shooting = false;
+				playerMoveScript.lockedMovement = false;
+				cameraFollowScript.aiming = false;
+				FireBubble();
+				ResetBubbleBlowing();
+				number--;
+				print ("Number of bubbles left: " +number);
+			}
 		}
-			
-	}
 	}
 		
 
