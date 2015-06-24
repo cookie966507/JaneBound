@@ -15,7 +15,7 @@ public class BubbleNumber : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		t.text =  BubbleBlowing.number.ToString();
+		t.text =  BubbleBlowing.number_of_bubbles.ToString();
 			//bb.number.ToString();
 	}
 }

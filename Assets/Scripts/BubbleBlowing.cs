@@ -20,7 +20,7 @@ public class BubbleBlowing : MonoBehaviour {
 	private PlayerMove playerMoveScript;
 	private bool shooting;
 	//private Transform mainCam;
-	public static int number = 5;
+	public static int number_of_bubbles = 5;
 	private GameObject mainCam;
 	private CameraFollow cameraFollowScript;
 
@@ -34,16 +34,8 @@ public class BubbleBlowing : MonoBehaviour {
 	void Update () {
 
 		//First time i right click
-		if (Input.GetButtonDown ("RB") && playerMoveScript.grounded && number>0){
-
-			CreateNewBubble();
-			shooting = true;
-			print ("RB - DOWN");
-			playerMoveScript.lockedMovement = true;
-		if (Input.GetButtonDown ("RB")){
-			shooting = !shooting;
+		if (Input.GetButtonDown ("RB") && playerMoveScript.grounded && number_of_bubbles > 0){
 			ToggleBlowing ();
-		}
 		}
 		
 
@@ -69,8 +61,8 @@ public class BubbleBlowing : MonoBehaviour {
 				cameraFollowScript.aiming = false;
 				FireBubble();
 				ResetBubbleBlowing();
-				number--;
-				print ("Number of bubbles left: " +number);
+				number_of_bubbles--;
+				print ("Number of bubbles left: " +number_of_bubbles);
 			}
 		}
 	}
@@ -78,6 +70,7 @@ public class BubbleBlowing : MonoBehaviour {
 
 
 	void ToggleBlowing(){
+		shooting = !shooting;
 		if(shooting){
 			print ("Shooting: ON");
 			playerMoveScript.lockedMovement = true;
