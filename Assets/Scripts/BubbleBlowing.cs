@@ -19,14 +19,11 @@ public class BubbleBlowing : MonoBehaviour {
 	private GameObject bubble;
 	private PlayerMove playerMoveScript;
 	private bool shooting;
-<<<<<<< HEAD
-	private Transform mainCam;
+	//private Transform mainCam;
 	public static int number = 5;
-=======
 	private GameObject mainCam;
 	private CameraFollow cameraFollowScript;
 
->>>>>>> 4e6179da8e867a8a0227be8b82f9b5fc0c553f3b
 	// Use this for initialization
 	void Start () {
 		playerMoveScript = GetComponent<PlayerMove>();
@@ -37,19 +34,18 @@ public class BubbleBlowing : MonoBehaviour {
 	void Update () {
 
 		//First time i right click
-<<<<<<< HEAD
 		if (Input.GetButtonDown ("RB") && playerMoveScript.grounded && number>0){
 
 			CreateNewBubble();
 			shooting = true;
 			print ("RB - DOWN");
 			playerMoveScript.lockedMovement = true;
-=======
 		if (Input.GetButtonDown ("RB")){
 			shooting = !shooting;
 			ToggleBlowing ();
->>>>>>> 4e6179da8e867a8a0227be8b82f9b5fc0c553f3b
 		}
+		}
+		
 
 		//If im still holding down the button, grow the bubble
 		if(shooting){
@@ -66,11 +62,9 @@ public class BubbleBlowing : MonoBehaviour {
 		}
 
 		//If you press fire while holding the bubble button down, you fire the bubble
-<<<<<<< HEAD
 		if (Input.GetButtonDown ("LB") && Input.GetButton ("RB") && number>0){
-=======
+
 		if (Input.GetButtonDown ("LB") && shooting){
->>>>>>> 4e6179da8e867a8a0227be8b82f9b5fc0c553f3b
 			print ("FIRE");
 			shooting = false;
 			playerMoveScript.lockedMovement = false;
@@ -80,7 +74,10 @@ public class BubbleBlowing : MonoBehaviour {
 			number--;
 			print ("Number of bubbles left: " +number);
 		}
+			
 	}
+	}
+		
 
 
 	void ToggleBlowing(){
@@ -98,6 +95,7 @@ public class BubbleBlowing : MonoBehaviour {
 			ResetBubbleBlowing();
 		}
 	}
+
 
 
 	//Chris: creates new bubble new the players location
@@ -137,4 +135,5 @@ public class BubbleBlowing : MonoBehaviour {
 			bubble = null;
 		}
 	}
+
 }
