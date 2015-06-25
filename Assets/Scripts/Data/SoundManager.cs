@@ -103,13 +103,16 @@ namespace Assets.Scripts.Data
 		//function for playing sfx
 		public static void PlaySFX(AudioSource _audio)
 		{
-			//if sfx is muted, mute the incoming sound
+			if(!_sfxSources.Contains(_audio))
+			   {
+				//if sfx is muted, mute the incoming sound
 			//if(!_sfxEnabled) _audio.volume = VOL_DOWN;
-			_audio.volume = _sfxVol;
+				_audio.volume = _sfxVol;
 
 			//play it anyway in case we unmute the sound and store a reference
-			_sfxSources.Add(_audio);
-			_audio.Play();
+				_sfxSources.Add(_audio);
+				_audio.Play();
+			}
 		}
 
 		//function for playing music

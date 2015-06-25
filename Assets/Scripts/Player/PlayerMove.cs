@@ -327,9 +327,8 @@ namespace Assets.Scripts.Player
 			if(!lockedMovement){
 				if(jumpSound)
 				{
-					GetComponent<AudioSource>().volume = 1;
 					GetComponent<AudioSource>().clip = jumpSound;
-					GetComponent<AudioSource>().Play ();
+					Data.SoundManager.PlaySFX(this.GetComponent<AudioSource>());
 				}
 				GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, 0f, GetComponent<Rigidbody>().velocity.z);
 				GetComponent<Rigidbody>().AddRelativeForce (jumpVelocity, ForceMode.Impulse);

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Assets.Scripts.Player;
+using Assets.Scripts.Data;
 //by: Shawn Kim
 public class Footstep : MonoBehaviour {
 
@@ -14,11 +15,11 @@ public class Footstep : MonoBehaviour {
 
 	void Update () {
 		//Temp for grass sound only
-		if(cc.grounded == true && cc.lockedMovement == false && cc.isMoving && GetComponent<AudioSource>().isPlaying == false){
+		if(cc.grounded == true && cc.lockedMovement == false && cc.isMoving){
 			audio.clip = cc.grassSound;
-			audio.volume = Random.Range (0.8f, 1);
+			//audio.volume = Random.Range (0.8f, 1);
 			audio.pitch = 2f;
-			audio.Play();
+			SoundManager.PlaySFX(audio);
 		}
 	}
 }
