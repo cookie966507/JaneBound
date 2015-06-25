@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+#region ERIC
 namespace Assets.Scripts.Data
 {
 	public class LoadManager : DataHandler
@@ -46,3 +47,4 @@ namespace Assets.Scripts.Data
 		}
 	}
 }
+#endregion

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+#region ERIC
 namespace Assets.Scripts.Data
 {
 	public abstract class DataHandler : MonoBehaviour
@@ -43,3 +44,4 @@ namespace Assets.Scripts.Data
 		}
 	}
 }
+#endregion

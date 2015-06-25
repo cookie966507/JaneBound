@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+#region ERIC
 namespace Assets.Scripts.Data
 {
 	/*
@@ -233,3 +234,4 @@ namespace Assets.Scripts.Data
 		*/
 	}
 }
+#endregion

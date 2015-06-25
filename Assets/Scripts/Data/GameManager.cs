@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+#region ERIC
 namespace Assets.Scripts.Data
 {
 	public class GameManager : MonoBehaviour
@@ -62,5 +63,10 @@ namespace Assets.Scripts.Data
 		{
 			get { return _state.Equals(GameState.Paused); }
 		}
+		public static bool InSuspendedState
+		{
+			get { return _state.Equals(GameState.Paused) || _state.Equals(GameState.Win) || _state.Equals(GameState.Lose); }
+		}
 	}
 }
+#endregion
