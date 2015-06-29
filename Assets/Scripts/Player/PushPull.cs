@@ -9,7 +9,7 @@ namespace Assets.Scripts.Player
 		Rigidbody body2;
 		FixedJoint fj;
 		Rigidbody self;
-		BoxCollider col;
+		//BoxCollider col;
 		float h, v;
 		int flag = 0;
 
@@ -17,7 +17,7 @@ namespace Assets.Scripts.Player
 		{
 			anim = GetComponentInChildren<Animator>();					  			
 			self = GetComponent<Rigidbody>();
-			col = GetComponent<BoxCollider>();
+			//col = GetComponent<BoxCollider>();
 		}
 
 		public override void Run ()
@@ -36,8 +36,8 @@ namespace Assets.Scripts.Player
 			{
 				body2=null;
 			}
-			Vector3 move = new Vector3(h,0,v);
-			float dotProd = Vector3.Dot(move, transform.forward);
+			//Vector3 move = new Vector3(h,0,v);
+			//float dotProd = Vector3.Dot(move, transform.forward);
 
 			if(flag ==1 && Input.GetKey(KeyCode.LeftShift) && (h!=0 || v!=0) && (h*v==0) && body2!=null)
 			{

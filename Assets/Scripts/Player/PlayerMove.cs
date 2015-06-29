@@ -42,7 +42,7 @@ namespace Assets.Scripts.Player
 		private Vector3 direction, moveDirection, screenMovementForward, screenMovementRight, movingObjSpeed;
 		
 		private CharacterMotor characterMotor;
-		private Bounce bounce;
+		//private Bounce bounce;
 		public bool isMoving;
 		
 		#region SABRINA
@@ -131,7 +131,7 @@ namespace Assets.Scripts.Player
 			}
 			//usual setup
 			mainCam = GameObject.FindGameObjectWithTag("MainCamera").transform;
-			bounce = GetComponent<Bounce>();
+			//bounce = GetComponent<Bounce>();
 			characterMotor = GetComponent<CharacterMotor>();
 			//gets child objects of floorcheckers, and puts them in an array
 			//later these are used to raycast downward and see if we are on the ground
@@ -351,7 +351,7 @@ namespace Assets.Scripts.Player
 			box.size = new Vector3 (box.size.x, 2.5f, box.size.z);
 			box.center = new Vector3 (box.center.x, 1.25f, box.center.z);
 			bool isStuck = false;
-			Collider[] colliders = FindObjectsOfType (typeof(Collider)) as Collider[];
+			//Collider[] colliders = FindObjectsOfType (typeof(Collider)) as Collider[];
 			/*foreach (Collider checkBox in colliders) {
 			if (checkBox != box && !checkBox.isTrigger) {
 				isStuck = box.bounds.Intersects (checkBox.bounds);

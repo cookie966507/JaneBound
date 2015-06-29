@@ -90,7 +90,7 @@ public class BubbleBlowing : MonoBehaviour {
 
 	//Chris: creates new bubble new the players location
 	void CreateNewBubble(){
-		Vector3 pos = this.transform.position;
+		//Vector3 pos = this.transform.position;
 
 		bubble = GameObject.Instantiate(Resources.Load("Bubble")) as GameObject;
 		bubble.GetComponent<Bounce>().collisionEnter = false;
