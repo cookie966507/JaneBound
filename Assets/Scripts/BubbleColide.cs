@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Util;
 
-public class BubbleColide : MonoBehaviour {
-
+public class BubbleColide : MonoBehaviour
+{
 	private Rigidbody myBody;
-	
-	// Update is called once per frame
-	void Update () {
+
+	void Update ()
+	{
 		myBody = this.GetComponent<Rigidbody>();
 	}
 
@@ -15,11 +16,17 @@ public class BubbleColide : MonoBehaviour {
 		if(col.gameObject.tag != "Player"){
 			if(myBody)
 			{
-				print ("bubble collide");
-				myBody.isKinematic = true;
-				//GameObject go = new GameObject();
+				//myBody.isKinematic = true;
+				GameObject go = new GameObject();
+				go.transform.position = this.transform.position;
+				go.transform.parent = col.transform;
+
+				FollowPoint _fp = this.GetComponent<FollowPoint>();
+				_fp.FollowTransform = go.transform;
+				_fp.enabled = true;
+				Physics.IgnoreCollision(this.GetComponent<Collider>(), col.collider, true);
+
 				Destroy (myBody);
-				//go.transform.parent = col.transform;
 				//this.transform.parent = go.transform;
 			}
 		}
