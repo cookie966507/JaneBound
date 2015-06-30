@@ -14,10 +14,6 @@ namespace Assets.Scripts.Data
 		//reference to the sound manager
 		public static SoundManager _instance;
 
-		//whether sfx or music are enabled - not implemented
-		//private static bool _sfxEnabled = true;
-		//private static bool _musicEnabled = true;
-
 		//volume of the audio types
 		private static float _sfxVol = 1f;
 		private static float _musicVol = 1f;
@@ -26,9 +22,16 @@ namespace Assets.Scripts.Data
 		private static List<AudioSource> _sfxSources;
 		private static List<AudioSource> _musicSources;
 
-		//volume parameters - not implemented
-		//private const float VOL_UP = 1f;
-		//private const float VOL_DOWN = 0f;
+		//setting up events
+		void OnEnable()
+		{
+			GameManager.GamePause += PauseAudio;
+		}
+		
+		void OnDisable()
+		{
+			GameManager.GamePause -= UnpauseAudio;
+		}
 
 		void Awake()
 		{
@@ -68,17 +71,12 @@ namespace Assets.Scripts.Data
 
 		void Update()
 		{
-			//List<AudioSource> _tempList = new List<AudioSource>();
 			//go through the audio sources
-			//foreach(AudioSource _source in _sfxSources)
 			for(int i = 0; i < _sfxSources.Count; i++)
 			{
 				//if the source is finished playing
 				if(!_sfxSources[i].isPlaying)
 				{
-					//set the volume to be on just in case it was off
-					//_sfxSources[i].volume = VOL_UP;
-
 					//remove the reference because we are done with it (tempList will remove it)
 					_sfxSources.RemoveAt(i);
 					//decrement i
@@ -88,13 +86,10 @@ namespace Assets.Scripts.Data
 
 
 			//same for the music
-			//foreach(AudioSource _source in _musicSources)
 			for(int i = 0; i < _musicSources.Count; i++)
 			{
 				if(!_musicSources[i].isPlaying)
 				{
-					//_musicSources[i].volume = VOL_UP;
-
 					_musicSources.RemoveAt(i);
 					i--;
 				}
@@ -106,11 +101,8 @@ namespace Assets.Scripts.Data
 		{
 			if(!_sfxSources.Contains(_audio))
 			   {
-				//if sfx is muted, mute the incoming sound
-			//if(!_sfxEnabled) _audio.volume = VOL_DOWN;
 				_audio.volume = _sfxVol;
 
-			//play it anyway in case we unmute the sound and store a reference
 				_sfxSources.Add(_audio);
 				_audio.Play();
 			}
@@ -119,14 +111,10 @@ namespace Assets.Scripts.Data
 		//function for playing music
 		public static void PlayMusic(AudioSource _audio)
 		{
-			//if music is muted, mute the incoming sound
-			//if(!_musicEnabled) _audio.volume = VOL_DOWN;
-
 			if(!_musicSources.Contains(_audio))
 			{
 				_audio.volume = _musicVol;
 
-				//play it anyway in case we unmute the music and store a reference
 				_musicSources.Add(_audio);
 				_audio.Play();
 			}
@@ -153,85 +141,30 @@ namespace Assets.Scripts.Data
 				_musicSources[i].volume = _musicVol;
 			}
 		}
-//
-//		public static void PauseAudio()
-//		{
-//			for(int i = 0; i < _musicSources.Count; i++)
-//			{
-//				_musicSources[i].Pause();
-//			}
-//			for(int i = 0; i < _sfxSources.Count; i++)
-//			{
-//				_sfxSources[i].Pause();
-//			}
-//		}
-//
-//		public static void UnPauseAudio()
-//		{
-//			for(int i = 0; i < _musicSources.Count; i++)
-//			{
-//				_musicSources[i].Play();
-//			}
-//			for(int i = 0; i < _sfxSources.Count; i++)
-//			{
-//				_sfxSources[i].Play();
-//			}
-//			Debug.Log("AudioUnpaused");
-//		}
 
-		/* - not implemented
-		//muting/unmuting sfx
-		public static void ToggleSFX()
+		public static void PauseAudio()
 		{
-			//mute/unmute
-			_sfxEnabled = !_sfxEnabled;
-
-			//set volume accordingly
-			if(_sfxEnabled)
+			for(int i = 0; i < _musicSources.Count; i++)
 			{
-				SoundManager.ToggleCurrentSFX(VOL_UP);
+				_musicSources[i].Pause();
 			}
-			else
+			for(int i = 0; i < _sfxSources.Count; i++)
 			{
-				SoundManager.ToggleCurrentSFX(VOL_DOWN);
+				_sfxSources[i].Pause();
 			}
 		}
 
-		//muting/unmuting the music
-		public static void ToggleMusic()
+		public static void UnpauseAudio()
 		{
-			//mute/unmute
-			_musicEnabled = !_musicEnabled;
-
-			//set volume accordingly
-			if(_musicEnabled)
+			for(int i = 0; i < _musicSources.Count; i++)
 			{
-				SoundManager.ToggleCurrentMusic(VOL_UP);
+				_musicSources[i].Play();
 			}
-			else
+			for(int i = 0; i < _sfxSources.Count; i++)
 			{
-				SoundManager.ToggleCurrentMusic(VOL_DOWN);
+				_sfxSources[i].Play();
 			}
 		}
-
-		//update the volume for currently playing sounds
-		private static void ToggleCurrentSFX(float _volume)
-		{
-			foreach(AudioSource _source in _sfxSources)
-			{
-				_source.volume = _volume;
-			}
-		}
-
-		//update the volume for currently playing music
-		private static void ToggleCurrentMusic(float _volume)
-		{
-			foreach(AudioSource _source in _musicSources)
-			{
-				_source.volume = _volume;
-			}
-		}
-		*/
 	}
 }
 #endregion
