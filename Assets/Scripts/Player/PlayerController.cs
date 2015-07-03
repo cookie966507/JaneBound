@@ -14,6 +14,7 @@ namespace Assets.Scripts.Player
 		private PlayerMove _movement;
 		private PlayerLife _life;
 		private PushPull _pushPull;
+		private Footstep _footStep;
 
 		//public delegate events to assign this controller to all listening components
 		public delegate void AssignmentEvent(PlayerController _controller);
@@ -34,6 +35,7 @@ namespace Assets.Scripts.Player
 				if(_life.Health > 0)
 				{
 					_movement.Run();
+					_footStep.Run();
 				}
 			}
 		}
@@ -59,22 +61,28 @@ namespace Assets.Scripts.Player
 			_movement = this.GetComponent<PlayerMove>();
 			_life = this.GetComponent<PlayerLife>();
 			_pushPull = this.GetComponent<PushPull>();
+			_footStep = this.GetComponentInChildren<Footstep>();
+
 
 			//tell all components this is their controller
 			AssignController(this);
 		}
 
-		public PlayerMove Movement
+		public PlayerMove MovementComponent
 		{
 			get { return _movement; }
 		}
-		public PlayerLife Life
+		public PlayerLife LifeComponent
 		{
 			get { return _life; }
 		}
-		public PushPull GetPushPull
+		public PushPull PushPullComponent
 		{
 			get { return _pushPull; }
+		}
+		public Footstep FootStepComponent
+		{
+			get { return _footStep; }
 		}
 	}
 }
