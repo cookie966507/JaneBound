@@ -10,7 +10,7 @@ namespace Assets.Scripts.Data
 {
 	public class SaveManager : DataHandler
 	{
-		private static SaveManager _instance;
+		public static SaveManager _instance;
 
 		protected override void Init()
 		{
@@ -28,7 +28,10 @@ namespace Assets.Scripts.Data
 
 		public static void SaveAudio(float _sfxVol, float _musicVol)
 		{
-
+#if UNITY_WEBPLAYER
+			PlayerPrefs.SetFloat(_audioHash + 0, _sfxVol);
+			PlayerPrefs.SetFloat(_audioHash + 1, _musicVol);
+#else
 			BinaryFormatter _bf = new BinaryFormatter();
 			FileStream _file = File.Create(_audioDataPath);
 
@@ -38,6 +41,7 @@ namespace Assets.Scripts.Data
 
 			_bf.Serialize(_file, _data);
 			_file.Close();
+#endif
 		}
 	}
 }

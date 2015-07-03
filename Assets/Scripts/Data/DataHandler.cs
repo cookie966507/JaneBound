@@ -10,7 +10,11 @@ namespace Assets.Scripts.Data
 {
 	public abstract class DataHandler : MonoBehaviour
 	{
+#if UNITY_WEBPLAYER
+		protected static string _audioHash = "JaneBound Audio";
+#else
 		protected static string _audioDataPath = Application.persistentDataPath + "/Audio.dat";
+#endif
 
 		void Awake()
 		{

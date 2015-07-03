@@ -45,16 +45,8 @@ namespace Assets.Scripts.Data
 				_musicSources = new List<AudioSource>();
 
 				AudioData _data = LoadManager.LoadAudio();
-                if(_data != null)
-                {
-					_musicVol = _data.MusicVol;
-					_sfxVol = _data.SFXVol;
-                }
-                else
-                {
-                    _musicVol = 1f;
-                    _sfxVol = 1f;
-                }
+				_musicVol = _data.MusicVol;
+				_sfxVol = _data.SFXVol;
 			}
 			//too many sound managers
 			else if(_instance != this)

@@ -28,6 +28,19 @@ namespace Assets.Scripts.Data
 
 		public static AudioData LoadAudio()
 		{
+#if UNITY_WEBPLAYER
+			AudioData _data = new AudioData();
+			if(PlayerPrefs.HasKey(_audioHash + 0))
+			{
+				_data.SFXVol = PlayerPrefs.GetFloat(_audioHash + 0);
+				_data.MusicVol = PlayerPrefs.GetFloat(_audioHash + 1);
+			}
+			else
+			{
+				SaveManager.SaveAudio(1f, 1f);
+			}
+			return _data;
+#else
 			if(File.Exists(_audioDataPath))
 			{
 				BinaryFormatter _bf = new BinaryFormatter();
@@ -41,9 +54,11 @@ namespace Assets.Scripts.Data
 			}
 			else
 			{
+				AudioData _newData = new AudioData();
 				SaveManager.SaveAudio(1f, 1f);
-				return null;
+				return _newData;
 			}
+#endif
 		}
 	}
 }
