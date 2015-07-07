@@ -41,6 +41,7 @@ namespace Assets.Scripts.Data
 			}
 			return _data;
 #else
+
 			if(File.Exists(_audioDataPath))
 			{
 				BinaryFormatter _bf = new BinaryFormatter();
@@ -78,12 +79,13 @@ namespace Assets.Scripts.Data
 			}
 			return _data;
 #else
+			VideoData _data = new VideoData();
 			if(File.Exists(_videoDataPath))
 			{
 				BinaryFormatter _bf = new BinaryFormatter();
 				FileStream _file = File.Open(_videoDataPath, FileMode.Open);
 				
-				VideoData _data = (VideoData)_bf.Deserialize(_file);
+				_data = (VideoData)_bf.Deserialize(_file);
 				
 				_file.Close();
 				
