@@ -60,6 +60,43 @@ namespace Assets.Scripts.Data
 			}
 #endif
 		}
+
+		public static VideoData LoadVideo()
+		{
+#if UNITY_WEBPLAYER
+			VideoData _data = new VideoData();
+			if(PlayerPrefs.HasKey(_videoHash + 0))
+			{
+				_data.ResolutionIndex = PlayerPrefs.GetInt(_videoHash + 0);
+				_data.QualityIndex = PlayerPrefs.GetInt(_videoHash + 1);
+				int _full = PlayerPrefs.GetInt(_videoHash + 2);
+				_data.Fullscreen = (_full == 1) ? true : false;
+			}
+			else
+			{
+				SaveManager.SaveVideo(_data.ResolutionIndex, _data.QualityIndex, _data.Fullscreen);
+			}
+			return _data;
+#else
+			if(File.Exists(_videoDataPath))
+			{
+				BinaryFormatter _bf = new BinaryFormatter();
+				FileStream _file = File.Open(_videoDataPath, FileMode.Open);
+				
+				VideoData _data = (VideoData)_bf.Deserialize(_file);
+				
+				_file.Close();
+				
+				return _data;
+			}
+			else
+			{
+				VideoData _newData = new VideoData();
+				SaveManager.SaveVideo(_data.ResolutionIndex, _data.QualityIndex, _data.Fullscreen);
+				return _newData;
+			}
+#endif
+		}
 	}
 }
 #endregion
