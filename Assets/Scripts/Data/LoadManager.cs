@@ -28,8 +28,9 @@ namespace Assets.Scripts.Data
 
 		public static AudioData LoadAudio()
 		{
-#if UNITY_WEBPLAYER
 			AudioData _data = new AudioData();
+#if UNITY_WEBPLAYER
+
 			if(PlayerPrefs.HasKey(_audioHash + 0))
 			{
 				_data.SFXVol = PlayerPrefs.GetFloat(_audioHash + 0);
@@ -47,7 +48,7 @@ namespace Assets.Scripts.Data
 				BinaryFormatter _bf = new BinaryFormatter();
 				FileStream _file = File.Open(_audioDataPath, FileMode.Open);
 
-				AudioData _data = (AudioData)_bf.Deserialize(_file);
+				_data = (AudioData)_bf.Deserialize(_file);
 
 				_file.Close();
 
@@ -64,8 +65,9 @@ namespace Assets.Scripts.Data
 
 		public static VideoData LoadVideo()
 		{
-#if UNITY_WEBPLAYER
 			VideoData _data = new VideoData();
+#if UNITY_WEBPLAYER
+
 			if(PlayerPrefs.HasKey(_videoHash + 0))
 			{
 				_data.ResolutionIndex = PlayerPrefs.GetInt(_videoHash + 0);
@@ -79,7 +81,7 @@ namespace Assets.Scripts.Data
 			}
 			return _data;
 #else
-			VideoData _data = new VideoData();
+
 			if(File.Exists(_videoDataPath))
 			{
 				BinaryFormatter _bf = new BinaryFormatter();
