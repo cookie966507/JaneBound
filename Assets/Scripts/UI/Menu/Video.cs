@@ -66,17 +66,27 @@ namespace Assets.Scripts.UI.Menu
            _fullscreen.isOn = !_fullscreen.isOn;
         }
 
-        public void Exit()
-        {
+		public void Apply()
+		{
+			ConformationWindow.getConformation(ApplySettings);
+		}
+
+		public void ApplySettings(bool _accept)
+		{
 			Screen.SetResolution(
 				_res[(int)_resolution.value].width,
 				_res[(int)_resolution.value].height,
 				_fullscreen.isOn);
-
+			
 			FindObjectOfType<Camera>().ResetAspect();
-
+			
 			QualitySettings.SetQualityLevel((int)_quality.value);
 			SaveManager.SaveVideo((int)_resolution.value, (int)_quality.value, _fullscreen.isOn);
+		}
+
+        public void Exit()
+        {
+			//put exit code here
         }
     }
 }
