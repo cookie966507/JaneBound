@@ -72,6 +72,11 @@ namespace Assets.Scripts.UI.Menu
 				}
 			}
 		}
+
+		public static MenuState PreviousState
+		{
+			get { return _previousState; }
+		}
 	}
 }
 #endregion

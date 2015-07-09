@@ -3,21 +3,22 @@ using System.Collections;
 
 namespace Assets.Scripts.UI.Menu
 {
-    class ConformationWindow : MenuElement
+    class ConformationWindow : MonoBehaviour
     {
         public delegate void Confirm(bool _confirm);
         private static Confirm confirmFunction;
-        private static Canvas _win;
+		private static Canvas _win;
 
-		protected override void Init ()
+		void Awake()
 		{
-			base.Init ();
-			_state = MenuManager.MenuState.Confirmation;
+			_win = this.GetComponent<Canvas>();
+			_win.enabled = false;
 		}
 
 		public static void getConformation(Confirm confirmFunction)
         {
 			ConformationWindow.confirmFunction = confirmFunction;
+			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Confirmation);
             _win.enabled = true;
         }
 
@@ -32,6 +33,7 @@ namespace Assets.Scripts.UI.Menu
         private static void doAnswer(bool yesNo)
         {
 			confirmFunction(yesNo);
+			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.PreviousState);
             _win.enabled = false;
         }
     }

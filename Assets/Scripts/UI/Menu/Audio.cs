@@ -36,9 +36,11 @@ namespace Assets.Scripts.UI.Menu
 			SoundManager.SliderMusic(_music.value);
 		}
 
-        public void Exit()
+        public void Back()
         {
 			SaveManager.SaveAudio(_sfx.value, _music.value);
+			_win.enabled = false;
+			MenuManager.StateTransition(_state, MenuManager.MenuState.Settings);
         }
     }
 }
