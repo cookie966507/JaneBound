@@ -31,6 +31,7 @@ namespace Assets.Scripts.UI.Menu
 				_instance = this;
 				DontDestroyOnLoad(this.gameObject);
 				_currentState = MenuState.Title;
+				_previousState = MenuState.Title;
 				_menuElements = GameObject.FindObjectsOfType<MenuElement>();
 			}
 			else if(_instance != this) Destroy(this.gameObject);
@@ -55,6 +56,7 @@ namespace Assets.Scripts.UI.Menu
 			case MenuState.Pause:
 				break;
 			case MenuState.Inactive:
+				DeactivateAll();
 				break;
 			}
 		}
@@ -70,6 +72,14 @@ namespace Assets.Scripts.UI.Menu
 					_element.Activate();
 					break;
 				}
+			}
+		}
+
+		public static void DeactivateAll()
+		{
+			for(int i = 0; i < _menuElements.Length; i++)
+			{
+				_menuElements[i].Deactivate();
 			}
 		}
 

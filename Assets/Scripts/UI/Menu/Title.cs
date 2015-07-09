@@ -14,7 +14,7 @@ namespace Assets.Scripts.UI.Menu
 
 		public void Play()
 		{
-
+			MenuManager.StateTransition(_state, MenuManager.MenuState.Inactive);
 		}
 		public void Settings()
 		{
