@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using Assets.Scripts.Data;
 
+#region ERIC
 namespace Assets.Scripts.UI.Menu
 {
     class Audio : MenuElement
@@ -39,8 +40,9 @@ namespace Assets.Scripts.UI.Menu
         public void Back()
         {
 			SaveManager.SaveAudio(_sfx.value, _music.value);
-			_win.enabled = false;
+			this.Deactivate();
 			MenuManager.StateTransition(_state, MenuManager.MenuState.Settings);
         }
     }
 }
+#endregion

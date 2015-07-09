@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using Assets.Scripts.Data;
 
+#region ERIC
 namespace Assets.Scripts.UI.Menu
 {
     class Video : MenuElement
@@ -91,7 +92,7 @@ namespace Assets.Scripts.UI.Menu
 
 		public void Apply()
 		{
-			ConformationWindow.getConformation(ApplySettings);
+			ConfirmationWindow.GetConfirmation(ApplySettings, ConfirmationWindow.ConfirmationType.ApplyChanges);
 		}
 
 		public void ApplySettings(bool _accept)
@@ -111,9 +112,10 @@ namespace Assets.Scripts.UI.Menu
 
         public void Back()
         {
-			if(_update) ConformationWindow.getConformation(ApplySettings);
-			_win.enabled = false;
+			if(_update) ConfirmationWindow.GetConfirmation(ApplySettings, ConfirmationWindow.ConfirmationType.ApplyChanges);
+			this.Deactivate();
 			MenuManager.StateTransition(_state, MenuManager.MenuState.Settings);
         }
     }
 }
+#endregion

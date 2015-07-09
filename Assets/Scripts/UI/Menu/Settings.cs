@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+#region ERIC
 namespace Assets.Scripts.UI.Menu
 {
 	public class Settings : MenuElement
@@ -21,8 +22,9 @@ namespace Assets.Scripts.UI.Menu
 		}
 		public void Back()
 		{
-			_win.enabled = false;
+			this.Deactivate();
 			MenuManager.StateTransition(_state, MenuManager.MenuState.Title);
 		}
 	}
 }
+#endregion
