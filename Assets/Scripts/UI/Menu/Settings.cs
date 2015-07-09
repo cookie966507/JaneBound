@@ -19,5 +19,10 @@ namespace Assets.Scripts.UI.Menu
 		{
 			MenuManager.StateTransition(_state, MenuManager.MenuState.Video);
 		}
+		public void Back()
+		{
+			_win.enabled = false;
+			MenuManager.StateTransition(_state, MenuManager.MenuState.Title);
+		}
 	}
 }

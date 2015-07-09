@@ -13,6 +13,8 @@ namespace Assets.Scripts.UI.Menu
 		private Text _qualityText;
 		private Toggle _fullscreen;
 
+		private bool _update;
+
 		private static List<Resolution> _res;
 
         void Start()
@@ -47,23 +49,44 @@ namespace Assets.Scripts.UI.Menu
 			_fullscreen.isOn = _data.Fullscreen;
             _resolutionText.text = _res[(int)_resolution.value].width + "x" + _res[(int)_resolution.value].height;
             _qualityText.text = QualitySettings.names[(int)_quality.value];
+
+			ApplySettings(true);
         }
+
+		public override void Activate ()
+		{
+			base.Activate ();
+
+			VideoData _data = LoadManager.LoadVideo();
+			_resolution.value = _data.ResolutionIndex;
+			_resolutionText.text = _res[(int)_resolution.value].width + "x" + _res[(int)_resolution.value].height;
+			
+			_quality.value = _data.QualityIndex;
+			_qualityText.text = QualitySettings.names[(int)_quality.value];
+			
+			_fullscreen.isOn = _data.Fullscreen;
+
+			_update = false;
+		}
 
         public void ResolutionOption()
         {
 			_resolution.value = (int)_resolution.value;
 			_resolutionText.text = _res[(int)_resolution.value].width + "x" + _res[(int)_resolution.value].height;
+			_update = true;
         }
 
 		public void QualityOption()
 		{
 			_quality.value = (int)_quality.value;
 			_qualityText.text = QualitySettings.names[(int)_quality.value];
+			_update = true;
 		}
 
         public void FullscreenOption()
         {
            _fullscreen.isOn = !_fullscreen.isOn;
+			_update = true;
         }
 
 		public void Apply()
@@ -73,6 +96,7 @@ namespace Assets.Scripts.UI.Menu
 
 		public void ApplySettings(bool _accept)
 		{
+			if(!_accept) return;
 			Screen.SetResolution(
 				_res[(int)_resolution.value].width,
 				_res[(int)_resolution.value].height,
@@ -82,11 +106,14 @@ namespace Assets.Scripts.UI.Menu
 			
 			QualitySettings.SetQualityLevel((int)_quality.value);
 			SaveManager.SaveVideo((int)_resolution.value, (int)_quality.value, _fullscreen.isOn);
+			_update = false;
 		}
 
-        public void Exit()
+        public void Back()
         {
-			//put exit code here
+			if(_update) ConformationWindow.getConformation(ApplySettings);
+			_win.enabled = false;
+			MenuManager.StateTransition(_state, MenuManager.MenuState.Settings);
         }
     }
 }
