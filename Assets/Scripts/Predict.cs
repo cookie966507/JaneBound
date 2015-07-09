@@ -26,7 +26,6 @@ namespace Assets.Scripts.Player
 			target = p.transform.position + 5*p.transform.forward*pm.animator.GetFloat("Speed");
 			//target.Set (0,0,0);
 			mlt.VectorTarget = target;
-			Debug.Log("Start");
 			ai.WorkingMemory.SetItem<MoveLookTarget>("directionVector", mlt);
 			base.Start(ai);
 

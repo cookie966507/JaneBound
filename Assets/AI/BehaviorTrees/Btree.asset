@@ -24,12 +24,12 @@ MonoBehaviour:
       name=&quot;near&quot; matchtype=&quot;best&quot; entityobjectvariable=&quot;&quot;
       debugbreak=&quot;False&quot; consistent=&quot;True&quot; aspectvariable=&quot;&quot;
       aspectobjectvariable=&quot;varNear&quot; aspect=&quot;&amp;quot;aPlayer&amp;quot;&quot;
-      /&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;selector&quot;
-      debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot;
-      name=&quot;constraint&quot; debugbreak=&quot;False&quot; constraint=&quot;varPlayer
-      != null&quot;&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot;
-      name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;failure&quot;
+      /&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;running&quot;
+      name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot;
       priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
+      constraint=&quot;varPlayer != null&quot;&gt;&lt;selector usepriorities=&quot;False&quot;
+      repeatuntil=&quot;&quot; name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
+      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
       constraint=&quot;varNear == null&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot;
       succeed=&quot;all&quot; repeatuntil=&quot;&quot; name=&quot;parallel&quot; fail=&quot;any&quot;
       debugbreak=&quot;False&quot;&gt;&lt;animate repeatuntil=&quot;&quot; name=&quot;animate&quot;
