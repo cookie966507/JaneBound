@@ -5,15 +5,20 @@ using Assets.Scripts.Data;
 
 namespace Assets.Scripts.UI.Menu
 {
-    class Audio : MonoBehaviour
+    class Audio : MenuElement
     {
         public Slider _music;
         public Slider _sfx;
 
+		protected override void Init ()
+		{
+			base.Init ();
+			_state = MenuManager.MenuState.Audio;
+		}
         void Start()
         {
-			_music = this.transform.Find("Music").GetComponent<Slider>();
-			_sfx = this.transform.Find("SFX").GetComponent<Slider>();
+			_music = GameObject.Find("Music").GetComponent<Slider>();
+			_sfx = GameObject.Find("SFX").GetComponent<Slider>();
 
 			AudioData _data = LoadManager.LoadAudio();
 

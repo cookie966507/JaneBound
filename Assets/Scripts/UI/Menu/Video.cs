@@ -5,7 +5,7 @@ using Assets.Scripts.Data;
 
 namespace Assets.Scripts.UI.Menu
 {
-    class Video : MonoBehaviour
+    class Video : MenuElement
     {
         private Slider _resolution;
 		private Text _resolutionText;
@@ -17,11 +17,11 @@ namespace Assets.Scripts.UI.Menu
 
         void Start()
         {
-			_resolution = this.transform.Find("Resolution").GetComponent<Slider>();
-			_quality = this.transform.Find("Quality").GetComponent<Slider>();
-			_fullscreen = this.transform.Find("Fullscreen").GetComponent<Toggle>();
-			_resolutionText = this.transform.Find("Resolution Text").GetComponent<Text>();
-			_qualityText = this.transform.Find("Quality Text").GetComponent<Text>();
+			_resolution = GameObject.Find("Resolution").GetComponent<Slider>();
+			_quality = GameObject.Find("Quality").GetComponent<Slider>();
+			_fullscreen = GameObject.Find("Fullscreen").GetComponent<Toggle>();
+			_resolutionText = GameObject.Find("Resolution Text").GetComponent<Text>();
+			_qualityText = GameObject.Find("Quality Text").GetComponent<Text>();
 
 			_res = new List<Resolution>();
 			double num = 0;
