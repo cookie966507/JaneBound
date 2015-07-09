@@ -16,6 +16,7 @@ namespace Assets.Scripts.UI.Menu
 			Pause,
 			Confirmation,
 			Inactive,
+			Credits,
 			NoStateOverride
 		}
 
@@ -43,9 +44,8 @@ namespace Assets.Scripts.UI.Menu
 		{
 			if(!GameManager.InSuspendedState)
 			{
-				if(Input.GetKeyDown(KeyCode.Return))
+				if(Input.GetKeyDown(KeyCode.Backspace))
 				{
-					Debug.Log(_currentState);
 					if(_currentState.Equals(MenuState.Inactive))
 					{
 						StateTransition(_currentState, MenuState.Pause);
@@ -78,6 +78,9 @@ namespace Assets.Scripts.UI.Menu
 				ActivateElement(typeof(Pause));
 				Cursor.lockState = CursorLockMode.None;
 				Cursor.visible = true;
+				break;
+			case MenuState.Credits:
+				ActivateElement(typeof(Credits));
 				break;
 			case MenuState.Inactive:
 				DeactivateAll();

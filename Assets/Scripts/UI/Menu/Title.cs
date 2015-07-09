@@ -27,7 +27,9 @@ namespace Assets.Scripts.UI.Menu
 
 		public void Credits()
 		{
-
+			MenuManager.StateTransition(_state, MenuManager.MenuState.Credits);
+			this.Deactivate();
+			Application.LoadLevel("Credits");
 		}
 	}
 }
