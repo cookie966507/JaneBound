@@ -23,6 +23,7 @@ namespace Assets.Scripts
 
 			Vector3 predicPosDif =  predictVector - cabbageGuy.transform.position;
 			ct.cabbage_force = predicPosDif.magnitude*68;
+
 			ct.predictVector = predicPosDif.normalized;
 
 	        base.Start(ai);
