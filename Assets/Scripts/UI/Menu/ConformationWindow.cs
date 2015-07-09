@@ -1,24 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Assets.Scripts.UI
+namespace Assets.Scripts.UI.Menu
 {
-    class ConformationWindow : MonoBehaviour
+    class ConformationWindow : MenuElement
     {
         public delegate void Confirm(bool _confirm);
         private static Confirm confirmFunction;
         private static Canvas _win;
 
+		protected override void Init ()
+		{
+			base.Init ();
+			_state = MenuManager.MenuState.Confirmation;
+		}
+
 		public static void getConformation(Confirm confirmFunction)
         {
 			ConformationWindow.confirmFunction = confirmFunction;
             _win.enabled = true;
-        }
-
-        void Start()
-        {
-            _win = this.gameObject.GetComponent<Canvas>();
-            _win.enabled = false;
         }
 
         public void Yes()
