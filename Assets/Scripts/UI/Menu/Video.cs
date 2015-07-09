@@ -86,7 +86,6 @@ namespace Assets.Scripts.UI.Menu
 
         public void FullscreenOption()
         {
-           _fullscreen.isOn = !_fullscreen.isOn;
 			_update = true;
         }
 
@@ -114,7 +113,7 @@ namespace Assets.Scripts.UI.Menu
         {
 			if(_update) ConfirmationWindow.GetConfirmation(ApplySettings, ConfirmationWindow.ConfirmationType.ApplyChanges);
 			this.Deactivate();
-			MenuManager.StateTransition(_state, MenuManager.MenuState.Settings);
+			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Settings);
         }
     }
 }

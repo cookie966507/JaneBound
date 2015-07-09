@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Assets.Scripts.Data;
 
 //class to add to collectible coins
 [RequireComponent(typeof(SphereCollider))]
@@ -57,17 +58,20 @@ public class GumPickup : MonoBehaviour
 	//move coin toward player when he is close to it, and increase the spin/speed of the coin
 	void Update()
 	{
-		transform.Rotate (rotation * Time.deltaTime, Space.World);
-		
-		if(triggerParent.collided)
-			collected = true;
-		
-		if (collected)
+		if(!GameManager.InSuspendedState)
 		{
-			startSpeed += speedGain;
-			rotation += rotationGain;
-			transform.position = Vector3.Lerp (transform.position, player.position, startSpeed * Time.deltaTime);
-		}	
+			transform.Rotate (rotation * Time.deltaTime, Space.World);
+			
+			if(triggerParent.collided)
+				collected = true;
+			
+			if (collected)
+			{
+				startSpeed += speedGain;
+				rotation += rotationGain;
+				transform.position = Vector3.Lerp (transform.position, player.position, startSpeed * Time.deltaTime);
+			}
+		}
 	}
 	
 	//give player coin when it touches them

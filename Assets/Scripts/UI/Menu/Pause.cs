@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using System;
 using System.Collections;
 using Assets.Scripts.Data;
 
@@ -7,29 +9,34 @@ namespace Assets.Scripts.UI.Menu
 {
 	public class Pause : MenuElement
 	{
-		void OnEnable()
-		{
-			GameManager.GameUnpause += Resume;
-		}
-		void OnDisable()
-		{
-			GameManager.GameUnpause -= Resume;
-		}
+		Button[] _buttons;
 
 		protected override void Init ()
 		{
 			base.Init ();
+			_buttons = transform.GetComponentsInChildren<Button>();
 			_state = MenuManager.MenuState.Pause;
+			this.ToggleButtons(true);
+		}
+
+		public override void Activate ()
+		{
+			base.Activate ();
+			this.ToggleButtons(true);
 		}
 
 		public void Resume()
 		{
-			this.Deactivate();
+			GameManager.ShouldPause = false;
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
+			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Inactive);
+			this.ToggleButtons(false);
 		}
 
 		public void Settings()
 		{
-			MenuManager.StateTransition(_state, MenuManager.MenuState.Settings);
+			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Settings);
 		}
 
 		public void Restart()
@@ -38,7 +45,18 @@ namespace Assets.Scripts.UI.Menu
 		}
 		private void RestartLevel(bool _accept)
 		{
-			if(_accept) Application.LoadLevel(Application.loadedLevel);
+			if(_accept)
+			{
+				this.Resume();
+
+				Application.LoadLevel(Application.loadedLevel);
+				MenuManager.StateTransition(MenuManager.MenuState.Inactive, MenuManager.MenuState.Inactive);
+				this.Deactivate();
+			}
+			else
+			{
+				MenuManager.StateTransition(MenuManager.MenuState.Pause, MenuManager.MenuState.Pause);
+			}
 		}
 
 		public void Quit()
@@ -47,8 +65,22 @@ namespace Assets.Scripts.UI.Menu
 		}
 		private void QuitLevel(bool _accept)
 		{
-			if(_accept) Application.LoadLevel("Title");
-			MenuManager.StateTransition(MenuManager.MenuState.Title, MenuManager.MenuState.Title);
+			if(_accept)
+			{
+				this.Resume();
+				Application.LoadLevel("Title");
+				MenuManager.StateTransition(MenuManager.MenuState.Title, MenuManager.MenuState.Title);
+				Cursor.lockState = CursorLockMode.None;
+				Cursor.visible = true;
+			}
+		}
+
+		private void ToggleButtons(bool _enabled)
+		{
+			for(int i = 0; i < _buttons.Length; i++)
+			{
+				_buttons[i].enabled = enabled;
+			}
 		}
 	}
 }

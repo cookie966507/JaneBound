@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Data;
 
 #region ERIC
 namespace Assets.Scripts.Util
@@ -12,8 +13,11 @@ namespace Assets.Scripts.Util
 
 		void Update()
 		{
-			_timer += Time.deltaTime;
-			if(_timer > _runTime) Destroy(this.gameObject);
+			if(!GameManager.InSuspendedState)
+			{
+				_timer += Time.deltaTime;
+				if(_timer > _runTime) Destroy(this.gameObject);
+			}
 		}
 	}
 }

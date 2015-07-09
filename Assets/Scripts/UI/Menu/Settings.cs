@@ -14,16 +14,16 @@ namespace Assets.Scripts.UI.Menu
 
 		public void Audio()
 		{
-			MenuManager.StateTransition(_state, MenuManager.MenuState.Audio);
+			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Audio);
 		}
 		public void Video()
 		{
-			MenuManager.StateTransition(_state, MenuManager.MenuState.Video);
+			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Video);
 		}
 		public void Back()
 		{
 			this.Deactivate();
-			MenuManager.StateTransition(_state, MenuManager.MenuState.Title);
+			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.PreviousState);
 		}
 	}
 }

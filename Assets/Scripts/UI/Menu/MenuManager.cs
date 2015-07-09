@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using Assets.Scripts.Data;
 
 #region ERIC
 namespace Assets.Scripts.UI.Menu
@@ -33,17 +34,37 @@ namespace Assets.Scripts.UI.Menu
 				_currentState = MenuState.Title;
 				_previousState = MenuState.Title;
 				_menuElements = GameObject.FindObjectsOfType<MenuElement>();
+				StateTransition(_previousState, _currentState);
 			}
 			else if(_instance != this) Destroy(this.gameObject);
 		}
 
+		void Update()
+		{
+			if(!GameManager.InSuspendedState)
+			{
+				if(Input.GetKeyDown(KeyCode.Return))
+				{
+					Debug.Log(_currentState);
+					if(_currentState.Equals(MenuState.Inactive))
+					{
+						StateTransition(_currentState, MenuState.Pause);
+						GameManager.ShouldPause = true;
+					}
+				}
+			}
+		}
+
 		public static void StateTransition(MenuState _currState, MenuState _nextState)
 		{
-			if(!_currentState.Equals(MenuState.NoStateOverride)) _previousState = _currState;
+			if(!_currState.Equals(MenuState.NoStateOverride)) _previousState = _currState;
 			_currentState = _nextState;
 
 			switch(_currentState)
 			{
+			case MenuState.Title:
+				ActivateElement(typeof(Title));
+				break;
 			case MenuState.Settings:
 				ActivateElement(typeof(Settings));
 				break;
@@ -54,6 +75,9 @@ namespace Assets.Scripts.UI.Menu
 				ActivateElement(typeof(Video));
 				break;
 			case MenuState.Pause:
+				ActivateElement(typeof(Pause));
+				Cursor.lockState = CursorLockMode.None;
+				Cursor.visible = true;
 				break;
 			case MenuState.Inactive:
 				DeactivateAll();

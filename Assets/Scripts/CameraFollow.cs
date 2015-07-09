@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Assets.Scripts.Player;
+using Assets.Scripts.Data;
 
 public class CameraFollow : MonoBehaviour 
 {
@@ -58,16 +59,25 @@ public class CameraFollow : MonoBehaviour
 	//run our camera functions each frame
 	void Update()
 	{
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
-		if (!target)
-			return;
+		if(!GameManager.InSuspendedState)
+		{
+			if(Input.GetMouseButtonDown(0))
+			{
+				if(!GameManager.IsPaused)
+				{
+					Cursor.lockState = CursorLockMode.Locked;
+					Cursor.visible = false;
+				}
+			}
+			if (!target)
+				return;
 
-		SmoothFollow ();
-		if(rotateDamping > 0)
-			SmoothLookAt();
-		else
-			transform.LookAt(target.position);
+			SmoothFollow ();
+			if(rotateDamping > 0)
+				SmoothLookAt();
+			else
+				transform.LookAt(target.position);
+		}
 	}
 	
 	//rotate smoothly toward the target

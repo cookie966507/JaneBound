@@ -30,7 +30,6 @@ namespace Assets.Scripts.UI.Menu
 			if(_type.Equals(ConfirmationType.ApplyChanges))	_label.text = "Apply Changes?";
 			else _label.text = "Are you sure?";
 
-			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Confirmation);
             _win.enabled = true;
         }
 
@@ -45,7 +44,6 @@ namespace Assets.Scripts.UI.Menu
         private static void doAnswer(bool yesNo)
         {
 			confirmFunction(yesNo);
-			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.PreviousState);
 			_win.enabled = false;
         }
     }

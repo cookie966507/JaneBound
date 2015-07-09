@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Data;
 
 [RequireComponent(typeof(AudioSource))]
 public class BoxMove : MonoBehaviour {
@@ -15,15 +16,20 @@ public class BoxMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		h = Input.GetAxis("Horizontal");				
-		v = Input.GetAxis("Vertical");	
-	
+		if(!GameManager.InSuspendedState)
+		{
+			h = Input.GetAxis("Horizontal");				
+			v = Input.GetAxis("Vertical");
+		}
 	}
 	void OnCollisionStay(Collision collision)
 	{
-		if(!boxMove.isPlaying && collision.collider.attachedRigidbody!=null && Input.GetKey(KeyCode.LeftShift) && (h!=0 || v!=0))
-			boxMove.Play();
-		else if(boxMove.isPlaying && !(Input.GetKey(KeyCode.LeftShift) && (h!=0 || v!=0)))
-			boxMove.Stop ();
+		if(!GameManager.InSuspendedState)
+		{
+			if(!boxMove.isPlaying && collision.collider.attachedRigidbody!=null && Input.GetKey(KeyCode.LeftShift) && (h!=0 || v!=0))
+				boxMove.Play();
+			else if(boxMove.isPlaying && !(Input.GetKey(KeyCode.LeftShift) && (h!=0 || v!=0)))
+				boxMove.Stop ();
+		}
 	}
 }

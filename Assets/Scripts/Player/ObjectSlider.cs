@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Data;
 
 #region ERIC
 namespace Assets.Scripts.Player
@@ -18,9 +19,12 @@ namespace Assets.Scripts.Player
 
 		void FixedUpdate()
 		{
-			if(_sliding)
+			if(!GameManager.InSuspendedState)
 			{
-				_rigidbody.MovePosition(this.transform.position + _direction * Time.deltaTime * _slideSpeed);
+				if(_sliding)
+				{
+					_rigidbody.MovePosition(this.transform.position + _direction * Time.deltaTime * _slideSpeed);
+				}
 			}
 		}
 

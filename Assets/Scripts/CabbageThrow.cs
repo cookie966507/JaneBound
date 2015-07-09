@@ -9,13 +9,6 @@ public class CabbageThrow : MonoBehaviour {
 
 		predictVector = Vector3.zero;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	
-	}
-
 
 	void ThrowCabbage()
 	{
@@ -25,7 +18,5 @@ public class CabbageThrow : MonoBehaviour {
 		GameObject cabbage = (GameObject)GameObject.Instantiate(Resources.Load("Food_Watermelon"),throwPosition,Quaternion.identity);
 		Rigidbody cabbage_body = cabbage.GetComponent<Rigidbody>();
 		cabbage_body.AddForce(predictVector*cabbage_force);
-
-
 	}
 }

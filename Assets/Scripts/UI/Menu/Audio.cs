@@ -41,7 +41,7 @@ namespace Assets.Scripts.UI.Menu
         {
 			SaveManager.SaveAudio(_sfx.value, _music.value);
 			this.Deactivate();
-			MenuManager.StateTransition(_state, MenuManager.MenuState.Settings);
+			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Settings);
         }
     }
 }

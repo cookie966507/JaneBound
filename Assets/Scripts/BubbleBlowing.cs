@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Assets.Scripts.Player;
+using Assets.Scripts.Data;
 
 public class BubbleBlowing : MonoBehaviour {
 	
@@ -33,36 +34,39 @@ public class BubbleBlowing : MonoBehaviour {
 
 	void Update () {
 
-		//First time i right click
-		if (Input.GetButtonDown ("RB") && playerMoveScript.grounded && number_of_bubbles > 0){
-			ToggleBlowing ();
-		}
-		
-
-		//If im still holding down the button, grow the bubble
-		if(shooting){
-			if(bubble != null && current_scale < max_scale){
-				bubble.transform.localScale = Vector3.one * current_scale;
-				current_scale += growth_rate * Time.deltaTime;
-				current_bubble_distance += growth_rate * Time.deltaTime; 
-
-			    Vector3 currentLoc = this.transform.position + this.transform.forward * current_bubble_distance *0.5f;
-				currentLoc.y += bubble_height + current_bubble_distance * 0.1f;
-				bubble.transform.position = currentLoc;
+		if(!GameManager.InSuspendedState)
+		{
+			//First time i right click
+			if (Input.GetButtonDown ("RB") && playerMoveScript.grounded && number_of_bubbles > 0){
+				ToggleBlowing ();
 			}
-		}
+			
 
-		if (Input.GetButtonDown ("LB") && shooting){
-			//makes it so the bubble has to be max size
-			if(current_scale >= max_scale){
-				print ("FIRE");
-				shooting = false;
-				playerMoveScript.lockedMovement = false;
-				cameraFollowScript.aiming = false;
-				FireBubble();
-				ResetBubbleBlowing();
-				number_of_bubbles--;
-				print ("Number of bubbles left: " +number_of_bubbles);
+			//If im still holding down the button, grow the bubble
+			if(shooting){
+				if(bubble != null && current_scale < max_scale){
+					bubble.transform.localScale = Vector3.one * current_scale;
+					current_scale += growth_rate * Time.deltaTime;
+					current_bubble_distance += growth_rate * Time.deltaTime; 
+
+				    Vector3 currentLoc = this.transform.position + this.transform.forward * current_bubble_distance *0.5f;
+					currentLoc.y += bubble_height + current_bubble_distance * 0.1f;
+					bubble.transform.position = currentLoc;
+				}
+			}
+
+			if (Input.GetButtonDown ("LB") && shooting){
+				//makes it so the bubble has to be max size
+				if(current_scale >= max_scale){
+					print ("FIRE");
+					shooting = false;
+					playerMoveScript.lockedMovement = false;
+					cameraFollowScript.aiming = false;
+					FireBubble();
+					ResetBubbleBlowing();
+					number_of_bubbles--;
+					print ("Number of bubbles left: " +number_of_bubbles);
+				}
 			}
 		}
 	}

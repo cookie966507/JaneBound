@@ -8,18 +8,23 @@ namespace Assets.Scripts.UI.Menu
 	{
 		protected override void Init ()
 		{
-			_win = this.GetComponent<Canvas>();
+			base.Init();
 			_state = MenuManager.MenuState.Title;
 		}
 
 		public void Play()
 		{
 			MenuManager.StateTransition(_state, MenuManager.MenuState.Inactive);
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
+			Application.LoadLevel("Menu");
 		}
+
 		public void Settings()
 		{
-			MenuManager.StateTransition(_state, MenuManager.MenuState.Settings);
+			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Settings);
 		}
+
 		public void Credits()
 		{
 

@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/Scenes/AdityaScene.unity
   - enabled: 1
     path: Assets/Scenes/SabrinaScene.unity
+  - enabled: 1
+    path: Assets/Scenes/Title.unity

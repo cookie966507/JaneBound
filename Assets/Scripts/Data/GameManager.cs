@@ -23,6 +23,7 @@ namespace Assets.Scripts.Data
 		public delegate void PauseAction();
 		public static event PauseAction GamePause;
 		public static event PauseAction GameUnpause;
+		private static bool _shouldPause;
 
 		void Awake()
 		{
@@ -42,12 +43,12 @@ namespace Assets.Scripts.Data
 
 		void Update()
 		{
-			if(Input.GetKeyDown(KeyCode.Return) && !IsPaused)
+			if(_shouldPause && !IsPaused)
 			{
 				_state = GameState.Paused;
 				if(GamePause != null) GamePause();
 			}
-			if(Input.GetKeyDown(KeyCode.Backspace) && IsPaused)
+			if(!_shouldPause && IsPaused)
 			{
 				_state = GameState.Running;
 				if(GameUnpause != null) GameUnpause();
@@ -66,6 +67,11 @@ namespace Assets.Scripts.Data
 		public static bool InSuspendedState
 		{
 			get { return _state.Equals(GameState.Paused) || _state.Equals(GameState.Win) || _state.Equals(GameState.Lose); }
+		}
+		public static bool ShouldPause
+		{
+			get { return _shouldPause; }
+			set { _shouldPause = value; }
 		}
 	}
 }

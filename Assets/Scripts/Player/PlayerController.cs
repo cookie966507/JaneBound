@@ -28,7 +28,7 @@ namespace Assets.Scripts.Player
 		void Update()
 		{
 			//if game is not paused
-			if(!Data.GameManager.IsPaused)
+			if(!Data.GameManager.InSuspendedState)
 			{
 				//run all components
 				_life.Run();
@@ -43,7 +43,7 @@ namespace Assets.Scripts.Player
 		void FixedUpdate()
 		{
 			//if game is not paused
-			if(!Data.GameManager.IsPaused)
+			if(!Data.GameManager.InSuspendedState)
 			{
 				//run all fixed components for physics
 				if(_life.Health > 0)
