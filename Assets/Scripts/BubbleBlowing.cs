@@ -20,7 +20,7 @@ public class BubbleBlowing : MonoBehaviour {
 	private PlayerMove playerMoveScript;
 	private bool shooting;
 	//private Transform mainCam;
-	public static int number_of_bubbles = 5;
+	public int number_of_bubbles = 5;
 	private GameObject mainCam;
 	private CameraFollow cameraFollowScript;
 

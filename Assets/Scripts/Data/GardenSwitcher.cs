@@ -26,30 +26,31 @@ namespace Assets.Scripts.Data
 
 		void Update()
 		{
+
 			if(Input.GetKeyDown(KeyCode.Alpha1))
 			{
 				Application.LoadLevel(_gardens[0]);
-				BubbleBlowing.number_of_bubbles = 5;
+				//BubbleBlowing.number_of_bubbles = 5;
 			}
 			if(Input.GetKeyDown(KeyCode.Alpha2))
 			{
 				Application.LoadLevel(_gardens[1]);
-				BubbleBlowing.number_of_bubbles = 5;
+				//BubbleBlowing.number_of_bubbles = 5;
 			}
 			if(Input.GetKeyDown(KeyCode.Alpha3))
 			{
 				Application.LoadLevel(_gardens[2]);
-				BubbleBlowing.number_of_bubbles = 5;
+				//BubbleBlowing.number_of_bubbles = 5;
 			}
 			if(Input.GetKeyDown(KeyCode.Alpha4))
 			{
 				Application.LoadLevel(_gardens[3]);
-				BubbleBlowing.number_of_bubbles = 5;
+				//BubbleBlowing.number_of_bubbles = 5;
 			}
 			if(Input.GetKeyDown(KeyCode.Alpha5))
 			{
 				Application.LoadLevel(_gardens[4]);
-				BubbleBlowing.number_of_bubbles = 5;
+				//BubbleBlowing.number_of_bubbles = 5;
 			}
 		}
 	}
