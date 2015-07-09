@@ -19,10 +19,10 @@ namespace Assets.Scripts
 			Player.PlayerMove pm = p.GetComponent<Player.PlayerMove>();
 			ct = cabbageGuy.GetComponent<CabbageThrow>();
 
-			Vector3 predictVector = p.transform.position + p.transform.forward*1.5f*pm.maxSpeed*(pm.animator.GetFloat("Speed")/2);
+			Vector3 predictVector = p.transform.position + p.transform.forward.normalized*1f*pm.maxSpeed*(pm.animator.GetFloat("Speed")/2);
 
 			Vector3 predicPosDif =  predictVector - cabbageGuy.transform.position;
-			ct.cabbage_force = predicPosDif.magnitude*65;
+			ct.cabbage_force = predicPosDif.magnitude*68;
 			ct.predictVector = predicPosDif.normalized;
 
 	        base.Start(ai);
