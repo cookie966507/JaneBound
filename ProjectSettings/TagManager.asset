@@ -14,6 +14,7 @@ TagManager:
   - Waypoint
   - Surface
   - grabbable
+  - Janitor
   layers:
   - Default
   - TransparentFX
