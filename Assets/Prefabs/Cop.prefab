@@ -494,6 +494,7 @@ GameObject:
   - 54: {fileID: 5465422}
   - 136: {fileID: 13642780}
   - 114: {fileID: 11493834}
+  - 114: {fileID: 11449574}
   m_Layer: 0
   m_Name: Cop
   m_TagString: Untagged
@@ -1961,8 +1962,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138344}
-  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
-  m_LocalPosition: {x: 59.57798, y: 1.44603728e-05, z: -80.8682632}
+  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
+  m_LocalPosition: {x: -168.899994, y: -2.1099999, z: -15.3787537}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 473706}
@@ -2340,6 +2341,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11449574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99e04e5874c2045b89ad5e30c9342713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  copClips:
+  - {fileID: 8300000, guid: 35bbd6fbb357b4f91a90d5d388e5b91e, type: 3}
 --- !u!114 &11455298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2354,40 +2368,41 @@ MonoBehaviour:
   _dataSerializer:
     _serializedData: <component version="1.3" type="RAIN.Core.AIRig"><fields><field
       value="OnWhenSelected" type="RAIN.Core.VisualModeEnum" id="_visualMode" /><field
-      value="True" type="System.Boolean" id="_useUnityMessages" /><field value="True"
+      value="True" type="System.Boolean" id="_useUnityMessages" /><field value="False"
       type="System.Boolean" id="_useFixedUpdate" /><field type="RAIN.Core.AI" reference="0"
       id="_ai" /></fields><references><reference type="RAIN.Core.AI" refcount="1"
       id="0"><field value="True" type="System.Boolean" id="_isActive" /><field type="UnityEngine.GameObject"
       id="_body" gameobject="0" /><field type="RAIN.Memory.BasicMemory" reference="1"
       id="_workingMemory" childrenvisible="True" /><field type="RAIN.Minds.BasicMind"
       reference="2" id="_mind" childrenvisible="False" /><field type="RAIN.Motion.BasicMotor"
-      reference="3" id="_motor" /><field type="RAIN.Animation.MecanimAnimator" reference="4"
-      id="_animator" /><field type="RAIN.Navigation.BasicNavigator" reference="20"
-      id="_navigator" /><field type="RAIN.Perception.BasicSenses" reference="21" id="_senses"
-      /><field type="System.Collections.Generic.List" id="_customElements" elementtype="RAIN.Core.CustomAIElement"
-      /></reference><reference type="RAIN.Memory.BasicMemory" refcount="1" id="1"><field
-      type="System.Collections.Generic.List" id="_memoryItems" elementtype="RAIN.Memory.BasicMemory+MemoryItem"><field
-      type="RAIN.Memory.BasicMemory+MemoryItem" reference="24" id="element0" /></field></reference><reference
-      type="RAIN.Minds.BasicMind" refcount="1" id="2"><field type="RAIN.BehaviorTrees.BTAsset"
-      id="_behaviorTreeAsset" gameobject="3" /><field type="System.Collections.Generic.List"
-      id="_behaviorTreeBindings" elementtype="RAIN.BehaviorTrees.BTAssetBinding" /></reference><reference
-      type="RAIN.Motion.BasicMotor" refcount="1" id="3"><field value="1" type="System.Single"
-      id="_speed" /><field value="360" type="System.Single" id="_rotationSpeed" /><field
-      value="0.1" type="System.Single" id="_closeEnoughDistance" /><field value="0.1"
-      type="System.Single" id="_closeEnoughAngle" /><field value="360" type="System.Single"
-      id="_faceBeforeMoveAngle" /><field value="1" type="System.Single" id="_maxHeightOffset"
-      /><field value="False" type="System.Boolean" id="_allow3DMovement" /><field
-      value="False" type="System.Boolean" id="_allow3DRotation" /><field value="True"
-      type="System.Boolean" id="_allowOffGraphMovement" /></reference><reference type="RAIN.Animation.MecanimAnimator"
-      refcount="1" id="4"><field type="RAIN.Animation.MecanimAnimator+IKTarget" reference="5"
-      id="_rightFoot" /><field type="RAIN.Animation.MecanimAnimator+IKTarget" reference="6"
-      id="_leftFoot" /><field type="RAIN.Animation.MecanimAnimator+IKTarget" reference="7"
-      id="_rightHand" /><field type="RAIN.Animation.MecanimAnimator+IKTarget" reference="8"
-      id="_leftHand" /><field type="RAIN.Animation.MecanimAnimator+IKLookAt" reference="9"
-      id="_lookAt" /><field type="System.Collections.Generic.List" id="_animationStates"
-      elementtype="RAIN.Animation.MecanimAnimator+MecanimAnimatorState"><field type="RAIN.Animation.MecanimAnimator+MecanimAnimatorState"
-      reference="10" id="element0" /><field type="RAIN.Animation.MecanimAnimator+MecanimAnimatorState"
-      reference="15" id="element1" /></field></reference><reference type="RAIN.Animation.MecanimAnimator+IKTarget"
+      reference="3" id="_motor" childrenvisible="False" /><field type="RAIN.Animation.MecanimAnimator"
+      reference="4" id="_animator" childrenvisible="False" /><field type="RAIN.Navigation.BasicNavigator"
+      reference="20" id="_navigator" childrenvisible="False" /><field type="RAIN.Perception.BasicSenses"
+      reference="21" id="_senses" childrenvisible="False" /><field type="System.Collections.Generic.List"
+      id="_customElements" elementtype="RAIN.Core.CustomAIElement" /></reference><reference
+      type="RAIN.Memory.BasicMemory" refcount="1" id="1"><field type="System.Collections.Generic.List"
+      id="_memoryItems" elementtype="RAIN.Memory.BasicMemory+MemoryItem"><field type="RAIN.Memory.BasicMemory+MemoryItem"
+      reference="24" id="element0" /></field></reference><reference type="RAIN.Minds.BasicMind"
+      refcount="1" id="2"><field type="RAIN.BehaviorTrees.BTAsset" id="_behaviorTreeAsset"
+      gameobject="3" /><field type="System.Collections.Generic.List" id="_behaviorTreeBindings"
+      elementtype="RAIN.BehaviorTrees.BTAssetBinding" /></reference><reference type="RAIN.Motion.BasicMotor"
+      refcount="1" id="3"><field value="1" type="System.Single" id="_speed" /><field
+      value="360" type="System.Single" id="_rotationSpeed" /><field value="0.1" type="System.Single"
+      id="_closeEnoughDistance" /><field value="0.1" type="System.Single" id="_closeEnoughAngle"
+      /><field value="360" type="System.Single" id="_faceBeforeMoveAngle" /><field
+      value="1" type="System.Single" id="_maxHeightOffset" /><field value="False"
+      type="System.Boolean" id="_allow3DMovement" /><field value="False" type="System.Boolean"
+      id="_allow3DRotation" /><field value="True" type="System.Boolean" id="_allowOffGraphMovement"
+      /></reference><reference type="RAIN.Animation.MecanimAnimator" refcount="1"
+      id="4"><field type="RAIN.Animation.MecanimAnimator+IKTarget" reference="5" id="_rightFoot"
+      /><field type="RAIN.Animation.MecanimAnimator+IKTarget" reference="6" id="_leftFoot"
+      /><field type="RAIN.Animation.MecanimAnimator+IKTarget" reference="7" id="_rightHand"
+      /><field type="RAIN.Animation.MecanimAnimator+IKTarget" reference="8" id="_leftHand"
+      /><field type="RAIN.Animation.MecanimAnimator+IKLookAt" reference="9" id="_lookAt"
+      /><field type="System.Collections.Generic.List" id="_animationStates" elementtype="RAIN.Animation.MecanimAnimator+MecanimAnimatorState"><field
+      type="RAIN.Animation.MecanimAnimator+MecanimAnimatorState" reference="10" id="element0"
+      /><field type="RAIN.Animation.MecanimAnimator+MecanimAnimatorState" reference="15"
+      id="element1" /></field></reference><reference type="RAIN.Animation.MecanimAnimator+IKTarget"
       refcount="1" id="5"><field value="False" type="System.Boolean" id="isActive"
       /><field value="0" type="System.Single" id="positionWeight" /><field value="0"
       type="System.Single" id="rotationWeight" /><field value="0,0,0" type="UnityEngine.Vector3"
@@ -2425,7 +2440,7 @@ MonoBehaviour:
       id="parameterType" /><field type="RAIN.Representation.Expression" reference="12"
       id="parameterValue" /><field value="0" type="System.Single" id="dampTime" /></reference><reference
       type="RAIN.Representation.Expression" refcount="1" id="12" customdata="0" /><reference
-      type="RAIN.Animation.MecanimParameterValue" refcount="1" id="13"><field value=""
+      type="RAIN.Animation.MecanimParameterValue" refcount="1" id="13"><field value="walk"
       type="System.String" id="parameterName" /><field value="Boolean" type="RAIN.Animation.MecanimParameterValue+SupportedMecanimType"
       id="parameterType" /><field type="RAIN.Representation.Expression" reference="14"
       id="parameterValue" /><field value="0" type="System.Single" id="dampTime" /></reference><reference
@@ -2462,10 +2477,10 @@ MonoBehaviour:
       id="_mountPoint" gameobject="1" /><field value="6.083864E-08,1.558305,-0.0896479"
       type="UnityEngine.Vector3" id="_positionOffset" /><field value="0,0,0" type="UnityEngine.Vector3"
       id="_angleOffset" /><field type="System.Collections.Generic.List" id="_filters"
-      elementtype="RAIN.Perception.Sensors.Filters.RAINSensorFilter" /><field value="50"
+      elementtype="RAIN.Perception.Sensors.Filters.RAINSensorFilter" /><field value="20.3"
       type="System.Single" id="_range" /><field value="False" type="System.Boolean"
-      id="_canDetectSelf" /><field value="200" type="System.Single" id="_horizontalAngle"
-      /><field value="178" type="System.Single" id="_verticalAngle" /><field value="True"
+      id="_canDetectSelf" /><field value="81" type="System.Single" id="_horizontalAngle"
+      /><field value="180" type="System.Single" id="_verticalAngle" /><field value="True"
       type="System.Boolean" id="_lineOfSight" /><field value="-5" type="UnityEngine.LayerMask"
       id="_lineOfSightMask" /></reference><reference type="RAIN.Perception.Sensors.VisualSensor"
       refcount="1" id="23"><field value="True" type="System.Boolean" id="_showVisual"
@@ -2494,7 +2509,7 @@ MonoBehaviour:
     - _data: 
       _stringData: dHJ1ZQo=
     - _data: 
-      _stringData: Cg==
+      _stringData: ZmFsc2UK
     - _data: 
       _stringData: dHJ1ZQo=
     - _data: 
@@ -2924,7 +2939,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: copClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 35bbd6fbb357b4f91a90d5d388e5b91e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 138344}
