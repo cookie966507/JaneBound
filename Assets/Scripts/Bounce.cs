@@ -33,6 +33,10 @@ public class Bounce : MonoBehaviour
 				GetComponent<AudioSource>().Play();
 			}
 		}
+		if(col.transform.tag.Equals("Janitor"))
+		{
+			Destroy(this.gameObject);
+		}
 	}
 	
 	//if were checking for a trigger enter, attack what enters the trigger

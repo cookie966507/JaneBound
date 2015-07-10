@@ -24,33 +24,29 @@ MonoBehaviour:
       name=&quot;near&quot; matchtype=&quot;best&quot; entityobjectvariable=&quot;&quot;
       debugbreak=&quot;False&quot; consistent=&quot;True&quot; aspectvariable=&quot;&quot;
       aspectobjectvariable=&quot;varNear&quot; aspect=&quot;&amp;quot;aBubble&amp;quot;&quot;
-      /&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;selector&quot;
-      debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot;
-      name=&quot;constraint&quot; debugbreak=&quot;False&quot; constraint=&quot;varBubble
-      != null&quot;&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot;
-      name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;failure&quot;
+      /&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;running&quot;
+      name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot;
       priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
-      constraint=&quot;varNear == null&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot;
-      succeed=&quot;all&quot; repeatuntil=&quot;&quot; name=&quot;parallel&quot; fail=&quot;any&quot;
-      debugbreak=&quot;False&quot;&gt;&lt;animate repeatuntil=&quot;&quot; name=&quot;animate&quot;
-      debugbreak=&quot;False&quot; animationstate=&quot;Base Layer.Run&quot; /&gt;&lt;move
-      turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;directionVector&quot;
-      movespeed=&quot;0&quot; facetarget=&quot;directionVector&quot; debugbreak=&quot;False&quot;
-      closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot; /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint
+      constraint=&quot;varBubble != null&quot;&gt;&lt;selector usepriorities=&quot;False&quot;
+      repeatuntil=&quot;&quot; name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
+      repeatuntil=&quot;failure&quot; priority=&quot;&quot; name=&quot;constraint&quot;
+      debugbreak=&quot;False&quot; constraint=&quot;varNear == null&quot;&gt;&lt;parallel
+      tiebreaker=&quot;fail&quot; succeed=&quot;all&quot; repeatuntil=&quot;&quot;
+      name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;animate
+      repeatuntil=&quot;&quot; name=&quot;animate&quot; debugbreak=&quot;False&quot;
+      animationstate=&quot;Base Layer.Run&quot; /&gt;&lt;move turnspeed=&quot;100&quot;
+      repeatuntil=&quot;success&quot; name=&quot;move&quot; movetarget=&quot;varBubble&quot;
+      movespeed=&quot;0&quot; facetarget=&quot;varBubble&quot; debugbreak=&quot;False&quot;
+      closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot; /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/constraint&gt;&lt;constraint
       repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
-      constraint=&quot;varNear != null&quot;&gt;&lt;action repeatuntil=&quot;&quot;
-      parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;(global)&quot;
-      name=&quot;action&quot; debugbreak=&quot;False&quot; classname=&quot;BubblePop&quot;
-      /&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
-      priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
       constraint=&quot;varBubble == null&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot;
       succeed=&quot;all&quot; repeatuntil=&quot;&quot; name=&quot;parallel&quot; fail=&quot;any&quot;
       debugbreak=&quot;False&quot;&gt;&lt;waypointpatrol waypointsetvariable=&quot;PatrolNetwork&quot;
       waypointactiontype=&quot;patrol&quot; traversetype=&quot;loop&quot; traverseorder=&quot;forward&quot;
       repeatuntil=&quot;&quot; pathtargetvariable=&quot;&quot; name=&quot;Patrol&quot;
       movetargetvariable=&quot;nextStop&quot; debugbreak=&quot;False&quot;&gt;&lt;move
-      turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;nextStop&quot;
-      movespeed=&quot;0&quot; facetarget=&quot;&quot; debugbreak=&quot;False&quot;
+      turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;directionVector&quot;
+      movespeed=&quot;0&quot; facetarget=&quot;directionVector&quot; debugbreak=&quot;False&quot;
       closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot; /&gt;&lt;/waypointpatrol&gt;&lt;animate
       repeatuntil=&quot;&quot; name=&quot;animate&quot; debugbreak=&quot;False&quot;
       animationstate=&quot;Base Layer.WalkForward&quot; /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/parallel&gt;&lt;/behaviortree&gt;"
