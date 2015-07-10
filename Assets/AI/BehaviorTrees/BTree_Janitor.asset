@@ -30,7 +30,7 @@ MonoBehaviour:
       constraint=&quot;varBubble != null&quot;&gt;&lt;selector usepriorities=&quot;False&quot;
       repeatuntil=&quot;&quot; name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
       repeatuntil=&quot;failure&quot; priority=&quot;&quot; name=&quot;constraint&quot;
-      debugbreak=&quot;False&quot; constraint=&quot;varNear == null&quot;&gt;&lt;parallel
+      debugbreak=&quot;False&quot; constraint=&quot;varBubble != null&quot;&gt;&lt;parallel
       tiebreaker=&quot;fail&quot; succeed=&quot;all&quot; repeatuntil=&quot;&quot;
       name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;animate
       repeatuntil=&quot;&quot; name=&quot;animate&quot; debugbreak=&quot;False&quot;
