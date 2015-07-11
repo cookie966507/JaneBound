@@ -12,7 +12,7 @@ public class Bang : MonoBehaviour {
 
 	void Awake()
 	{
-		//SoundManager.PlaySFX(this.GetComponent<AudioSource>());
+		SoundManager.PlaySFX(this.GetComponent<AudioSource>());
 	}
 	// Use this for initialization
 	void Start () {
