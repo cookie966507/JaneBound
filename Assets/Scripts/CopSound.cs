@@ -33,12 +33,9 @@ public class CopSound : MonoBehaviour {
 					{
 						//copSource.PlayDelayed(2);
 						Assets.Scripts.Data.SoundManager.PlaySFX(copSource);
-					}
-					else
-					{
 						i = (i+1)%(copClips.Length);
-						Debug.Log (i);
 					}
+
 				}
 			}
 		}
