@@ -36,7 +36,7 @@ namespace Assets.Scripts.UI.Menu
 
 		public void Settings()
 		{
-			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Settings);
+			MenuManager.StateTransition(MenuManager.MenuState.Pause, MenuManager.MenuState.Settings);
 		}
 
 		public void Restart()

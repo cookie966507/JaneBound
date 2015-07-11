@@ -1,0 +1,145 @@
+fileFormatVersion: 2
+guid: d76397f0cb72ff64eb42fb6909110dd4
+timeCreated: 1436643162
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Settings_States_Slider
+    21300002: Settings_States_Checkmark
+    21300004: Settings_States_SliderHandle
+    21300006: Settings_States_Toggle
+    21300008: Settings_States_BubbleHandle_Normal
+    21300010: Settings_States_BubbleHandle_Highlighted
+    21300012: Settings_States_BubbleHandle_Pressed
+    21300014: Settings_States_Toggle_Normal
+    21300016: Settings_States_Toggle_Highlighted
+    21300018: Settings_States_Toggle_Pressed
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Settings_States_Slider
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1637
+        width: 2628
+        height: 382
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Settings_States_BubbleHandle_Normal
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 946
+        width: 600
+        height: 601
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Settings_States_BubbleHandle_Highlighted
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 946
+        width: 601
+        height: 601
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Settings_States_BubbleHandle_Pressed
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 946
+        width: 601
+        height: 601
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Settings_States_Checkmark
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 661
+        width: 582
+        height: 449
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Settings_States_Toggle_Normal
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 233
+        width: 500
+        height: 501
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Settings_States_Toggle_Highlighted
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 233
+        width: 501
+        height: 501
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Settings_States_Toggle_Pressed
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 233
+        width: 500
+        height: 501
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

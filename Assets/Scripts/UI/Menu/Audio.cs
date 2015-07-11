@@ -8,8 +8,8 @@ namespace Assets.Scripts.UI.Menu
 {
     class Audio : MenuElement
     {
-        public Slider _music;
-        public Slider _sfx;
+        private Slider _music;
+        private Slider _sfx;
 
 		protected override void Init ()
 		{
