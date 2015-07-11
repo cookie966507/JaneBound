@@ -45,7 +45,7 @@ MonoBehaviour:
       animationstate=&quot;Base Layer.Run&quot; /&gt;&lt;action repeatuntil=&quot;failure&quot;
       parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;(global)&quot;
       name=&quot;action&quot; debugbreak=&quot;False&quot; classname=&quot;Assets.Scripts.Player.Predict&quot;
-      /&gt;&lt;move turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot;
+      /&gt;&lt;move turnspeed=&quot;&quot; repeatuntil=&quot;failure&quot; name=&quot;move&quot;
       movetarget=&quot;directionVector&quot; movespeed=&quot;0&quot; facetarget=&quot;directionVector&quot;
       debugbreak=&quot;False&quot; closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot;
       /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/sequencer&gt;&lt;/constraint&gt;&lt;constraint
