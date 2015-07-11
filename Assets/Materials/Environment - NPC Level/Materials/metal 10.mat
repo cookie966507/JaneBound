@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: brick v
+  m_Name: metal 10
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -19,8 +19,8 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: b8948c9e9c9f16944bd76d29676cb5fe, type: 3}
-          m_Scale: {x: 5, y: 5}
+          m_Texture: {fileID: 2800000, guid: 4a2fff8bf47f76d459607584502e6e02, type: 3}
+          m_Scale: {x: 5.57999992, y: 2.8599999}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -55,7 +55,7 @@ Material:
           name: _EmissionMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 5, y: 5}
+          m_Scale: {x: 5.57999992, y: 2.8599999}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -102,7 +102,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0
+        second: .5
       data:
         first:
           name: _BumpScale
@@ -126,7 +126,7 @@ Material:
       data:
         first:
           name: _Metallic
-        second: .393000007
+        second: 0
     m_Colors:
       data:
         first:
@@ -135,4 +135,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .867647052, g: .621256411, b: .510380626, a: 1}
+        second: {r: .684147894, g: .706911445, b: .816176474, a: 1}

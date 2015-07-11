@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Metal
-  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: metal 2
+  m_Shader: {fileID: 20, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -19,19 +19,23 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: e507e832d221d3b4d93dc3a4c83422dc, type: 3}
-          m_Scale: {x: 18.1299992, y: 7.05999994}
+          m_Texture: {fileID: 2800000, guid: 4a2fff8bf47f76d459607584502e6e02, type: 3}
+          m_Scale: {x: 15.6000004, y: 8.02999973}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _BumpMap
+          name: _Cube
         second:
-          m_Texture: {fileID: 2800000, guid: 9fddb5c3d196a334ea578841a748107a, type: 3}
-          m_Scale: {x: 1, y: 1}
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 8.21000004, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats: {}
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .264705896, g: .258866787, b: .258866787, a: 1}
+      data:
+        first:
+          name: _ReflectColor
+        second: {r: .735294104, g: .702854633, b: .702854633, a: .5}
