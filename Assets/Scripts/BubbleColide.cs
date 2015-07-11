@@ -27,6 +27,7 @@ public class BubbleColide : MonoBehaviour
 				Physics.IgnoreCollision(this.GetComponent<Collider>(), col.collider, true);
 
 				Destroy (myBody);
+				Destroy(this.GetComponent<Assets.Scripts.Util.VelocityInfo>());
 				//this.transform.parent = go.transform;
 			}
 		}

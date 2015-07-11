@@ -72,6 +72,8 @@ GameObject:
   - 54: {fileID: 5471548}
   - 136: {fileID: 13659142}
   - 114: {fileID: 11476806}
+  - 114: {fileID: 11473914}
+  - 114: {fileID: 11407744}
   m_Layer: 0
   m_Name: CabbageGuy
   m_TagString: Untagged
@@ -2200,6 +2202,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11407744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439051df94d550b4aa3f7869cdb6d2a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11412418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2440,6 +2453,19 @@ MonoBehaviour:
       _stringData: dHJ1Cg==
     - _data: 
       _stringData: dHJ1ZQo=
+--- !u!114 &11473914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b59a34f2d5db4647af303ec707453a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _kinematic: 0
+  _freezeRotation: 1
 --- !u!114 &11476806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2863,7 +2889,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: _freezeRotation
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 110502}

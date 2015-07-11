@@ -15,10 +15,10 @@ MonoBehaviour:
   HolderNodes:
   - AssetPath: .currentai
     BehaviorTreeName: (No AI Selected)
-    BehaviorTreeID: 59
+    BehaviorTreeID: 17
     BehaviorTreeBindings: []
-    LastUpdate: 635721504430196459
-    LastModified: 635721477807968554
+    LastUpdate: 635721642814833532
+    LastModified: 635720683872055918
     Errored: 0
   - AssetPath: .createxml
     BehaviorTreeName: Create New Behavior Tree
@@ -31,7 +31,7 @@ MonoBehaviour:
     BehaviorTreeName: Btree1
     BehaviorTreeID: 17
     BehaviorTreeBindings: []
-    LastUpdate: 635721455885536972
+    LastUpdate: 635721642814833532
     LastModified: 635720683872055918
     Errored: 0
   - AssetPath: Assets/AI/BehaviorTrees/Btree21.asset
@@ -45,8 +45,8 @@ MonoBehaviour:
     BehaviorTreeName: BTree_Janitor
     BehaviorTreeID: 59
     BehaviorTreeBindings: []
-    LastUpdate: 635721504430196459
-    LastModified: 635721477807968554
+    LastUpdate: 635721633842603980
+    LastModified: 635721633789057273
     Errored: 0
   - AssetPath: Assets/AI/BehaviorTrees/CabbageGuy.asset
     BehaviorTreeName: CabbageGuy
@@ -229,7 +229,7 @@ MonoBehaviour:
       _type: 4
       _stateIndex: 17
       _parent: 0
-      _lastUpdate: 635721455885446904
+      _lastUpdate: 635721642814833532
       _children: 12000000
       _variables: 
       _focused: 0
@@ -423,7 +423,7 @@ MonoBehaviour:
         _recordChange: 0
         _changed: 0
       - _field: repeatuntil
-        _currentValue: running
+        _currentValue: success
         _recordChange: 1
         _changed: 0
       - _field: debugbreak
@@ -453,7 +453,7 @@ MonoBehaviour:
       _type: 18
       _stateIndex: 21
       _parent: 18
-      _lastUpdate: 635721455885536972
+      _lastUpdate: 635721642546501953
       _children: 1600000021000000
       _variables: 
       _focused: 0
@@ -593,10 +593,10 @@ MonoBehaviour:
       _type: 1
       _stateIndex: 24
       _parent: 23
-      _lastUpdate: 0
+      _lastUpdate: 635721642814833532
       _children: 
       _variables: 
-      _focused: 0
+      _focused: 1
     - _fields:
       - _field: name
         _currentValue: selector
@@ -872,7 +872,7 @@ MonoBehaviour:
       _lastUpdate: 0
       _children: 
       _variables: 
-      _focused: 1
+      _focused: 0
     - _fields:
       - _field: name
         _currentValue: action
@@ -2333,7 +2333,7 @@ MonoBehaviour:
       _type: 4
       _stateIndex: 59
       _parent: 0
-      _lastUpdate: 635721504430196459
+      _lastUpdate: 635721633842603980
       _children: 3c000000
       _variables: 
       _focused: 0
@@ -2385,7 +2385,7 @@ MonoBehaviour:
       _type: 15
       _stateIndex: 60
       _parent: 59
-      _lastUpdate: 635721501727599237
+      _lastUpdate: 635721633796819617
       _children: 3d0000003e0000003f000000
       _variables: 
       _focused: 0
@@ -2557,7 +2557,7 @@ MonoBehaviour:
       _type: 18
       _stateIndex: 63
       _parent: 60
-      _lastUpdate: 635721501727599237
+      _lastUpdate: 635721633796819617
       _children: 4000000046000000
       _variables: 
       _focused: 0
@@ -2601,7 +2601,7 @@ MonoBehaviour:
       _type: 5
       _stateIndex: 64
       _parent: 63
-      _lastUpdate: 635721501727599237
+      _lastUpdate: 635721633796819617
       _children: 41000000
       _variables: 
       _focused: 0
@@ -2645,7 +2645,7 @@ MonoBehaviour:
       _type: 18
       _stateIndex: 65
       _parent: 64
-      _lastUpdate: 635721501727599237
+      _lastUpdate: 635721633796819617
       _children: 42000000
       _variables: 
       _focused: 0
@@ -2689,10 +2689,10 @@ MonoBehaviour:
       _type: 5
       _stateIndex: 66
       _parent: 65
-      _lastUpdate: 635721504430196459
+      _lastUpdate: 635721633796819617
       _children: 43000000
       _variables: 
-      _focused: 1
+      _focused: 0
     - _fields:
       - _field: name
         _currentValue: parallel
@@ -2741,7 +2741,7 @@ MonoBehaviour:
       _type: 15
       _stateIndex: 67
       _parent: 66
-      _lastUpdate: 635721501727599237
+      _lastUpdate: 635721633796819617
       _children: 4400000045000000
       _variables: 
       _focused: 0
@@ -2827,7 +2827,7 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       - _field: turnspeed
-        _currentValue: 500
+        _currentValue: 
         _recordChange: 1
         _changed: 0
       - _field: closeenoughdistance
@@ -2885,7 +2885,7 @@ MonoBehaviour:
       _type: 5
       _stateIndex: 70
       _parent: 63
-      _lastUpdate: 635721501727599237
+      _lastUpdate: 635721633796819617
       _children: 47000000
       _variables: 
       _focused: 0
@@ -2937,7 +2937,7 @@ MonoBehaviour:
       _type: 15
       _stateIndex: 71
       _parent: 70
-      _lastUpdate: 635721501727599237
+      _lastUpdate: 635721633796819617
       _children: 480000004a000000
       _variables: 
       _focused: 0
@@ -3001,7 +3001,7 @@ MonoBehaviour:
       _type: 22
       _stateIndex: 72
       _parent: 71
-      _lastUpdate: 635721501727599237
+      _lastUpdate: 635721633796819617
       _children: 49000000
       _variables: 
       _focused: 0
@@ -3047,7 +3047,7 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       - _field: turnspeed
-        _currentValue: 100
+        _currentValue: 
         _recordChange: 1
         _changed: 0
       - _field: closeenoughdistance
@@ -3055,16 +3055,16 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       - _field: closeenoughangle
-        _currentValue: 0
+        _currentValue: 
         _recordChange: 1
         _changed: 0
       _type: 14
       _stateIndex: 73
       _parent: 72
-      _lastUpdate: 0
+      _lastUpdate: 635721633842603980
       _children: 
       _variables: 
-      _focused: 0
+      _focused: 1
     - _fields:
       - _field: name
         _currentValue: animate

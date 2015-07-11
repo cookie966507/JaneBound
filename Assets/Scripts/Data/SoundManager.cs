@@ -26,11 +26,13 @@ namespace Assets.Scripts.Data
 		void OnEnable()
 		{
 			GameManager.GamePause += PauseAudio;
+			GameManager.GameUnpause += UnpauseAudio;
 		}
 		
 		void OnDisable()
 		{
-			GameManager.GamePause -= UnpauseAudio;
+			GameManager.GamePause -= PauseAudio;
+			GameManager.GameUnpause -= UnpauseAudio;
 		}
 
 		void Awake()
@@ -63,27 +65,29 @@ namespace Assets.Scripts.Data
 
 		void Update()
 		{
-			//go through the audio sources
-			for(int i = 0; i < _sfxSources.Count; i++)
+			if(!GameManager.InSuspendedState)
 			{
-				//if the source is finished playing
-				if(!_sfxSources[i].isPlaying)
+				//go through the audio sources
+				for(int i = 0; i < _sfxSources.Count; i++)
 				{
-					//remove the reference because we are done with it (tempList will remove it)
-					_sfxSources.RemoveAt(i);
-					//decrement i
-					i--;
+					//if the source is finished playing
+					if(!_sfxSources[i].isPlaying)
+					{
+						//remove the reference because we are done with it (tempList will remove it)
+						_sfxSources.RemoveAt(i);
+						//decrement i
+						i--;
+					}
 				}
-			}
 
-
-			//same for the music
-			for(int i = 0; i < _musicSources.Count; i++)
-			{
-				if(!_musicSources[i].isPlaying)
+				//same for the music
+				for(int i = 0; i < _musicSources.Count; i++)
 				{
-					_musicSources.RemoveAt(i);
-					i--;
+					if(!_musicSources[i].isPlaying)
+					{
+						_musicSources.RemoveAt(i);
+						i--;
+					}
 				}
 			}
 		}
@@ -134,7 +138,7 @@ namespace Assets.Scripts.Data
 			}
 		}
 
-		public static void PauseAudio()
+		public void PauseAudio()
 		{
 			for(int i = 0; i < _musicSources.Count; i++)
 			{
@@ -146,7 +150,7 @@ namespace Assets.Scripts.Data
 			}
 		}
 
-		public static void UnpauseAudio()
+		public void UnpauseAudio()
 		{
 			for(int i = 0; i < _musicSources.Count; i++)
 			{

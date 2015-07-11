@@ -212,6 +212,7 @@ GameObject:
   - 114: {fileID: 11458724}
   - 114: {fileID: 11413194}
   - 114: {fileID: 11437094}
+  - 114: {fileID: 11479886}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -893,6 +894,7 @@ GameObject:
   - 4: {fileID: 433490}
   - 95: {fileID: 9534410}
   - 114: {fileID: 11464224}
+  - 114: {fileID: 11432546}
   m_Layer: 0
   m_Name: Player Model
   m_TagString: Untagged
@@ -2458,6 +2460,17 @@ MonoBehaviour:
   crawlUnder: {fileID: 0}
   _ragdoll: {fileID: 0}
   _model: {fileID: 176574}
+--- !u!114 &11432546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439051df94d550b4aa3f7869cdb6d2a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11437094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2478,6 +2491,7 @@ MonoBehaviour:
   start_scale: .100000001
   bubble_texture: {fileID: 0}
   bubble_force: 1000
+  number_of_bubbles: 5
 --- !u!114 &11458724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2547,6 +2561,19 @@ MonoBehaviour:
     - {fileID: 118454}
     - {fileID: 405044}
     _serializedCustomData: []
+--- !u!114 &11479886
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b59a34f2d5db4647af303ec707453a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _kinematic: 0
+  _freezeRotation: 1
 --- !u!114 &11488550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2847,6 +2874,10 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _freezeRotation
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

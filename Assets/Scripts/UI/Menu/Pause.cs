@@ -16,7 +16,7 @@ namespace Assets.Scripts.UI.Menu
 			base.Init ();
 			_buttons = transform.GetComponentsInChildren<Button>();
 			_state = MenuManager.MenuState.Pause;
-			this.ToggleButtons(true);
+			this.ToggleButtons(false);
 		}
 
 		public override void Activate ()
@@ -30,8 +30,8 @@ namespace Assets.Scripts.UI.Menu
 			GameManager.ShouldPause = false;
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
-			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Inactive);
 			this.ToggleButtons(false);
+			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Inactive);
 		}
 
 		public void Settings()
@@ -79,7 +79,7 @@ namespace Assets.Scripts.UI.Menu
 		{
 			for(int i = 0; i < _buttons.Length; i++)
 			{
-				_buttons[i].enabled = enabled;
+				_buttons[i].enabled = _enabled;
 			}
 		}
 	}

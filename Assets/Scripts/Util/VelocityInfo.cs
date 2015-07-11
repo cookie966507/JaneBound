@@ -15,13 +15,23 @@ public class VelocityInfo : MonoBehaviour
         //is rigidbody fixed angle?
         public bool _freezeRotation = false;
 
-        //is rigidbody paused?
-        private bool _paused = false;
-
         //reference to old velocity
         private Vector3 _vel = Vector3.zero;
         //reference to spinning velocity
         private Vector3 _angVel = Vector3.zero;
+
+		//setting up events
+		void OnEnable()
+		{
+			Data.GameManager.GamePause += PauseMotion;
+			Data.GameManager.GameUnpause += UnpauseMotion;
+		}
+
+		void OnDisable()
+		{
+			Data.GameManager.GamePause -= PauseMotion;
+			Data.GameManager.GameUnpause -= UnpauseMotion;
+		}
 
         //pause rigidbody
         public void PauseMotion()
@@ -45,9 +55,6 @@ public class VelocityInfo : MonoBehaviour
                 //set to kinematic to pause
                 this.GetComponent<Rigidbody>().isKinematic = true;
             }
-
-            //pause
-            _paused = true;
         }
 
         public void UnpauseMotion()
@@ -78,14 +85,6 @@ public class VelocityInfo : MonoBehaviour
                 //reset reference
                 _vel = Vector3.zero;
             }
-
-            //unpause
-            _paused = false;
-        }
-
-        public bool Paused
-        {
-            get { return _paused; }
         }
 
         public Vector3 Vel

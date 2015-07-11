@@ -35,20 +35,14 @@ namespace Assets.Scripts
 
 			if(!cabbageSource.isPlaying)
 			{
-				//Data.SoundManager.PlaySFX(cabbageSource);
-				cabbageSource.Play();
+				Data.SoundManager.PlaySFX(cabbageSource);
+				//cabbageSource.Play();
 			}
 			else
 			{
 				i = (i+1)%(cabbageClips.Length);
 				Debug.Log (i);
 			}
-
-			
-			//cabbageSource.Play();
-		//	clip.Play();
-
-
 		}
 	}
 }
