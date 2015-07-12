@@ -36,6 +36,7 @@ namespace Assets.Scripts.Player
 		
 		private int onJump;
 		public bool grounded;
+		public bool sneaking;
 		private Transform[] floorCheckers;
 		private Quaternion screenMovementSpace;
 		private float airPressTime, groundedCount, curAccel, curDecel, curRotateSpeed, slope;
@@ -180,6 +181,16 @@ namespace Assets.Scripts.Player
 			} else {
 				isMoving = false;
 			}
+
+			if (Input.GetKey (KeyCode.LeftControl)) {
+				sneaking = true;
+				maxSpeed = 2;
+			}
+			else{
+				sneaking = false;
+				maxSpeed = 9;
+			}
+			animator.SetBool ("Sneaking", sneaking);
 		}
 		
 		//apply correct player movement (fixedUpdate for physics calculations)
