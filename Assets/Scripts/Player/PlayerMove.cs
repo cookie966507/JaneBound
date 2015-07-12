@@ -109,9 +109,7 @@ namespace Assets.Scripts.Player
 		void Awake()
 		{
 			box = GetComponent<BoxCollider> ();
-			
-			//animator = GetComponent <Animator> ();
-			//create single floorcheck in centre of object, if none are assigned
+
 			if(!floorChecks)
 			{
 				floorChecks = new GameObject().transform;
@@ -171,11 +169,11 @@ namespace Assets.Scripts.Player
 
 
 			//only apply vertical input to movemement, if player is not sidescroller
-			
+
+			#region SHAWN
 			direction = (screenMovementForward * v) + (screenMovementRight * h);
 			moveDirection = transform.position + direction;
-			
-			//SHAWN 
+
 			if (h != 0 || v != 0) {
 				isMoving = true;
 			} else {
@@ -191,6 +189,7 @@ namespace Assets.Scripts.Player
 				maxSpeed = 9;
 			}
 			animator.SetBool ("Sneaking", sneaking);
+			#endregion
 		}
 		
 		//apply correct player movement (fixedUpdate for physics calculations)
@@ -237,29 +236,21 @@ namespace Assets.Scripts.Player
 				}
 			}
 		}
-		
-		//prevents rigidbody from sliding down slight slopes (read notes in characterMotor class for more info on friction)
+
 		void OnCollisionStay(Collision other)
 		{
-			//only stop movement on slight slopes if we aren't being touched by anything else
 			if (other.collider.tag != "Untagged" || grounded == false)
 				return;
-			//if no movement should be happening, stop player moving in Z/X axis
+
 			if(direction.magnitude == 0 && slope < slopeLimit && GetComponent<Rigidbody>().velocity.magnitude < 2)
 			{
-				//it's usually not a good idea to alter a rigidbodies velocity every frame
-				//but this is the cleanest way i could think of, and we have a lot of checks beforehand, so it shou
 				GetComponent<Rigidbody>().velocity = Vector3.zero;
 			}
 		}
-		
-		//returns whether we are on the ground or not
-		//also: bouncing on enemies, keeping player on moving platforms and slope checking
+
 		private bool IsGrounded() 
 		{
-			//get distance to ground, from centre of collider (where floorcheckers should be)
 			float dist = GetComponent<Collider>().bounds.extents.y;
-			//check whats at players feet, at each floorcheckers position
 			foreach (Transform check in floorCheckers)
 			{
 				RaycastHit hit;
@@ -267,33 +258,17 @@ namespace Assets.Scripts.Player
 				{
 					if(!hit.transform.GetComponent<Collider>().isTrigger)
 					{
-						//slope control
 						slope = Vector3.Angle (hit.normal, Vector3.up);
-						//slide down slopes
 						if(slope > slopeLimit && hit.transform.tag != "Pushable")
 						{
 							Vector3 slide = new Vector3(0f, -slideAmount, 0f);
 							GetComponent<Rigidbody>().AddForce (slide, ForceMode.Force);
 						}
-						//moving platforms
-						if (hit.transform.tag == "MovingPlatform" || hit.transform.tag == "Pushable")
-						{
-							movingObjSpeed = hit.transform.GetComponent<Rigidbody>().velocity;
-							movingObjSpeed.y = 0f;
-							//9.5f is a magic number, if youre not moving properly on platforms, experiment with this number
-							GetComponent<Rigidbody>().AddForce(movingObjSpeed * movingPlatformFriction * Time.fixedDeltaTime, ForceMode.VelocityChange);
-						}
-						else
-						{
-							movingObjSpeed = Vector3.zero;
-						}
-						//yes our feet are on something
 						return true;
 					}
 				}
 			}
 			movingObjSpeed = Vector3.zero;
-			//no none of the floorchecks hit anything, we must be in the air (or water)
 			return false;
 		}
 		
@@ -345,6 +320,7 @@ namespace Assets.Scripts.Player
 				GetComponent<Rigidbody>().AddRelativeForce (jumpVelocity, ForceMode.Impulse);
 				airPressTime = 0f;
 			}
+			print ("jump");
 		}
 		
 		#region SABRINA
