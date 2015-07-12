@@ -7367,11 +7367,11 @@ Prefab:
         id="_isActive" /><field type="UnityEngine.GameObject" id="_body" gameobject="0"
         /><field type="RAIN.Memory.BasicMemory" reference="1" id="_workingMemory"
         childrenvisible="False" /><field type="RAIN.Minds.BasicMind" reference="2"
-        id="_mind" childrenvisible="False" /><field type="RAIN.Motion.BasicMotor"
-        reference="3" id="_motor" childrenvisible="False" /><field type="RAIN.Animation.MecanimAnimator"
+        id="_mind" childrenvisible="True" /><field type="RAIN.Motion.BasicMotor" reference="3"
+        id="_motor" childrenvisible="False" /><field type="RAIN.Animation.MecanimAnimator"
         reference="4" id="_animator" childrenvisible="False" /><field type="RAIN.Navigation.BasicNavigator"
         reference="20" id="_navigator" childrenvisible="False" /><field type="RAIN.Perception.BasicSenses"
-        reference="21" id="_senses" childrenvisible="True" /><field type="System.Collections.Generic.List"
+        reference="21" id="_senses" childrenvisible="False" /><field type="System.Collections.Generic.List"
         id="_customElements" elementtype="RAIN.Core.CustomAIElement" childrenvisible="False"
         /></reference><reference type="RAIN.Memory.BasicMemory" refcount="1" id="1"><field
         type="System.Collections.Generic.List" id="_memoryItems" elementtype="RAIN.Memory.BasicMemory+MemoryItem"><field
@@ -10652,15 +10652,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 405044, guid: 7d75bf7b3282feb4cb24a4e4fa1fb171, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.36327744
+      value: -47.4000015
       objectReference: {fileID: 0}
     - target: {fileID: 405044, guid: 7d75bf7b3282feb4cb24a4e4fa1fb171, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.84129333
+      value: 20.2000008
       objectReference: {fileID: 0}
     - target: {fileID: 405044, guid: 7d75bf7b3282feb4cb24a4e4fa1fb171, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -16.1431313
+      value: 134.199997
       objectReference: {fileID: 0}
     - target: {fileID: 405044, guid: 7d75bf7b3282feb4cb24a4e4fa1fb171, type: 2}
       propertyPath: m_LocalRotation.x
