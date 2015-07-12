@@ -20,6 +20,10 @@ MonoBehaviour:
       name=&quot;far&quot; matchtype=&quot;any&quot; entityobjectvariable=&quot;&quot;
       debugbreak=&quot;False&quot; consistent=&quot;True&quot; aspectvariable=&quot;&quot;
       aspectobjectvariable=&quot;varPlayer&quot; aspect=&quot;&amp;quot;aPlayer&amp;quot;&quot;
+      /&gt;&lt;detect sensor=&quot;&amp;quot;nearTarget&amp;quot;&quot; repeatuntil=&quot;running&quot;
+      name=&quot;detect&quot; matchtype=&quot;best&quot; entityobjectvariable=&quot;&quot;
+      debugbreak=&quot;False&quot; consistent=&quot;True&quot; aspectvariable=&quot;&quot;
+      aspectobjectvariable=&quot;nearSleep&quot; aspect=&quot;&amp;quot;anSleepTarget&amp;quot;&quot;
       /&gt;&lt;detect sensor=&quot;&amp;quot;close&amp;quot;&quot; repeatuntil=&quot;running&quot;
       name=&quot;near&quot; matchtype=&quot;best&quot; entityobjectvariable=&quot;&quot;
       debugbreak=&quot;False&quot; consistent=&quot;True&quot; aspectvariable=&quot;&quot;
@@ -27,11 +31,11 @@ MonoBehaviour:
       /&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;success&quot;
       name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot;
       priority=&quot;&quot; name=&quot;Player not visible&quot; debugbreak=&quot;False&quot;
-      constraint=&quot;varPlayer == null&quot;&gt;&lt;sequencer usepriorities=&quot;False&quot;
-      repeatuntil=&quot;&quot; name=&quot;Move to sleep position&quot; debugbreak=&quot;False&quot;&gt;&lt;action
-      repeatuntil=&quot;&quot; priority=&quot;&quot; parametervalues=&quot;&quot;
-      parameters=&quot;&quot; namespace=&quot;(global)&quot; name=&quot;action&quot;
-      debugbreak=&quot;False&quot; classname=&quot;ZZAction&quot; /&gt;&lt;parallel
+      constraint=&quot;varPlayer == null&quot;&gt;&lt;selector usepriorities=&quot;False&quot;
+      repeatuntil=&quot;&quot; name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
+      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
+      constraint=&quot;nearSleep == null&quot;&gt;&lt;sequencer usepriorities=&quot;False&quot;
+      repeatuntil=&quot;&quot; name=&quot;Move to sleep position&quot; debugbreak=&quot;False&quot;&gt;&lt;parallel
       tiebreaker=&quot;fail&quot; succeed=&quot;all&quot; repeatuntil=&quot;&quot;
       priority=&quot;&quot; name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;animate
       repeatuntil=&quot;&quot; name=&quot;animate&quot; debugbreak=&quot;False&quot;
@@ -39,14 +43,19 @@ MonoBehaviour:
       repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;&amp;quot;SleepTarget&amp;quot;&quot;
       movespeed=&quot;0&quot; facetarget=&quot;&amp;quot;SleepTarget&amp;quot;&quot;
       debugbreak=&quot;False&quot; closeenoughdistance=&quot;1&quot; closeenoughangle=&quot;&quot;
-      /&gt;&lt;/parallel&gt;&lt;/sequencer&gt;&lt;mecparam valueexpression=&quot;true&quot;
-      repeatuntil=&quot;&quot; parametertype=&quot;boolean&quot; parametername=&quot;sleep&quot;
-      name=&quot;mecparam&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot;
-      /&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot;
-      name=&quot;Player visible&quot; debugbreak=&quot;False&quot; constraint=&quot;varPlayer
-      != null&quot;&gt;&lt;sequencer usepriorities=&quot;False&quot; repeatuntil=&quot;&quot;
-      name=&quot;sequencer&quot; debugbreak=&quot;False&quot;&gt;&lt;action repeatuntil=&quot;&quot;
-      priority=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;&quot;
+      /&gt;&lt;/parallel&gt;&lt;/sequencer&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;failure&quot;
+      priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
+      constraint=&quot;nearSleep != null&quot;&gt;&lt;action repeatuntil=&quot;&quot;
+      parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;(global)&quot;
+      name=&quot;action&quot; debugbreak=&quot;False&quot; classname=&quot;ZZAction&quot;
+      /&gt;&lt;mecparam valueexpression=&quot;true&quot; repeatuntil=&quot;&quot;
+      parametertype=&quot;boolean&quot; parametername=&quot;sleep&quot; name=&quot;mecparam&quot;
+      debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/constraint&gt;&lt;constraint
+      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Player visible&quot;
+      debugbreak=&quot;False&quot; constraint=&quot;varPlayer != null&quot;&gt;&lt;sequencer
+      usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;sequencer&quot;
+      debugbreak=&quot;False&quot;&gt;&lt;action repeatuntil=&quot;&quot; priority=&quot;&quot;
+      parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;&quot;
       name=&quot;action&quot; debugbreak=&quot;False&quot; classname=&quot;Assets.Scripts.Player.SleepAction&quot;
       /&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Chase&quot;
       debugbreak=&quot;False&quot; constraint=&quot;sneaking == false&quot;&gt;&lt;mecparam

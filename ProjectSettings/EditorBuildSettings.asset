@@ -6,20 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-  - enabled: 1
-    path: Assets/Scenes/ShawnScene.unity
-  - enabled: 1
-    path: Assets/Scenes/EricScene.unity
-  - enabled: 1
-    path: Assets/Scenes/ChrisScene.unity
-  - enabled: 1
-    path: Assets/Scenes/AdityaScene.unity
-  - enabled: 1
-    path: Assets/Scenes/SabrinaScene.unity
-  - enabled: 1
     path: Assets/Scenes/Title.unity
   - enabled: 1
     path: Assets/Scenes/Credits.unity
   - enabled: 1
     path: Assets/Scenes/EricJanitorScene.unity
+  - enabled: 1
+    path: Assets/Scenes/FINALNPCLevel(for now...!).unity

@@ -34,10 +34,14 @@ namespace Assets.Scripts.UI.Menu
 				DontDestroyOnLoad(this.gameObject);
 				_currentState = MenuState.Title;
 				_previousState = MenuState.Title;
-				_menuElements = GameObject.FindObjectsOfType<MenuElement>();
-				StateTransition(_previousState, _currentState);
 			}
 			else if(_instance != this) Destroy(this.gameObject);
+		}
+
+		void Start()
+		{
+			_menuElements = GameObject.FindObjectsOfType<MenuElement>();
+			StateTransition(_previousState, _currentState);
 		}
 
 		void Update()
