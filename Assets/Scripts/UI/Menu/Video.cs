@@ -41,15 +41,22 @@ namespace Assets.Scripts.UI.Menu
 
 			_resolution.minValue = 0f;
             _resolution.maxValue = _res.Count - 1;
-            _quality.minValue = 0f;
-            _quality.maxValue = QualitySettings.names.Length - 1;
            
 			VideoData _data = LoadManager.LoadVideo();
 			_resolution.value = _data.ResolutionIndex;
-			_quality.value = _data.QualityIndex;
-			_fullscreen.isOn = _data.Fullscreen;
+			_fullscreen.isOn = false;
             _resolutionText.text = _res[(int)_resolution.value].width + "x" + _res[(int)_resolution.value].height;
+
+#if !UNITY_WEBPLAYER
+			_quality.minValue = 0f;
+			_quality.maxValue = QualitySettings.names.Length - 1;
+
+			_quality.value = _data.QualityIndex;
             _qualityText.text = QualitySettings.names[(int)_quality.value];
+#else
+			GameObject _qual = GameObject.Find("Quality");
+			_qual.SetActive(false);
+#endif
 
 			ApplySettings(true);
         }

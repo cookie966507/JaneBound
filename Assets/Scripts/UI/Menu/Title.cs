@@ -17,7 +17,7 @@ namespace Assets.Scripts.UI.Menu
 			MenuManager.StateTransition(_state, MenuManager.MenuState.Inactive);
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
-			Application.LoadLevel("EricJanitorScene");
+			Application.LoadLevel("FINALNPCLevel(for now...!)");
 		}
 
 		public void Settings()
