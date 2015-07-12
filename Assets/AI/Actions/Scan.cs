@@ -15,7 +15,7 @@ public class Scan : RAINAction
 
     public override void Start(RAIN.Core.AI ai)
     {
-		Debug.Log("START!");
+		//Debug.Log("START!");
 		//myTransform = ai.Body.transform;
         base.Start(ai);
     }
@@ -24,7 +24,7 @@ public class Scan : RAINAction
     {
 
 		_Time = _Time + Time.deltaTime;
-		Debug.Log(_Time);
+		//Debug.Log(_Time);
 		float phase = Mathf.Sin(_Time / _Period);
 		//myTransform.localRotation = Quaternion.Euler( new Vector3(0, phase * _Angle, 0));
 		ai.Kinematic.Rotation = new Vector3(0, phase * _Angle, 0);
