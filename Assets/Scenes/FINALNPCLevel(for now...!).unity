@@ -8182,6 +8182,10 @@ Prefab:
       propertyPath: _dataSerializer._serializedCustomData.Array.data[5]._stringData
       value: DQo=
       objectReference: {fileID: 0}
+    - target: {fileID: 130408, guid: 8b6854ae961ae1442816629701499903, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b6854ae961ae1442816629701499903, type: 2}
   m_IsPrefabParent: 0
