@@ -2029,8 +2029,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130408}
-  m_LocalRotation: {x: 0, y: .193806335, z: 0, w: .981039822}
-  m_LocalPosition: {x: -.930000007, y: -2, z: -8.27999973}
+  m_LocalRotation: {x: 0, y: .833017886, z: 0, w: .553246081}
+  m_LocalPosition: {x: -54.1599998, y: 13.6100006, z: 167.869995}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 476398}
@@ -2468,7 +2468,7 @@ Animator:
   m_GameObject: {fileID: 130408}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7e0137f6e205143b9a3aac8cb6f54a55, type: 3}
-  m_Controller: {fileID: 9100000, guid: 3f82e36ea1a9d4b568444742b17f4111, type: 2}
+  m_Controller: {fileID: 9100000, guid: 421e62d7dc1a648a783de6c389514ebf, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -2507,11 +2507,11 @@ MonoBehaviour:
       id="0"><field value="True" type="System.Boolean" id="_isActive" /><field type="UnityEngine.GameObject"
       id="_body" gameobject="0" /><field type="RAIN.Memory.BasicMemory" reference="1"
       id="_workingMemory" childrenvisible="False" /><field type="RAIN.Minds.BasicMind"
-      reference="2" id="_mind" childrenvisible="False" /><field type="RAIN.Motion.BasicMotor"
+      reference="2" id="_mind" childrenvisible="True" /><field type="RAIN.Motion.BasicMotor"
       reference="3" id="_motor" childrenvisible="False" /><field type="RAIN.Animation.MecanimAnimator"
       reference="4" id="_animator" childrenvisible="False" /><field type="RAIN.Navigation.BasicNavigator"
       reference="20" id="_navigator" childrenvisible="False" /><field type="RAIN.Perception.BasicSenses"
-      reference="21" id="_senses" childrenvisible="True" /><field type="System.Collections.Generic.List"
+      reference="21" id="_senses" childrenvisible="False" /><field type="System.Collections.Generic.List"
       id="_customElements" elementtype="RAIN.Core.CustomAIElement" childrenvisible="False"
       /></reference><reference type="RAIN.Memory.BasicMemory" refcount="1" id="1"><field
       type="System.Collections.Generic.List" id="_memoryItems" elementtype="RAIN.Memory.BasicMemory+MemoryItem"><field
@@ -2535,7 +2535,8 @@ MonoBehaviour:
       id="_lookAt" /><field type="System.Collections.Generic.List" id="_animationStates"
       elementtype="RAIN.Animation.MecanimAnimator+MecanimAnimatorState"><field type="RAIN.Animation.MecanimAnimator+MecanimAnimatorState"
       reference="10" id="element0" /><field type="RAIN.Animation.MecanimAnimator+MecanimAnimatorState"
-      reference="15" id="element1" /></field></reference><reference type="RAIN.Animation.MecanimAnimator+IKTarget"
+      reference="15" id="element1" /><field type="RAIN.Animation.MecanimAnimator+MecanimAnimatorState"
+      reference="25" id="element2" /></field></reference><reference type="RAIN.Animation.MecanimAnimator+IKTarget"
       refcount="1" id="5"><field value="False" type="System.Boolean" id="isActive"
       /><field value="0" type="System.Single" id="positionWeight" /><field value="0"
       type="System.Single" id="rotationWeight" /><field value="0,0,0" type="UnityEngine.Vector3"
@@ -2631,7 +2632,22 @@ MonoBehaviour:
       id="_lineOfSightMask" /></reference><reference type="RAIN.Memory.BasicMemory+MemoryItem"
       refcount="1" id="24"><field value="bang" type="System.String" id="Key" /><field
       value="UnityEngine.GameObject" type="System.Type" id="ValueType" /><field value=""
-      type="UnityEngine.GameObject" id="Value" gameobject="4" /></reference></references></component>
+      type="UnityEngine.GameObject" id="Value" gameobject="4" /></reference><reference
+      type="RAIN.Animation.MecanimAnimator+MecanimAnimatorState" refcount="1" id="25"><field
+      value="Base Layer.Idle" type="System.String" id="mecanimState" /><field value="0"
+      type="System.Int32" id="layer" /><field type="RAIN.Animation.MecanimParameterValue"
+      reference="26" id="startParameter" /><field type="RAIN.Animation.MecanimParameterValue"
+      reference="28" id="stopParameter" /></reference><reference type="RAIN.Animation.MecanimParameterValue"
+      refcount="1" id="26"><field value="" type="System.String" id="parameterName"
+      /><field value="Float" type="RAIN.Animation.MecanimParameterValue+SupportedMecanimType"
+      id="parameterType" /><field type="RAIN.Representation.Expression" reference="27"
+      id="parameterValue" /><field value="0" type="System.Single" id="dampTime" /></reference><reference
+      type="RAIN.Representation.Expression" refcount="1" id="27" customdata="4" /><reference
+      type="RAIN.Animation.MecanimParameterValue" refcount="1" id="28"><field value=""
+      type="System.String" id="parameterName" /><field value="Float" type="RAIN.Animation.MecanimParameterValue+SupportedMecanimType"
+      id="parameterType" /><field type="RAIN.Representation.Expression" reference="29"
+      id="parameterValue" /><field value="0" type="System.Single" id="dampTime" /></reference><reference
+      type="RAIN.Representation.Expression" refcount="1" id="29" customdata="5" /></references></component>
     _serializedGameObjects:
     - {fileID: 130408}
     - {fileID: 488922}
@@ -2640,13 +2656,17 @@ MonoBehaviour:
     - {fileID: 194508, guid: d886816b00bd5d1428e5dfb40c9fc556, type: 2}
     _serializedCustomData:
     - _data: 
-      _stringData: dHJ1ZQo=
+      _stringData: dHJ1ZQ0K
     - _data: 
-      _stringData: ZmFsc2UK
+      _stringData: ZmFsc2UNCg==
     - _data: 
-      _stringData: dHJ1ZQo=
+      _stringData: dHJ1ZQ0K
     - _data: 
-      _stringData: ZmFsc2UK
+      _stringData: ZmFsc2UNCg==
+    - _data: 
+      _stringData: DQo=
+    - _data: 
+      _stringData: DQo=
 --- !u!114 &11450940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2674,8 +2694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782b772fcac5a6844a70ab47fe1b7601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftFoot: {fileID: 0}
-  _rightFoot: {fileID: 0}
+  _leftFoot: {fileID: 419628}
+  _rightFoot: {fileID: 440628}
 --- !u!114 &11486186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2688,7 +2708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _kinematic: 0
-  _freezeRotation: 0
+  _freezeRotation: 1
 --- !u!114 &11495436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2706,7 +2726,7 @@ MonoBehaviour:
   fovMaxDistance: 50
   cullingMask:
     serializedVersion: 2
-    m_Bits: 3328
+    m_Bits: 7424
 --- !u!114 &11495926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2718,7 +2738,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e04e5874c2045b89ad5e30c9342713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  copClips: []
+  copClips:
+  - {fileID: 8300000, guid: 9e4faaedb829a47d792224be114e7359, type: 3}
+  - {fileID: 8300000, guid: f5623198275be4a19aa990071e1f7f4b, type: 3}
 --- !u!136 &13662922
 CapsuleCollider:
   m_ObjectHideFlags: 1

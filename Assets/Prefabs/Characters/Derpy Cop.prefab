@@ -1431,7 +1431,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189348}
   m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
-  m_LocalPosition: {x: -28.0100002, y: 13.3999996, z: 140.899994}
+  m_LocalPosition: {x: 25.0900002, y: 13.3999996, z: 140.809998}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 461738}
@@ -2405,7 +2405,7 @@ Animator:
   m_GameObject: {fileID: 189348}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7e0137f6e205143b9a3aac8cb6f54a55, type: 3}
-  m_Controller: {fileID: 9100000, guid: 3f82e36ea1a9d4b568444742b17f4111, type: 2}
+  m_Controller: {fileID: 9100000, guid: 421e62d7dc1a648a783de6c389514ebf, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -2433,9 +2433,9 @@ MonoBehaviour:
       id="0"><field value="True" type="System.Boolean" id="_isActive" /><field type="UnityEngine.GameObject"
       id="_body" gameobject="0" /><field type="RAIN.Memory.BasicMemory" reference="1"
       id="_workingMemory" childrenvisible="False" /><field type="RAIN.Minds.BasicMind"
-      reference="2" id="_mind" childrenvisible="False" /><field type="RAIN.Motion.BasicMotor"
+      reference="2" id="_mind" childrenvisible="True" /><field type="RAIN.Motion.BasicMotor"
       reference="3" id="_motor" childrenvisible="False" /><field type="RAIN.Animation.MecanimAnimator"
-      reference="4" id="_animator" childrenvisible="True" /><field type="RAIN.Navigation.BasicNavigator"
+      reference="4" id="_animator" childrenvisible="False" /><field type="RAIN.Navigation.BasicNavigator"
       reference="20" id="_navigator" childrenvisible="False" /><field type="RAIN.Perception.BasicSenses"
       reference="21" id="_senses" childrenvisible="False" /><field type="System.Collections.Generic.List"
       id="_customElements" elementtype="RAIN.Core.CustomAIElement" childrenvisible="False"
@@ -2586,7 +2586,7 @@ MonoBehaviour:
     - {fileID: 189348}
     - {fileID: 419820}
     - {fileID: 419820}
-    - {fileID: 11400000, guid: c463009019b5f044daebf54a2d8e3efd, type: 2}
+    - {fileID: 11400000, guid: e4edd1db9fe0c40da92414f08ed576b5, type: 2}
     - {fileID: 194508, guid: d886816b00bd5d1428e5dfb40c9fc556, type: 2}
     _serializedCustomData:
     - _data: 

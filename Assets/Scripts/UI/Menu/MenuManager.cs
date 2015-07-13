@@ -48,7 +48,7 @@ namespace Assets.Scripts.UI.Menu
 		{
 			if(!GameManager.InSuspendedState)
 			{
-				if(Input.GetKeyDown(KeyCode.Backspace))
+				if(Input.GetKeyDown(KeyCode.Delete))
 				{
 					if(_currentState.Equals(MenuState.Inactive))
 					{
