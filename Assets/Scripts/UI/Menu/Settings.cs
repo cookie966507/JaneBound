@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 
 #region ERIC
@@ -7,19 +6,10 @@ namespace Assets.Scripts.UI.Menu
 {
 	public class Settings : MenuElement
 	{
-		private Button _audio;
-
 		protected override void Init ()
 		{
 			base.Init ();
 			_state = MenuManager.MenuState.Settings;
-			_audio = GameObject.Find("Audio").GetComponent<Button>();
-		}
-
-		public override void Activate ()
-		{
-			base.Activate ();
-			_audio.Select();
 		}
 
 		public void Audio()

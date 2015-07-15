@@ -16,11 +16,6 @@ namespace Assets.Scripts.UI.Menu
 			base.Init ();
 			_state = MenuManager.MenuState.Audio;
 		}
-		public override void Activate ()
-		{
-			base.Activate ();
-			_sfx.Select();
-		}
         void Start()
         {
 			_music = GameObject.Find("Music").GetComponent<Slider>();
