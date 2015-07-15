@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d76397f0cb72ff64eb42fb6909110dd4
-timeCreated: 1436643162
+timeCreated: 1436921761
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -14,6 +14,7 @@ TextureImporter:
     21300014: Settings_States_Toggle_Normal
     21300016: Settings_States_Toggle_Highlighted
     21300018: Settings_States_Toggle_Pressed
+    21300020: Settings_States_No_Outline
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -136,6 +137,16 @@ TextureImporter:
         y: 233
         width: 500
         height: 501
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Settings_States_No_Outline
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 42
+        width: 586
+        height: 584
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

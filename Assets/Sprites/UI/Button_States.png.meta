@@ -1,12 +1,20 @@
 fileFormatVersion: 2
 guid: 9f0c3226fd4f92c49b7a79a9acb2849b
-timeCreated: 1436640868
+timeCreated: 1436931453
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Button_State_Normal
     21300002: Button_State_Highlighted
     21300004: Button_State_Pressed
+    21300006: Button_States_Normal
+    21300008: Button_States_No_Normal
+    21300010: Button_States_Yes_Normal
+    21300012: Button_States_Highlighted
+    21300014: Button_States_No_Highlighted
+    21300016: Button_States_Yes_Highlighted
+    21300018: Button_States_Pressed
+    21300020: Button_States_Warning
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -52,33 +60,83 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Button_State_Normal
+    - name: Button_States_Normal
       rect:
         serializedVersion: 2
-        x: 173
-        y: 1619
-        width: 1191
-        height: 445
+        x: 132
+        y: 3695
+        width: 1194
+        height: 444
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Button_State_Highlighted
+    - name: Button_States_No_Normal
       rect:
         serializedVersion: 2
-        x: 173
-        y: 844
-        width: 1191
-        height: 445
+        x: 1497
+        y: 3695
+        width: 1195
+        height: 444
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Button_State_Pressed
+    - name: Button_States_Yes_Normal
       rect:
         serializedVersion: 2
-        x: 173
-        y: 69
-        width: 1191
-        height: 445
+        x: 2883
+        y: 3692
+        width: 1193
+        height: 450
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button_States_Highlighted
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 2920
+        width: 1194
+        height: 447
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button_States_No_Highlighted
+      rect:
+        serializedVersion: 2
+        x: 1497
+        y: 2920
+        width: 1195
+        height: 444
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button_States_Yes_Highlighted
+      rect:
+        serializedVersion: 2
+        x: 2883
+        y: 2917
+        width: 1193
+        height: 450
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button_States_Pressed
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 2145
+        width: 1194
+        height: 447
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button_States_Warning
+      rect:
+        serializedVersion: 2
+        x: 3628
+        y: 28
+        width: 588
+        height: 588
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

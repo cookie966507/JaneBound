@@ -22,6 +22,7 @@ namespace Assets.Scripts.UI.Menu
 
 		public void Settings()
 		{
+			this.Deactivate();
 			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Settings);
 		}
 

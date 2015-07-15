@@ -54,8 +54,7 @@ namespace Assets.Scripts.UI.Menu
 			_quality.value = _data.QualityIndex;
             _qualityText.text = QualitySettings.names[(int)_quality.value];
 #else
-			GameObject _qual = GameObject.Find("Quality");
-			_qual.SetActive(false);
+			_quality.enabled = false;
 #endif
 
 			ApplySettings(true);
