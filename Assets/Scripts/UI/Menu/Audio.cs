@@ -8,13 +8,28 @@ namespace Assets.Scripts.UI.Menu
 {
     class Audio : MenuElement
     {
+		private static Audio _instance;
+
         private Slider _music;
         private Slider _sfx;
 
 		protected override void Init ()
 		{
+			if(_instance == null)
+			{
+				_instance = this;
+			}
+			else if(_instance != this)
+			{
+				Destroy(this.gameObject);
+			}
 			base.Init ();
 			_state = MenuManager.MenuState.Audio;
+		}
+		public override void Activate ()
+		{
+			base.Activate ();
+			_sfx.Select();
 		}
         void Start()
         {

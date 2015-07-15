@@ -9,10 +9,19 @@ namespace Assets.Scripts.UI.Menu
 {
 	public class Pause : MenuElement
 	{
-		Button[] _buttons;
+		private static Pause _instance;
+		private Button[] _buttons;
 
 		protected override void Init ()
 		{
+			if(_instance == null)
+			{
+				_instance = this;
+			}
+			else if(_instance != this)
+			{
+				Destroy(this.gameObject);
+			}
 			base.Init ();
 			_buttons = transform.GetComponentsInChildren<Button>();
 			_state = MenuManager.MenuState.Pause;
@@ -23,6 +32,7 @@ namespace Assets.Scripts.UI.Menu
 		{
 			base.Activate ();
 			this.ToggleButtons(true);
+			_buttons[0].Select();
 		}
 
 		public void Resume()
@@ -55,6 +65,7 @@ namespace Assets.Scripts.UI.Menu
 			}
 			else
 			{
+				_buttons[0].Select();
 				MenuManager.StateTransition(MenuManager.MenuState.Pause, MenuManager.MenuState.Pause);
 			}
 		}
@@ -65,6 +76,7 @@ namespace Assets.Scripts.UI.Menu
 		}
 		private void QuitLevel(bool _accept)
 		{
+			_buttons[0].Select();
 			if(_accept)
 			{
 				this.Resume();

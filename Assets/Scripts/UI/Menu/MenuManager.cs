@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using Assets.Scripts.Data;
+using UnityEngine.EventSystems;
 
 #region ERIC
 namespace Assets.Scripts.UI.Menu
@@ -46,6 +47,7 @@ namespace Assets.Scripts.UI.Menu
 
 		void Update()
 		{
+			//Debug.Log(EventSystem.current.currentSelectedGameObject);
 			if(!GameManager.InSuspendedState)
 			{
 				if(Input.GetKeyDown(KeyCode.Delete))
@@ -114,6 +116,10 @@ namespace Assets.Scripts.UI.Menu
 			}
 		}
 
+		public static MenuState CurrentState
+		{
+			get { return _currentState; }
+		}
 		public static MenuState PreviousState
 		{
 			get { return _previousState; }

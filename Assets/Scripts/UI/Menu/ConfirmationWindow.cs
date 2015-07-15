@@ -13,6 +13,7 @@ namespace Assets.Scripts.UI.Menu
 		private static Canvas _win;
 		private static Text _label;
 		private static ConfirmationType _type;
+		private static Button _yes;
 
 		void Awake()
 		{
@@ -20,7 +21,7 @@ namespace Assets.Scripts.UI.Menu
 			_label = this.GetComponentInChildren<Text>();
 			_win.enabled = false;
 
-			DontDestroyOnLoad(this.gameObject);
+			_yes = GameObject.Find("Yes").GetComponent<Button>();
 		}
 
 		public static void GetConfirmation(Confirm confirmFunction, ConfirmationType _type)
@@ -31,6 +32,7 @@ namespace Assets.Scripts.UI.Menu
 			else _label.text = "Are you sure?";
 
             _win.enabled = true;
+			_yes.Select();
         }
 
         public void Yes()

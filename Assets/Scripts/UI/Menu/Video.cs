@@ -8,6 +8,7 @@ namespace Assets.Scripts.UI.Menu
 {
     class Video : MenuElement
     {
+		private static Video _instance;
         private Slider _resolution;
 		private Text _resolutionText;
 		private Slider _quality;
@@ -15,9 +16,22 @@ namespace Assets.Scripts.UI.Menu
 		private Toggle _fullscreen;
 
 		private bool _update;
+		private bool _back;
 
 		private static List<Resolution> _res;
 
+		protected override void Init ()
+		{
+			if(_instance == null)
+			{
+				_instance = this;
+			}
+			else if(_instance != this)
+			{
+				Destroy(this.gameObject);
+			}
+			base.Init ();
+		}
         void Start()
         {
 			_resolution = GameObject.Find("Resolution").GetComponent<Slider>();
@@ -54,9 +68,18 @@ namespace Assets.Scripts.UI.Menu
 			_quality.value = _data.QualityIndex;
             _qualityText.text = QualitySettings.names[(int)_quality.value];
 #else
-			_quality.enabled = false;
+			_quality.interactable = false;
+			
+			Navigation _newNav = new Navigation();
+			_newNav.mode = Navigation.Mode.Explicit;
+			_newNav.selectOnUp = _resolution.navigation.selectOnUp;
+			_newNav.selectOnDown = _fullscreen;
+			_resolution.navigation = _newNav;
+			
+			_newNav.selectOnUp = _resolution;
+			_newNav.selectOnDown = _fullscreen.navigation.selectOnDown;
+			_fullscreen.navigation = _newNav;
 #endif
-
 			ApplySettings(true);
         }
 
@@ -74,6 +97,8 @@ namespace Assets.Scripts.UI.Menu
 			_fullscreen.isOn = _data.Fullscreen;
 
 			_update = false;
+
+			_resolution.Select();
 		}
 
         public void ResolutionOption()
@@ -102,7 +127,12 @@ namespace Assets.Scripts.UI.Menu
 
 		public void ApplySettings(bool _accept)
 		{
-			if(!_accept) return;
+			if(MenuManager.CurrentState != MenuManager.MenuState.Title)	_resolution.Select();
+			if(!_accept)
+			{
+				if(_back) this.GoBack();
+				return;
+			}
 			Screen.SetResolution(
 				_res[(int)_resolution.value].width,
 				_res[(int)_resolution.value].height,
@@ -113,14 +143,22 @@ namespace Assets.Scripts.UI.Menu
 			QualitySettings.SetQualityLevel((int)_quality.value);
 			SaveManager.SaveVideo((int)_resolution.value, (int)_quality.value, _fullscreen.isOn);
 			_update = false;
+			if(_back) this.GoBack();
 		}
 
         public void Back()
         {
+			_back = true;
 			if(_update) ConfirmationWindow.GetConfirmation(ApplySettings, ConfirmationWindow.ConfirmationType.ApplyChanges);
+			else this.GoBack();
+        }
+
+		public void GoBack()
+		{
+			_back = false;
 			this.Deactivate();
 			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Settings);
-        }
+		}
     }
 }
 #endregion

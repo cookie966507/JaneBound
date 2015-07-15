@@ -294,7 +294,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300010, guid: d76397f0cb72ff64eb42fb6909110dd4,
       type: 3}
     m_PressedSprite: {fileID: 21300012, guid: d76397f0cb72ff64eb42fb6909110dd4, type: 3}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: 3ed0bcec31b64b1449ae61cf52d5f26c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1142,7 +1142,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300010, guid: d76397f0cb72ff64eb42fb6909110dd4,
       type: 3}
     m_PressedSprite: {fileID: 21300012, guid: d76397f0cb72ff64eb42fb6909110dd4, type: 3}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: 3ed0bcec31b64b1449ae61cf52d5f26c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1907,7 +1907,11 @@ Prefab:
         type: 3}
     - target: {fileID: 194274, guid: 47f4c30129cdbcc44a09a6452d4bafc1, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194274, guid: 47f4c30129cdbcc44a09a6452d4bafc1, type: 2}
+      propertyPath: m_Name
+      value: Credits_Back
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47f4c30129cdbcc44a09a6452d4bafc1, type: 2}
