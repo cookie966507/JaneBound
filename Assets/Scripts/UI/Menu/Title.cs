@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 #region ERIC
@@ -6,10 +7,23 @@ namespace Assets.Scripts.UI.Menu
 {
 	public class Title : MenuElement
 	{
+		private Button _play;
+
 		protected override void Init ()
 		{
 			base.Init();
 			_state = MenuManager.MenuState.Title;
+			_play = GameObject.Find("Play").GetComponent<Button>();
+		}
+		public override void Activate ()
+		{
+			base.Activate ();
+			_play.Select();
+		}
+
+		void OnLevelWasLoaded(int i)
+		{
+			if(i == 0) _play.Select();
 		}
 
 		public void Play()

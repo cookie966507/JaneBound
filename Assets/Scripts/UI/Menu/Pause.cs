@@ -23,6 +23,7 @@ namespace Assets.Scripts.UI.Menu
 		{
 			base.Activate ();
 			this.ToggleButtons(true);
+			_buttons[0].Select();
 		}
 
 		public void Resume()

@@ -54,7 +54,17 @@ namespace Assets.Scripts.UI.Menu
 			_quality.value = _data.QualityIndex;
             _qualityText.text = QualitySettings.names[(int)_quality.value];
 #else
-			_quality.enabled = false;
+			_quality.interactable = false;
+
+			Navigation _newNav = new Navigation();
+			_newNav.mode = Navigation.Mode.Explicit;
+			_newNav.selectOnUp = _resolution.navigation.selectOnUp;
+			_newNav.selectOnDown = _fullscreen;
+			_resolution.navigation = _newNav;
+
+			_newNav.selectOnUp = _resolution;
+			_newNav.selectOnDown = _fullscreen.navigation.selectOnDown;
+			_fullscreen.navigation = _newNav;
 #endif
 
 			ApplySettings(true);
@@ -74,6 +84,8 @@ namespace Assets.Scripts.UI.Menu
 			_fullscreen.isOn = _data.Fullscreen;
 
 			_update = false;
+
+			_resolution.Select();
 		}
 
         public void ResolutionOption()
