@@ -18,7 +18,6 @@ public class AlarmRing : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
 	{
-		Debug.Log("AYY LMAO");
 		Assets.Scripts.Data.SoundManager.PlaySFX(alarmSource);
 	}
 }
