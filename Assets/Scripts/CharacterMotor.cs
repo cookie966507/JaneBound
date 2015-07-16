@@ -17,10 +17,7 @@ public class CharacterMotor : MonoBehaviour
 	{
 		//set up rigidbody constraints
 		GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.Interpolate;
-		if(sidescroller)
-			GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
-		else
-			GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+		GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 		//add frictionless physics material
 		if(GetComponent<Collider>().material.name == "Default (Instance)")
 		{

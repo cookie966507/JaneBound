@@ -59,9 +59,12 @@ MonoBehaviour:
       repeatuntil=&quot;&quot; name=&quot;sequencer&quot; debugbreak=&quot;False&quot;&gt;&lt;action
       repeatuntil=&quot;&quot; priority=&quot;&quot; parametervalues=&quot;&quot;
       parameters=&quot;&quot; namespace=&quot;&quot; name=&quot;action&quot; debugbreak=&quot;False&quot;
-      classname=&quot;FOVColorRed&quot; /&gt;&lt;constraint repeatuntil=&quot;&quot;
-      priority=&quot;&quot; name=&quot;Chase&quot; debugbreak=&quot;False&quot; constraint=&quot;sneaking
-      == false&quot;&gt;&lt;mecparam valueexpression=&quot;false&quot; repeatuntil=&quot;&quot;
+      classname=&quot;Assets.Scripts.Player.SleepAction&quot; /&gt;&lt;constraint
+      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Chase&quot; debugbreak=&quot;False&quot;
+      constraint=&quot;sneaking == false&quot;&gt;&lt;action repeatuntil=&quot;&quot;
+      parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;&quot;
+      name=&quot;action&quot; debugbreak=&quot;False&quot; classname=&quot;FOVColorRed&quot;
+      /&gt;&lt;mecparam valueexpression=&quot;false&quot; repeatuntil=&quot;&quot;
       parametertype=&quot;boolean&quot; parametername=&quot;sleep&quot; name=&quot;mecparam&quot;
       debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;selector usepriorities=&quot;False&quot;
       repeatuntil=&quot;&quot; name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
