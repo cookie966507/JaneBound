@@ -12,6 +12,7 @@ namespace Assets.Scripts.UI.Menu
 
 		protected override void Init ()
 		{
+			GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("playerDance",true);
 			if(_instance == null)
 			{
 				_instance = this;
