@@ -15,10 +15,10 @@ MonoBehaviour:
   HolderNodes:
   - AssetPath: .currentai
     BehaviorTreeName: (No AI Selected)
-    BehaviorTreeID: 115
+    BehaviorTreeID: 11
     BehaviorTreeBindings: []
-    LastUpdate: 635726091417532645
-    LastModified: 635726091016287893
+    LastUpdate: 635726104248086070
+    LastModified: 635726084522074752
     Errored: 0
   - AssetPath: .createxml
     BehaviorTreeName: Create New Behavior Tree
@@ -59,7 +59,7 @@ MonoBehaviour:
     BehaviorTreeName: Btree_derp2
     BehaviorTreeID: 11
     BehaviorTreeBindings: []
-    LastUpdate: 635726084524794454
+    LastUpdate: 635726104248086070
     LastModified: 635726084522074752
     Errored: 0
   - AssetPath: Assets/AI/BehaviorTrees/BTree_Janitor.asset
@@ -85,7 +85,7 @@ MonoBehaviour:
     Errored: 0
   - AssetPath: Assets/AI/BehaviorTrees/SleepyCop.asset
     BehaviorTreeName: SleepyCop
-    BehaviorTreeID: 115
+    BehaviorTreeID: 0
     BehaviorTreeBindings: []
     LastUpdate: 635726091417532645
     LastModified: 635726091016287893
@@ -640,7 +640,7 @@ MonoBehaviour:
       _type: 4
       _stateIndex: 11
       _parent: 0
-      _lastUpdate: 635726084524794454
+      _lastUpdate: 635726104248086070
       _children: 08000000
       _variables: 
       _focused: 0
@@ -1700,8 +1700,8 @@ MonoBehaviour:
       _type: 5
       _stateIndex: 46
       _parent: 5
-      _lastUpdate: 635726084524794454
-      _children: 2f000000
+      _lastUpdate: 635726104221216823
+      _children: 4c000000
       _variables: 
       _focused: 0
     - _fields:
@@ -1751,9 +1751,9 @@ MonoBehaviour:
         _changed: 0
       _type: 15
       _stateIndex: 47
-      _parent: 46
-      _lastUpdate: 635726084524794454
-      _children: 3000000032000000330000003a000000
+      _parent: 76
+      _lastUpdate: 635726104248086070
+      _children: 300000003200000033000000
       _variables: 
       _focused: 0
     - _fields:
@@ -2299,11 +2299,11 @@ MonoBehaviour:
         _changed: 0
       _type: 1
       _stateIndex: 58
-      _parent: 47
+      _parent: 76
       _lastUpdate: 0
       _children: 
       _variables: 
-      _focused: 0
+      _focused: 1
     - _fields: []
       _type: 0
       _stateIndex: 0
@@ -2440,12 +2440,48 @@ MonoBehaviour:
       _children: 
       _variables: 
       _focused: 0
-    - _fields: []
-      _type: 0
-      _stateIndex: 0
-      _parent: 0
-      _lastUpdate: 0
-      _children: 
+    - _fields:
+      - _field: name
+        _currentValue: sequencer
+        _recordChange: 1
+        _changed: 0
+      - _field: open
+        _currentValue: True
+        _recordChange: 0
+        _changed: 0
+      - _field: repeatuntil
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: debugbreak
+        _currentValue: False
+        _recordChange: 1
+        _changed: 0
+      - _field: startingpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: runningpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: priority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: weight
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: usepriorities
+        _currentValue: False
+        _recordChange: 1
+        _changed: 0
+      _type: 19
+      _stateIndex: 76
+      _parent: 46
+      _lastUpdate: 635726104248086070
+      _children: 2f0000003a000000
       _variables: 
       _focused: 0
     - _fields:
@@ -4392,4 +4428,4 @@ MonoBehaviour:
       _children: 72000000
       _variables: 
       _focused: 0
-    _freeList: 1700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c000000
+    _freeList: 1700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b000000
