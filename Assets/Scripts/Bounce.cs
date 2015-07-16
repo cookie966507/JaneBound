@@ -5,8 +5,8 @@ using System.Collections;
 [RequireComponent(typeof(AudioSource))]
 public class Bounce : MonoBehaviour 
 {
-	public float pushForce = 25f;							//how far away from this object to push the bounceObject when they hit this hazard
-	public float pushHeight = 6f;							//how high to push bounceObject when they are hit by this hazard
+	public float pushForce = 20f;							//how far away from this object to push the bounceObject when they hit this hazard
+	public float pushHeight = 2f;							//how high to push bounceObject when they are hit by this hazard
 	public bool triggerEnter;								//are we checking for a trigger collision? (ie: hits a child trigger symbolising area of effect)
 	public bool collisionEnter = true;						//are we checking for collider collision? (ie: hits the actual collider of the object)
 	public string[] effectedTags = {"Player"};				//which objects are vulnerable to this hazard (tags)
@@ -58,7 +58,7 @@ public class Bounce : MonoBehaviour
 		if (bounceObject.GetComponent<Rigidbody>() && !bounceObject.GetComponent<Rigidbody>().isKinematic)
 		{
 			bounceObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-			bounceObject.GetComponent<Rigidbody>().AddForce (pushDir.normalized * pushForce, ForceMode.VelocityChange);
+			bounceObject.GetComponent<Rigidbody>().AddForce (Vector3.up * pushForce, ForceMode.VelocityChange);
 			bounceObject.GetComponent<Rigidbody>().AddForce (Vector3.up * pushHeight, ForceMode.VelocityChange);
 		}
 	}
