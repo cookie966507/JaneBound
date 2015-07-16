@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TeamUtility.IO;
 
 namespace Assets.Scripts.Player
 {
@@ -27,17 +28,14 @@ namespace Assets.Scripts.Player
 
 		public override void FixedRun () 
 		{
-			h = Input.GetAxis("Horizontal");				
-			v = Input.GetAxis("Vertical");				
+			h = InputManager.GetAxis("Horizontal");				
+			v = InputManager.GetAxis("Vertical");				
 			anim.SetBool("Push",false);
-			//anim.SetBool("Pull",false);
 
 			if(body2!=null && !Input.GetKey(KeyCode.LeftShift))
 			{
 				body2=null;
 			}
-			//Vector3 move = new Vector3(h,0,v);
-			//float dotProd = Vector3.Dot(move, transform.forward);
 
 			if(flag ==1 && Input.GetKey(KeyCode.LeftShift) && (h!=0 || v!=0) && (h*v==0) && body2!=null)
 			{

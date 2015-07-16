@@ -2,6 +2,7 @@
 using System.Collections;
 using Assets.Scripts.Player;
 using Assets.Scripts.Data;
+using TeamUtility.IO;
 
 public class BubbleBlowing : MonoBehaviour {
 	
@@ -25,6 +26,8 @@ public class BubbleBlowing : MonoBehaviour {
 	private GameObject mainCam;
 	private CameraFollow cameraFollowScript;
 
+	private bool _firstShot;
+
 	// Use this for initialization
 	void Start () {
 		playerMoveScript = GetComponent<PlayerMove>();
@@ -36,8 +39,10 @@ public class BubbleBlowing : MonoBehaviour {
 
 		if(!GameManager.InSuspendedState)
 		{
+			if(InputManager.GetAxis("Shoot") == 0) _firstShot = false;
 			//First time i right click
-			if (Input.GetButtonDown ("RB") && playerMoveScript.grounded && number_of_bubbles > 0){
+			if (InputManager.GetAxis("Shoot") < 0 && !_firstShot && playerMoveScript.grounded && number_of_bubbles > 0){
+				InputManager.ResetInputAxes();
 				ToggleBlowing ();
 			}
 			
@@ -55,7 +60,7 @@ public class BubbleBlowing : MonoBehaviour {
 				}
 			}
 
-			if (Input.GetButtonDown ("LB") && shooting){
+			if (InputManager.GetAxis ("Shoot") > 0 && shooting){
 				//makes it so the bubble has to be max size
 				if(current_scale >= max_scale){
 					print ("FIRE");
@@ -75,6 +80,7 @@ public class BubbleBlowing : MonoBehaviour {
 
 	void ToggleBlowing(){
 		shooting = !shooting;
+		_firstShot = true;
 		if(shooting){
 			print ("Shooting: ON");
 			playerMoveScript.lockedMovement = true;

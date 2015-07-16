@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TeamUtility.IO;
 
 namespace Assets.Scripts.Player
 {
@@ -156,16 +157,16 @@ namespace Assets.Scripts.Player
 			screenMovementRight = screenMovementSpace * Vector3.right;
 			
 			//get movement input, set direction to move in
-			float h = Input.GetAxisRaw ("Horizontal");
-			float v = Input.GetAxisRaw ("Vertical");
+			float h = InputManager.GetAxisRaw ("Horizontal");
+			float v = InputManager.GetAxisRaw ("Vertical");
 
 			//crawl with the key "c" pressed down
 			
-			if (Input.GetKey (KeyCode.C)) {
+			/*if (InputManager.GetKey (KeyCode.C)) {
 				Crawl ();
 			} else {
 				StopCrawl();
-			}
+			}*/
 
 
 			//only apply vertical input to movemement, if player is not sidescroller
@@ -180,7 +181,7 @@ namespace Assets.Scripts.Player
 				isMoving = false;
 			}
 
-			if (Input.GetKey (KeyCode.LeftControl)) {
+			if (InputManager.GetButton("Sneak")) {
 				sneaking = true;
 				maxSpeed = 2;
 			}
@@ -229,7 +230,7 @@ namespace Assets.Scripts.Player
 					{
 						animator.SetBool("Grounded", grounded);
 						animator.SetFloat("YVelocity", GetComponent<Rigidbody>().velocity.y);
-						float speed = Mathf.Abs (Input.GetAxisRaw("Horizontal")) + Mathf.Abs (Input.GetAxisRaw ("Vertical"));
+						float speed = Mathf.Abs (InputManager.GetAxisRaw("Horizontal")) + Mathf.Abs (InputManager.GetAxisRaw ("Vertical"));
 						animator.SetFloat("Speed", speed);
 						animator.SetBool("Crawling",isCrawling);
 					}
@@ -286,14 +287,14 @@ namespace Assets.Scripts.Player
 				GetComponent<AudioSource>().Play ();
 			}
 			//if we press jump in the air, save the time
-			if (Input.GetButtonDown ("Jump") && !grounded)
+			if (InputManager.GetButtonDown ("Jump") && !grounded)
 				airPressTime = Time.time;
 			
 			//if were on ground within slope limit
 			if (grounded && slope < slopeLimit)
 			{
 				//and we press jump, or we pressed jump justt before hitting the ground
-				if (Input.GetButtonDown ("Jump") || airPressTime + jumpLeniancy > Time.time)
+				if (InputManager.GetButtonDown ("Jump") || airPressTime + jumpLeniancy > Time.time)
 				{	
 					//increment our jump type if we haven't been on the ground for long
 					onJump = (groundedCount < jumpDelay) ? Mathf.Min(2, onJump + 1) : 0;
