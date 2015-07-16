@@ -433,7 +433,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 10
 --- !u!114 &220371123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,15 +537,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 449230, guid: 5ae0c4c778642498eb7f922d42200ecb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.77999997
+      value: -4.0999999
       objectReference: {fileID: 0}
     - target: {fileID: 449230, guid: 5ae0c4c778642498eb7f922d42200ecb, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.44000006
+      value: 8.21000004
       objectReference: {fileID: 0}
     - target: {fileID: 449230, guid: 5ae0c4c778642498eb7f922d42200ecb, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.899999976
+      value: 4.0999999
       objectReference: {fileID: 0}
     - target: {fileID: 449230, guid: 5ae0c4c778642498eb7f922d42200ecb, type: 2}
       propertyPath: m_LocalRotation.x
@@ -565,7 +565,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 449230, guid: 5ae0c4c778642498eb7f922d42200ecb, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 449230, guid: 5ae0c4c778642498eb7f922d42200ecb, type: 2}
       propertyPath: m_LocalScale.x
@@ -785,7 +785,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 12
 --- !u!1 &481254808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,6 +1325,79 @@ Transform:
   - {fileID: 269422735}
   m_Father: {fileID: 1891813575}
   m_RootOrder: 0
+--- !u!1 &900290499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 900290503}
+  - 114: {fileID: 900290502}
+  - 114: {fileID: 900290501}
+  - 114: {fileID: 900290500}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &900290500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 900290499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb136099cc3379144a392d48c3cce324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: MenuHorizontal
+  m_VerticalAxis: MenuVertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_AllowActivationOnMobileDevice: 0
+--- !u!114 &900290501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 900290499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AllowActivationOnStandalone: 0
+--- !u!114 &900290502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 900290499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 5
+--- !u!4 &900290503
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 900290499}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1 &910945737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,6 +1922,48 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 141732, guid: e25d138f149884c829d5a4345ef44411, type: 2}
   m_PrefabInternal: {fileID: 1010246436}
+--- !u!1001 &1045856326
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 487364, guid: 0e80c7f5ba84df147be6e3c887dbd98e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 487364, guid: 0e80c7f5ba84df147be6e3c887dbd98e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 487364, guid: 0e80c7f5ba84df147be6e3c887dbd98e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.80000019
+      objectReference: {fileID: 0}
+    - target: {fileID: 487364, guid: 0e80c7f5ba84df147be6e3c887dbd98e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487364, guid: 0e80c7f5ba84df147be6e3c887dbd98e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .99999398
+      objectReference: {fileID: 0}
+    - target: {fileID: 487364, guid: 0e80c7f5ba84df147be6e3c887dbd98e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487364, guid: 0e80c7f5ba84df147be6e3c887dbd98e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -.00347283483
+      objectReference: {fileID: 0}
+    - target: {fileID: 487364, guid: 0e80c7f5ba84df147be6e3c887dbd98e, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0e80c7f5ba84df147be6e3c887dbd98e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1054420791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,10 +2093,10 @@ Transform:
   m_GameObject: {fileID: 1096641066}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: -.200000003, y: 0, z: 0}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 122.333542, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 6
 --- !u!1 &1124558464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2010,6 +2125,957 @@ Transform:
   - {fileID: 107093329}
   m_Father: {fileID: 417792608}
   m_RootOrder: 0
+--- !u!1 &1140488517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1140488519}
+  - 114: {fileID: 1140488518}
+  m_Layer: 0
+  m_Name: Input Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1140488518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1140488517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb91bdba6520fd248bbc41b14d02e9a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputConfigurations:
+  - name: KeyboardAndMouse
+    axes:
+    - name: Horizontal
+      description: 
+      positive: 100
+      negative: 97
+      altPositive: 275
+      altNegative: 276
+      deadZone: 0
+      gravity: 3
+      sensitivity: 3
+      snap: 1
+      invert: 0
+      type: 2
+      axis: 0
+      joystick: 0
+    - name: Vertical
+      description: 
+      positive: 119
+      negative: 115
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 3
+      sensitivity: 3
+      snap: 1
+      invert: 0
+      type: 2
+      axis: 0
+      joystick: 0
+    - name: LookHorizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 1
+      sensitivity: .100000001
+      snap: 0
+      invert: 0
+      type: 1
+      axis: 0
+      joystick: 0
+    - name: LookVertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 1
+      sensitivity: .100000001
+      snap: 0
+      invert: 0
+      type: 1
+      axis: 1
+      joystick: 0
+    - name: MenuHorizontal
+      description: 
+      positive: 100
+      negative: 97
+      altPositive: 275
+      altNegative: 276
+      deadZone: 0
+      gravity: 3
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 2
+      axis: 0
+      joystick: 0
+    - name: MenuVertical
+      description: 
+      positive: 119
+      negative: 115
+      altPositive: 273
+      altNegative: 274
+      deadZone: 0
+      gravity: 3
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 2
+      axis: 0
+      joystick: 0
+    - name: Jump
+      description: 
+      positive: 32
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 1
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: Submit
+      description: 
+      positive: 32
+      negative: 0
+      altPositive: 13
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: Cancel
+      description: 
+      positive: 127
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: Shoot
+      description: 
+      positive: 323
+      negative: 324
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 3
+      sensitivity: 3
+      snap: 1
+      invert: 0
+      type: 2
+      axis: 0
+      joystick: 0
+    - name: Sneak
+      description: 
+      positive: 306
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    isExpanded: 1
+  - name: Windows_Gamepad
+    axes:
+    - name: Horizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 0
+      joystick: 0
+    - name: Vertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 1
+      type: 3
+      axis: 1
+      joystick: 0
+    - name: LookHorizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 3
+      joystick: 0
+    - name: LookVertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 1
+      type: 3
+      axis: 4
+      joystick: 0
+    - name: MenuHorizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 0
+      joystick: 0
+    - name: MenuVertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 1
+      type: 3
+      axis: 1
+      joystick: 0
+    - name: Jump
+      description: 
+      positive: 350
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: Submit
+      description: 
+      positive: 350
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: Cancel
+      description: 
+      positive: 356
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: DPADHorizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 5
+      joystick: 0
+    - name: DPADVertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 6
+      joystick: 0
+    - name: RightTrigger
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 9
+      joystick: 0
+    - name: LeftTrigger
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 8
+      joystick: 0
+    - name: MenuHorizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 5
+      joystick: 0
+    - name: MenuVertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 6
+      joystick: 0
+    - name: Shoot
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 2
+      joystick: 0
+    - name: Sneak
+      description: 
+      positive: 352
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    isExpanded: 1
+  - name: OSX_Gamepad
+    axes:
+    - name: Horizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 0
+      joystick: 0
+    - name: Vertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 1
+      type: 3
+      axis: 1
+      joystick: 0
+    - name: LookHorizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 2
+      joystick: 0
+    - name: LookVertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 3
+      joystick: 0
+    - name: MenuHorizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 0
+      joystick: 0
+    - name: MenuVertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 1
+      joystick: 0
+    - name: Jump
+      description: 
+      positive: 366
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: Submit
+      description: 
+      positive: 366
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: Cancel
+      description: 
+      positive: 359
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: DPADHorizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: DPADVertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: RightTrigger
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 5
+      joystick: 0
+    - name: LeftTrigger
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 4
+      joystick: 0
+    - name: MenuHorizontal
+      description: 
+      positive: 358
+      negative: 357
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: MenuVertical
+      description: 
+      positive: 355
+      negative: 356
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: Shoot
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 5
+      joystick: 0
+    - name: Shoot
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 4
+      joystick: 0
+    - name: Sneak
+      description: 
+      positive: 368
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    isExpanded: 1
+  - name: Linux_Gamepad
+    axes:
+    - name: Horizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 0
+      joystick: 0
+    - name: Vertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 1
+      joystick: 0
+    - name: LookHorizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 3
+      joystick: 0
+    - name: LookVertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 4
+      joystick: 0
+    - name: MenuHorizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 0
+      joystick: 0
+    - name: MenuHorizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 6
+      joystick: 0
+    - name: MenuVertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 1
+      joystick: 0
+    - name: MenuVertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: .200000003
+      gravity: 0
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 3
+      axis: 7
+      joystick: 0
+    - name: Jump
+      description: 
+      positive: 350
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: Submit
+      description: 
+      positive: 350
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: Cancel
+      description: 
+      positive: 357
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: DPADHorizontal
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 6
+      joystick: 0
+    - name: DPADVertical
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 7
+      joystick: 0
+    - name: RightTrigger
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 5
+      joystick: 0
+    - name: LeftTrigger
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 2
+      joystick: 0
+    - name: Shoot
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 2
+      joystick: 0
+    - name: Shoot
+      description: 
+      positive: 0
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 1000
+      snap: 1
+      invert: 0
+      type: 3
+      axis: 5
+      joystick: 0
+    - name: Sneak
+      description: 
+      positive: 352
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 0
+      sensitivity: 0
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    isExpanded: 1
+  defaultConfiguration: KeyboardAndMouse
+  dontDestroyOnLoad: 1
+  ignoreTimescale: 0
+--- !u!4 &1140488519
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1140488517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &1148377247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,11 +3175,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1148608294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.970000029, z: 0}
-  m_LocalScale: {x: 69.970787, y: 6.48230219, z: 3.53995609}
+  m_LocalPosition: {x: 1.89999998, y: 3.20000005, z: 16.3999996}
+  m_LocalScale: {x: 86.8208771, y: 6.48230219, z: 3.53995609}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 11
 --- !u!1 &1185281496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,7 +3515,7 @@ Transform:
   - {fileID: 949650147}
   - {fileID: 1210857542}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 13
 --- !u!114 &1244061788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2897,80 +3963,6 @@ Transform:
   - {fileID: 1982516363}
   m_Father: {fileID: 1691769285}
   m_RootOrder: 0
---- !u!1 &1473335921
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1473335925}
-  - 114: {fileID: 1473335924}
-  - 114: {fileID: 1473335923}
-  - 114: {fileID: 1473335922}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1473335922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1473335921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
---- !u!114 &1473335923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1473335921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: .5
-  m_AllowActivationOnMobileDevice: 0
---- !u!114 &1473335924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1473335921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 5
---- !u!4 &1473335925
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1473335921}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
 --- !u!1 &1475436875
 GameObject:
   m_ObjectHideFlags: 0
@@ -3137,7 +4129,7 @@ Skybox:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1556091654}
   m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: e222162ddb8d34547a133b673221b195, type: 2}
+  m_CustomSkybox: {fileID: 2100000, guid: 13fde35df00f2384598d84d32a7bacd8, type: 2}
 --- !u!81 &1556091656
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3203,7 +4195,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
 --- !u!1 &1561186192
 GameObject:
   m_ObjectHideFlags: 0
@@ -3352,6 +4344,57 @@ SkinnedMeshRenderer:
     m_Center: {x: -.000141821802, y: .077178888, z: .0940834209}
     m_Extent: {x: .0465687774, y: .0171169639, z: .0170848817}
   m_DirtyAABB: 0
+--- !u!1 &1649170058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1649170060}
+  - 114: {fileID: 1649170059}
+  m_Layer: 0
+  m_Name: Input Adapter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1649170059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649170058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63496cd80558db4aa847b75970a8728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 1
+  allowRealtimeInputDeviceSwitch: 1
+  updateInputDeviceInterval: 1
+  updateJoystickCountInterval: 1
+  keyboardConfiguration: KeyboardAndMouse
+  windowsJoystickConfiguration: Windows_Gamepad
+  osxJoystickConfiguration: OSX_Gamepad
+  linuxJoystickConfiguration: Linux_Gamepad
+  leftTriggerAxis: LeftTrigger
+  rightTriggerAxis: RightTrigger
+  dpadHorizontalAxis: DPADHorizontal
+  dpadVerticalAxis: DPADVertical
+--- !u!4 &1649170060
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649170058}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!1 &1674628494
 GameObject:
   m_ObjectHideFlags: 0
@@ -3806,7 +4849,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .529411793, g: .00389273744, b: .00389273744, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -3840,7 +4883,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 7
 --- !u!1 &2138404650
 GameObject:
   m_ObjectHideFlags: 0
