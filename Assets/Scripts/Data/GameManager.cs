@@ -25,6 +25,17 @@ namespace Assets.Scripts.Data
 		public static event PauseAction GameUnpause;
 		private static bool _shouldPause;
 
+		void OnEnable()
+		{
+			Player.PlayerLife.PlayerDie += Lose;
+			Player.PlayerLife.PlayerWin += Win;
+		}
+		void OnDisable()
+		{
+			Player.PlayerLife.PlayerDie -= Lose;
+			Player.PlayerLife.PlayerWin -= Win;
+		}
+
 		void Awake()
 		{
 			if(_instance == null)
@@ -43,6 +54,7 @@ namespace Assets.Scripts.Data
 
 		void Update()
 		{
+			Debug.Log(_state);
 			if(_shouldPause && !IsPaused)
 			{
 				_state = GameState.Paused;
@@ -57,7 +69,22 @@ namespace Assets.Scripts.Data
 
 		public static void ResetLevel()
 		{
+			_shouldPause = false;
+			if(GameUnpause != null) GameUnpause();
 			Application.LoadLevel(Application.loadedLevel);
+		}
+
+		public void Win()
+		{
+			UI.Menu.MenuManager.StateTransition(Assets.Scripts.UI.Menu.MenuManager.MenuState.NoStateOverride, Assets.Scripts.UI.Menu.MenuManager.MenuState.Win);
+			_state = GameState.Win;
+			if(GamePause != null) GamePause();
+		}
+		public void Lose()
+		{
+			UI.Menu.MenuManager.StateTransition(Assets.Scripts.UI.Menu.MenuManager.MenuState.NoStateOverride, Assets.Scripts.UI.Menu.MenuManager.MenuState.Lose);
+			_state = GameState.Lose;
+			if(GamePause != null) GamePause();
 		}
 
 		public static bool IsPaused

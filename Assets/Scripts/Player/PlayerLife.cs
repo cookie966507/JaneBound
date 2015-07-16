@@ -15,6 +15,8 @@ namespace Assets.Scripts.Player
 		//public delegate events to assign this controller to all listening components
 		public delegate void PlayerDeath();
 		public static event PlayerDeath PlayerDie;
+		public delegate void PlayerWinGame();
+		public static event PlayerWinGame PlayerWin;
 
 		void Start ()
 		{
@@ -28,19 +30,14 @@ namespace Assets.Scripts.Player
 			{
 				_health = 0;
 			}
+			if(Input.GetKeyDown(KeyCode.O))
+			{
+				if(PlayerWin != null) PlayerWin();
+			}
 			if(_health <= 0)
 			{
+				if(_alive) PlayerDie();
 				_alive = false;
-				PlayerDie();
-			}
-
-			if(!_alive)
-			{
-				_resetLevelTimer += Time.deltaTime;
-				if(_resetLevelTimer > _resetLevelDelay)
-				{
-					Data.GameManager.ResetLevel();
-				}
 			}
 		}
 

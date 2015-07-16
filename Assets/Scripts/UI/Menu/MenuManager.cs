@@ -18,6 +18,8 @@ namespace Assets.Scripts.UI.Menu
 			Confirmation,
 			Inactive,
 			Credits,
+			Win,
+			Lose,
 			NoStateOverride
 		}
 
@@ -87,6 +89,12 @@ namespace Assets.Scripts.UI.Menu
 				break;
 			case MenuState.Credits:
 				ActivateElement(typeof(Credits));
+				break;
+			case MenuState.Win:
+				ActivateElement(typeof(Win));
+				break;
+			case MenuState.Lose:
+				ActivateElement(typeof(Lose));
 				break;
 			case MenuState.Inactive:
 				DeactivateAll();

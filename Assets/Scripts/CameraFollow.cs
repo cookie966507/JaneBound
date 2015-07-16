@@ -63,11 +63,8 @@ public class CameraFollow : MonoBehaviour
 		{
 			if(Input.GetMouseButtonDown(0))
 			{
-				if(!GameManager.IsPaused)
-				{
-					Cursor.lockState = CursorLockMode.Locked;
-					Cursor.visible = false;
-				}
+				Cursor.lockState = CursorLockMode.Locked;
+				Cursor.visible = false;
 			}
 			if (!target)
 				return;
