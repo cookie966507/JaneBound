@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Assets.Scripts.Player;
 using Assets.Scripts.Data;
+using TeamUtility.IO;
 
 public class CameraFollow : MonoBehaviour 
 {
@@ -99,9 +100,9 @@ public class CameraFollow : MonoBehaviour
 		followTarget.Translate(targetOffset, Space.Self);
 		if (lockRotation)
 			followTarget.rotation = target.rotation;
-		float axisX = Input.GetAxis ("Mouse X") * inputRotationSpeed * Time.deltaTime;
+		float axisX = InputManager.GetAxis("LookHorizontal") * inputRotationSpeed * Time.deltaTime;
 		followTarget.RotateAround (target.position, Vector3.up, axisX);
-		float axisY = Input.GetAxis ("Mouse Y") * inputRotationSpeed * Time.deltaTime;
+		float axisY = InputManager.GetAxis ("LookVertical") * inputRotationSpeed * Time.deltaTime;
 		followTarget.RotateAround (target.position, transform.right, -axisY);
 		
 		//where should the camera be next frame?

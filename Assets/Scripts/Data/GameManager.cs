@@ -54,7 +54,6 @@ namespace Assets.Scripts.Data
 
 		void Update()
 		{
-			Debug.Log(_state);
 			if(_shouldPause && !IsPaused)
 			{
 				_state = GameState.Paused;
