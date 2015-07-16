@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Data;
 
 public class Bgm : MonoBehaviour {
 
@@ -10,12 +11,6 @@ public class Bgm : MonoBehaviour {
 		bgmSource = gameObject.GetComponent<AudioSource>();
 	}
 	void Start () {
-		bgmSource.Play();
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		SoundManager.PlayMusic(bgmSource);
 	}
 }
