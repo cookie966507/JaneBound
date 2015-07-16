@@ -15,6 +15,7 @@ TagManager:
   - Surface
   - grabbable
   - Janitor
+  - CabbageGuy
   layers:
   - Default
   - TransparentFX
