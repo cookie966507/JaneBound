@@ -33,7 +33,7 @@ public class Bounce : MonoBehaviour
 				GetComponent<AudioSource>().Play();
 			}
 		}
-		if(col.transform.tag.Equals("Janitor"))
+		if(col.transform.tag.Equals("Janitor") || col.gameObject.layer == 13)
 		{
 			Destroy(this.gameObject);
 		}

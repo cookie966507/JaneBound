@@ -17,6 +17,11 @@ public class BangAction : RAINAction
 		                                       copPosition.y + yOffset,
 		                                       copPosition.z);
 		bang.transform.SetParent(ai.Body.transform,true);
+
+		//Change the FOV Color
+		FOV2DVisionCone FOV = ai.Body.transform.Find("FOV2D").GetComponent<FOV2DVisionCone>();
+		FOV.status = FOV2DVisionCone.Status.Alert;
+
 		base.Start(ai);
     }
 

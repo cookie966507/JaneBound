@@ -43,27 +43,29 @@ MonoBehaviour:
       repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;&amp;quot;SleepTarget&amp;quot;&quot;
       movespeed=&quot;0&quot; facetarget=&quot;&amp;quot;SleepTarget&amp;quot;&quot;
       debugbreak=&quot;False&quot; closeenoughdistance=&quot;1&quot; closeenoughangle=&quot;&quot;
-      /&gt;&lt;/parallel&gt;&lt;/sequencer&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;failure&quot;
-      priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
-      constraint=&quot;nearSleep != null&quot;&gt;&lt;action repeatuntil=&quot;&quot;
-      parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;(global)&quot;
-      name=&quot;action&quot; debugbreak=&quot;False&quot; classname=&quot;ZZAction&quot;
-      /&gt;&lt;mecparam valueexpression=&quot;true&quot; repeatuntil=&quot;&quot;
+      /&gt;&lt;action repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
+      namespace=&quot;&quot; name=&quot;action&quot; debugbreak=&quot;False&quot;
+      classname=&quot;FOVColorChange&quot; /&gt;&lt;/parallel&gt;&lt;/sequencer&gt;&lt;/constraint&gt;&lt;constraint
+      repeatuntil=&quot;failure&quot; priority=&quot;&quot; name=&quot;constraint&quot;
+      debugbreak=&quot;False&quot; constraint=&quot;nearSleep != null&quot;&gt;&lt;action
+      repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
+      namespace=&quot;(global)&quot; name=&quot;action&quot; debugbreak=&quot;False&quot;
+      classname=&quot;ZZAction&quot; /&gt;&lt;mecparam valueexpression=&quot;true&quot;
+      repeatuntil=&quot;&quot; parametertype=&quot;boolean&quot; parametername=&quot;sleep&quot;
+      name=&quot;mecparam&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot;
+      /&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
+      priority=&quot;&quot; name=&quot;Player visible&quot; debugbreak=&quot;False&quot;
+      constraint=&quot;varPlayer != null&quot;&gt;&lt;sequencer usepriorities=&quot;False&quot;
+      repeatuntil=&quot;&quot; name=&quot;sequencer&quot; debugbreak=&quot;False&quot;&gt;&lt;action
+      repeatuntil=&quot;&quot; priority=&quot;&quot; parametervalues=&quot;&quot;
+      parameters=&quot;&quot; namespace=&quot;&quot; name=&quot;action&quot; debugbreak=&quot;False&quot;
+      classname=&quot;FOVColorRed&quot; /&gt;&lt;constraint repeatuntil=&quot;&quot;
+      priority=&quot;&quot; name=&quot;Chase&quot; debugbreak=&quot;False&quot; constraint=&quot;sneaking
+      == false&quot;&gt;&lt;mecparam valueexpression=&quot;false&quot; repeatuntil=&quot;&quot;
       parametertype=&quot;boolean&quot; parametername=&quot;sleep&quot; name=&quot;mecparam&quot;
-      debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/constraint&gt;&lt;constraint
-      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Player visible&quot;
-      debugbreak=&quot;False&quot; constraint=&quot;varPlayer != null&quot;&gt;&lt;sequencer
-      usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;sequencer&quot;
-      debugbreak=&quot;False&quot;&gt;&lt;action repeatuntil=&quot;&quot; priority=&quot;&quot;
-      parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;&quot;
-      name=&quot;action&quot; debugbreak=&quot;False&quot; classname=&quot;Assets.Scripts.Player.SleepAction&quot;
-      /&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Chase&quot;
-      debugbreak=&quot;False&quot; constraint=&quot;sneaking == false&quot;&gt;&lt;mecparam
-      valueexpression=&quot;false&quot; repeatuntil=&quot;&quot; parametertype=&quot;boolean&quot;
-      parametername=&quot;sleep&quot; name=&quot;mecparam&quot; debugbreak=&quot;False&quot;
-      damptime=&quot;0&quot; /&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot;
-      name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot;
-      priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
+      debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;selector usepriorities=&quot;False&quot;
+      repeatuntil=&quot;&quot; name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
+      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
       constraint=&quot;varNear != null&quot;&gt;&lt;action repeatuntil=&quot;&quot;
       parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;&quot;
       name=&quot;action&quot; debugbreak=&quot;False&quot; classname=&quot;Assets.Scripts.Player.Caught&quot;

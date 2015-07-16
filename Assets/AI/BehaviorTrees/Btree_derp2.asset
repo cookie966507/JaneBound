@@ -76,7 +76,10 @@ MonoBehaviour:
       priority=&quot;&quot; parametertype=&quot;boolean&quot; parametername=&quot;walk&quot;
       name=&quot;mecparam&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot;
       /&gt;&lt;timer waitforsec=&quot;8&quot; returnvalue=&quot;success&quot; priority=&quot;&quot;
-      name=&quot;timer&quot; debugbreak=&quot;False&quot; /&gt;&lt;/sequencer&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/parallel&gt;&lt;/behaviortree&gt;"
+      name=&quot;timer&quot; debugbreak=&quot;False&quot; /&gt;&lt;/sequencer&gt;&lt;action
+      repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
+      namespace=&quot;&quot; name=&quot;action&quot; debugbreak=&quot;False&quot;
+      classname=&quot;FOVColorChange&quot; /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/parallel&gt;&lt;/behaviortree&gt;"
       type="System.String" id="treeData" /><field type="System.Array" id="treeBindings"
       elementtype="System.String" /></fields><references /></scriptableobject>
     _serializedGameObjects: []

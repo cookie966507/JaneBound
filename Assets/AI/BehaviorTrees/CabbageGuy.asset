@@ -40,16 +40,24 @@ MonoBehaviour:
       debugbreak=&quot;False&quot; classname=&quot;Assets.Scripts.CabbageMotion&quot;
       /&gt;&lt;mecparam valueexpression=&quot;true&quot; repeatuntil=&quot;&quot;
       parametertype=&quot;boolean&quot; parametername=&quot;throw&quot; name=&quot;throw&quot;
-      debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint
-      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
+      debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;action repeatuntil=&quot;&quot;
+      parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;(global)&quot;
+      name=&quot;action&quot; debugbreak=&quot;False&quot; classname=&quot;FOVColorRed&quot;
+      /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
+      priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
       constraint=&quot;varNear != null&quot;&gt;&lt;action repeatuntil=&quot;&quot;
       parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;(global)&quot;
       name=&quot;action&quot; debugbreak=&quot;False&quot; classname=&quot;Assets.Scripts.Player.Caught&quot;
       /&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
       priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
-      constraint=&quot;varPlayer == null&quot;&gt;&lt;mecparam valueexpression=&quot;false&quot;
+      constraint=&quot;varPlayer == null&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot;
+      succeed=&quot;all&quot; repeatuntil=&quot;&quot; name=&quot;parallel&quot; fail=&quot;any&quot;
+      debugbreak=&quot;False&quot;&gt;&lt;mecparam valueexpression=&quot;false&quot;
       repeatuntil=&quot;&quot; parametertype=&quot;boolean&quot; parametername=&quot;throw&quot;
-      name=&quot;throw&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/parallel&gt;&lt;/behaviortree&gt;"
+      name=&quot;throw&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;action
+      repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
+      namespace=&quot;&quot; name=&quot;action&quot; debugbreak=&quot;False&quot;
+      classname=&quot;FOVColorChange&quot; /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/parallel&gt;&lt;/behaviortree&gt;"
       type="System.String" id="treeData" /><field type="System.Array" id="treeBindings"
       elementtype="System.String" /></fields><references /></scriptableobject>
     _serializedGameObjects: []
