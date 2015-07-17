@@ -31,6 +31,7 @@ namespace Assets.Scripts.UI.Menu
 				Destroy(this.gameObject);
 			}
 			base.Init ();
+			_state = MenuManager.MenuState.Video;
 		}
         void Start()
         {
@@ -122,7 +123,8 @@ namespace Assets.Scripts.UI.Menu
 
 		public void Apply()
 		{
-			ConfirmationWindow.GetConfirmation(ApplySettings, ConfirmationWindow.ConfirmationType.ApplyChanges);
+			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Confirmation);
+			ConfirmationWindow.GetConfirmation(ApplySettings, ConfirmationWindow.ConfirmationType.ApplyChanges, _state);
 		}
 
 		public void ApplySettings(bool _accept)
@@ -149,7 +151,11 @@ namespace Assets.Scripts.UI.Menu
         public void Back()
         {
 			_back = true;
-			if(_update) ConfirmationWindow.GetConfirmation(ApplySettings, ConfirmationWindow.ConfirmationType.ApplyChanges);
+			if(_update)
+			{
+				MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Confirmation);
+				ConfirmationWindow.GetConfirmation(ApplySettings, ConfirmationWindow.ConfirmationType.ApplyChanges, MenuManager.MenuState.Settings);
+			}
 			else this.GoBack();
         }
 

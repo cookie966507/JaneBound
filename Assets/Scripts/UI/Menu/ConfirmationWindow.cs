@@ -14,6 +14,7 @@ namespace Assets.Scripts.UI.Menu
 		private static Text _label;
 		private static ConfirmationType _type;
 		private static Button _yes;
+		private static Menu.MenuManager.MenuState _returnState;
 
 		void Awake()
 		{
@@ -24,9 +25,10 @@ namespace Assets.Scripts.UI.Menu
 			_yes = GameObject.Find("Yes").GetComponent<Button>();
 		}
 
-		public static void GetConfirmation(Confirm confirmFunction, ConfirmationType _type)
+		public static void GetConfirmation(Confirm confirmFunction, ConfirmationType _type, Menu.MenuManager.MenuState _state)
         {
 			ConfirmationWindow.confirmFunction = confirmFunction;
+			_returnState = _state;
 
 			if(_type.Equals(ConfirmationType.ApplyChanges))	_label.text = "Apply Changes?";
 			else _label.text = "Are you sure?";
@@ -45,6 +47,7 @@ namespace Assets.Scripts.UI.Menu
         }
         private static void doAnswer(bool yesNo)
         {
+			Menu.MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, _returnState);
 			confirmFunction(yesNo);
 			_win.enabled = false;
         }

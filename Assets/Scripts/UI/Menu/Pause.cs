@@ -51,7 +51,8 @@ namespace Assets.Scripts.UI.Menu
 
 		public void Restart()
 		{
-			ConfirmationWindow.GetConfirmation(RestartLevel, ConfirmationWindow.ConfirmationType.AreYouSure);
+			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Confirmation);
+			ConfirmationWindow.GetConfirmation(RestartLevel, ConfirmationWindow.ConfirmationType.AreYouSure, _state);
 		}
 		private void RestartLevel(bool _accept)
 		{
@@ -72,7 +73,8 @@ namespace Assets.Scripts.UI.Menu
 
 		public void Quit()
 		{
-			ConfirmationWindow.GetConfirmation(QuitLevel, ConfirmationWindow.ConfirmationType.AreYouSure);
+			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Confirmation);
+			ConfirmationWindow.GetConfirmation(QuitLevel, ConfirmationWindow.ConfirmationType.AreYouSure, _state);
 		}
 		private void QuitLevel(bool _accept)
 		{

@@ -1211,7 +1211,7 @@ MonoBehaviour:
       joystick: 0
     - name: Pause
       description: 
-      positive: 127
+      positive: 112
       negative: 0
       altPositive: 0
       altNegative: 0
@@ -1340,7 +1340,7 @@ MonoBehaviour:
       joystick: 0
     - name: Cancel
       description: 
-      positive: 356
+      positive: 351
       negative: 0
       altPositive: 0
       altNegative: 0
@@ -1475,7 +1475,7 @@ MonoBehaviour:
       sensitivity: 0
       snap: 0
       invert: 0
-      type: 6
+      type: 0
       axis: 0
       joystick: 0
     isExpanded: 1
@@ -1595,7 +1595,7 @@ MonoBehaviour:
       joystick: 0
     - name: Cancel
       description: 
-      positive: 359
+      positive: 367
       negative: 0
       altPositive: 0
       altNegative: 0

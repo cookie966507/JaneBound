@@ -26,10 +26,6 @@ namespace Assets.Scripts.Player
 		
 		public override void Run()
 		{
-			if(Input.GetKeyDown(KeyCode.P))
-			{
-				_health = 0;
-			}
 			if(Input.GetKeyDown(KeyCode.O))
 			{
 				if(PlayerWin != null) PlayerWin();

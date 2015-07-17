@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using Assets.Scripts.Data;
 using UnityEngine.EventSystems;
+using TeamUtility.IO;
 
 #region ERIC
 namespace Assets.Scripts.UI.Menu
@@ -52,13 +53,54 @@ namespace Assets.Scripts.UI.Menu
 			//Debug.Log(EventSystem.current.currentSelectedGameObject);
 			if(!GameManager.InSuspendedState)
 			{
-				if(Input.GetKeyDown(KeyCode.Delete))
+				if(InputManager.GetButtonDown("Pause"))
 				{
 					if(_currentState.Equals(MenuState.Inactive))
 					{
 						StateTransition(_currentState, MenuState.Pause);
 						GameManager.ShouldPause = true;
 					}
+					else if(_currentState.Equals(MenuState.Pause))
+					{
+						Pause _pause = (Pause)GetElement(typeof(Pause));
+						_pause.Resume();
+					}
+				}
+			}
+			else if(GameManager.IsPaused)
+			{
+				if(InputManager.GetButtonDown("Pause"))
+				{
+					if(_currentState.Equals(MenuState.Pause))
+					{
+						Pause _pause = (Pause)GetElement(typeof(Pause));
+						_pause.Resume();
+					}
+				}
+			}
+			if(InputManager.GetButtonDown("Cancel") && _currentState != MenuState.Confirmation)
+			{
+				switch(_currentState)
+				{
+				case MenuState.Audio:
+					((Audio)GetElement(typeof(Audio))).Back();
+					break;
+				/*case MenuState.Confirmation:
+					ConfirmationWindow _w = GameObject.Find("ConfirmationWindow").GetComponent<ConfirmationWindow>();
+					_w.No();
+					break;*/
+				case MenuState.Credits:
+					((Credits)GetElement(typeof(Credits))).Back();
+					break;
+				case MenuState.Pause:
+					((Pause)GetElement(typeof(Pause))).Resume();
+					break;
+				case MenuState.Settings:
+					((Settings)GetElement(typeof(Settings))).Back();
+					break;
+				case MenuState.Video:
+					((Video)GetElement(typeof(Video))).Back();
+					break;
 				}
 			}
 		}
@@ -100,6 +142,18 @@ namespace Assets.Scripts.UI.Menu
 				DeactivateAll();
 				break;
 			}
+		}
+
+		public static MenuElement GetElement(Type _type)
+		{
+			for(int i = 0; i < _menuElements.Length; i++)
+			{
+				if(_menuElements[i].GetType().Equals(_type))
+				{
+					return _menuElements[i];
+				}
+			}
+			return null;
 		}
 
 		public static void ActivateElement(Type _type)
