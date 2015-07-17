@@ -39,11 +39,23 @@ public class BubbleBlowing : MonoBehaviour {
 
 		if(!GameManager.InSuspendedState)
 		{
-			if(InputManager.GetAxis("Shoot") == 0) _firstShot = false;
-			//First time i right click
-			if (InputManager.GetAxis("Shoot") < 0 && !_firstShot && playerMoveScript.grounded && number_of_bubbles > 0){
-				InputManager.ResetInputAxes();
-				ToggleBlowing ();
+			if(Application.platform == RuntimePlatform.OSXWebPlayer)
+			{
+				if(InputManager.GetAxis("Blow") == 0) _firstShot = false;
+				//First time i right click
+				if (InputManager.GetAxis("Blow") < 0 && !_firstShot && playerMoveScript.grounded && number_of_bubbles > 0){
+					InputManager.ResetInputAxes();
+					ToggleBlowing ();
+				}
+			}
+			else
+			{
+				if(InputManager.GetAxis("Shoot") == 0) _firstShot = false;
+				//First time i right click
+				if (InputManager.GetAxis("Shoot") < 0 && !_firstShot && playerMoveScript.grounded && number_of_bubbles > 0){
+					InputManager.ResetInputAxes();
+					ToggleBlowing ();
+				}
 			}
 			
 

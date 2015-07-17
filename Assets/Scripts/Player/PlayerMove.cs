@@ -230,7 +230,7 @@ namespace Assets.Scripts.Player
 					{
 						animator.SetBool("Grounded", grounded);
 						animator.SetFloat("YVelocity", GetComponent<Rigidbody>().velocity.y);
-						float speed = Mathf.Abs (InputManager.GetAxisRaw("Horizontal")) + Mathf.Abs (InputManager.GetAxisRaw ("Vertical"));
+						float speed = Mathf.Abs (InputManager.GetAxis("Horizontal")) + Mathf.Abs (InputManager.GetAxis("Vertical"));
 						animator.SetFloat("Speed", speed);
 						animator.SetBool("Crawling",isCrawling);
 					}
