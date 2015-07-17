@@ -34,6 +34,7 @@ namespace Assets.Scripts.Player
 		[HideInInspector]
 		public int onEnemyBounce;					
 		public bool lockedMovement = false;
+		public bool landedOnBubble = false;
 		
 		private int onJump;
 		public bool grounded;
@@ -255,11 +256,16 @@ namespace Assets.Scripts.Player
 			foreach (Transform check in floorCheckers)
 			{
 				RaycastHit hit;
+
 				if(Physics.Raycast(check.position, Vector3.down, out hit, dist + 0.05f))
 				{
 					if(!hit.transform.GetComponent<Collider>().isTrigger)
 					{
 						slope = Vector3.Angle (hit.normal, Vector3.up);
+
+						landedOnBubble = (hit.transform.tag.Equals("Bubble"));
+						//if (landedOnBubble) Debug.Log("landed on bubble!");
+
 						if(slope > slopeLimit && hit.transform.tag != "Pushable")
 						{
 							Vector3 slide = new Vector3(0f, -slideAmount, 0f);

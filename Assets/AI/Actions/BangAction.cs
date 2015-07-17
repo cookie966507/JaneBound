@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using RAIN.Action;
 using RAIN.Core;
 
+#region Sabrina
 [RAINAction]
 public class BangAction : RAINAction
 {
@@ -35,3 +36,4 @@ public class BangAction : RAINAction
 		base.Stop(ai);
     }
 }
+#endregion

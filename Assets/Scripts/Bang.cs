@@ -2,6 +2,7 @@
 using System.Collections;
 using Assets.Scripts.Data;
 
+#region Sabrina
 public class Bang : MonoBehaviour {
 	bool goingUp;
 	float yOffset;
@@ -50,3 +51,5 @@ public class Bang : MonoBehaviour {
 		}
 	}
 }
+
+#endregion

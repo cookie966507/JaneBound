@@ -16,6 +16,13 @@ namespace Assets.Scripts.Player
 		private PushPull _pushPull;
 		private Footstep _footStep;
 
+		//used for particle effects
+		private bool lastState = true;
+		private bool currentState;
+		public ParticleSystem particle; 
+
+
+
 		//public delegate events to assign this controller to all listening components
 		public delegate void AssignmentEvent(PlayerController _controller);
 		public static event AssignmentEvent AssignController;
@@ -37,9 +44,22 @@ namespace Assets.Scripts.Player
 					_movement.Run();
 					_footStep.Run();
 				}
+				#endregion
+
+				#region Sabrina
+				currentState = _movement.grounded;
+
+				if (Time.time > 3.0 && !lastState && currentState && !_movement.landedOnBubble) {
+					particle.Play();
+				}
+
+
+				lastState = _movement.grounded;
+				#endregion
 			}
 		}
 
+		#region Eric
 		void FixedUpdate()
 		{
 			//if game is not paused

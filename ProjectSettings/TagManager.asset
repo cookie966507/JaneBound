@@ -16,6 +16,7 @@ TagManager:
   - grabbable
   - Janitor
   - CabbageGuy
+  - Bubble
   layers:
   - Default
   - TransparentFX
