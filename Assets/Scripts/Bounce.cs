@@ -57,8 +57,9 @@ public class Bounce : MonoBehaviour
 		pushDir.y = pushHeight * 0.1f;
 		if (bounceObject.GetComponent<Rigidbody>() && !bounceObject.GetComponent<Rigidbody>().isKinematic)
 		{
+			Vector3 velocity = bounceObject.GetComponent<Rigidbody>().velocity;
 			bounceObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-			bounceObject.GetComponent<Rigidbody>().AddForce (Vector3.up * pushForce, ForceMode.VelocityChange);
+			bounceObject.GetComponent<Rigidbody>().AddForce ((Vector3.up  * pushForce) + (velocity * pushForce / 8), ForceMode.Impulse);
 			bounceObject.GetComponent<Rigidbody>().AddForce (Vector3.up * pushHeight, ForceMode.VelocityChange);
 		}
 	}

@@ -20,7 +20,7 @@ namespace Assets.Scripts.Player
 		public float accel = 70f;					//acceleration/deceleration in air or on the ground
 		public float airAccel = 18f;			
 		public float decel = 7.6f;
-		public float airDecel = 1.1f;
+		public float airDecel = 18f;
 		[Range(0f, 5f)]
 		public float rotateSpeed = 0.7f, airRotateSpeed = 0.4f;	//how fast to rotate on the ground, how fast to rotate in the air
 		public float maxSpeed = 9;								//maximum speed of movement in X/Z axis
