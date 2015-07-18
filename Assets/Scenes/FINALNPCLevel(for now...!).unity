@@ -6773,6 +6773,34 @@ Prefab:
       propertyPath: m_Name
       value: Particle System
       objectReference: {fileID: 0}
+    - target: {fileID: 19862064, guid: 0128de63408fbb2488a78b887f8a9c27, type: 2}
+      propertyPath: lengthInSec
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 19862064, guid: 0128de63408fbb2488a78b887f8a9c27, type: 2}
+      propertyPath: EmissionModule.rate.scalar
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 19862064, guid: 0128de63408fbb2488a78b887f8a9c27, type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.key1.rgba
+      value: 8159623
+      objectReference: {fileID: 0}
+    - target: {fileID: 19862064, guid: 0128de63408fbb2488a78b887f8a9c27, type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.key2.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 19862064, guid: 0128de63408fbb2488a78b887f8a9c27, type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 50501
+      objectReference: {fileID: 0}
+    - target: {fileID: 19862064, guid: 0128de63408fbb2488a78b887f8a9c27, type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 19862064, guid: 0128de63408fbb2488a78b887f8a9c27, type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.m_NumColorKeys
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0128de63408fbb2488a78b887f8a9c27, type: 2}
   m_IsPrefabParent: 0
