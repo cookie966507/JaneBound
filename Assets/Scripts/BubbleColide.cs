@@ -5,6 +5,7 @@ using Assets.Scripts.Util;
 public class BubbleColide : MonoBehaviour
 {
 	private Rigidbody myBody;
+	public ParticleSystem bubbleBurstSystem;
 
 	void Update ()
 	{
@@ -31,5 +32,19 @@ public class BubbleColide : MonoBehaviour
 				//this.transform.parent = go.transform;
 			}
 		}
+
+		if(col.gameObject.layer == 13){
+			bubbleBurstSystem.Play();
+			GetComponent<MeshRenderer>().enabled = false;
+			GetComponent<SphereCollider>().enabled = false;
+			StartCoroutine(WaitToDestroy(1.0f));
+		}
+	}
+
+	//destroys the bubble after waiting
+	IEnumerator WaitToDestroy(float waitTime){
+		if (waitTime > 0)
+			yield return new WaitForSeconds(waitTime);
+		Destroy(this.gameObject);
 	}
 }

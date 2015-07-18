@@ -11,7 +11,9 @@ public class Bounce : MonoBehaviour
 	public bool collisionEnter = true;						//are we checking for collider collision? (ie: hits the actual collider of the object)
 	public string[] effectedTags = {"Player"};				//which objects are vulnerable to this hazard (tags)
 	public AudioClip hitSound;								//sound to play when an object is hurt by this hazard
-	
+
+	public ParticleSystem bubbleBurstSystem;
+
 	//setup
 	void Awake()
 	{
@@ -19,7 +21,7 @@ public class Bounce : MonoBehaviour
 	}
 	
 	//if were checking for a physical collision, attack what hits this object
-	void OnCollisionEnter(Collision col)
+	void  OnCollisionEnter(Collision col)
 	{
 		if(!collisionEnter)
 			return;
@@ -35,8 +37,18 @@ public class Bounce : MonoBehaviour
 		}
 		if(col.transform.tag.Equals("Janitor") || col.gameObject.layer == 13)
 		{
-			Destroy(this.gameObject);
+			bubbleBurstSystem.Play();
+			GetComponent<MeshRenderer>().enabled = false;
+			GetComponent<SphereCollider>().enabled = false;
+			StartCoroutine(WaitToDestroy(1.0f));
 		}
+	}
+
+	//destroys the bubble after waiting
+	IEnumerator WaitToDestroy(float waitTime){
+		if (waitTime > 0)
+			yield return new WaitForSeconds(waitTime);
+		Destroy(this.gameObject);
 	}
 	
 	//if were checking for a trigger enter, attack what enters the trigger
