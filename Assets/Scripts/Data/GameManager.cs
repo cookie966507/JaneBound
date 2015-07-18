@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Util;
 
 #region ERIC
 namespace Assets.Scripts.Data
@@ -28,12 +29,12 @@ namespace Assets.Scripts.Data
 		void OnEnable()
 		{
 			Player.PlayerLife.PlayerDie += Lose;
-			Player.PlayerLife.PlayerWin += Win;
+			WinTrigger.PlayerWin += Win;
 		}
 		void OnDisable()
 		{
 			Player.PlayerLife.PlayerDie -= Lose;
-			Player.PlayerLife.PlayerWin -= Win;
+			WinTrigger.PlayerWin -= Win;
 		}
 
 		void Awake()
