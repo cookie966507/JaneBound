@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Assets.Scripts.Util;
+using Assets.Scripts.UI;
 
 #region ERIC
 namespace Assets.Scripts.Data
@@ -46,7 +47,6 @@ namespace Assets.Scripts.Data
 			}
 			else if(_instance != this)
 			{
-				Debug.Log("Too many game managers");
 				Destroy(this.gameObject);
 			}
 
@@ -87,6 +87,18 @@ namespace Assets.Scripts.Data
 			if(GamePause != null) GamePause();
 		}
 
+		public static void Load(string _level)
+		{
+			_state = GameState.Loading;
+			LoadingScreen.LevelToLoad = _level;
+			LoadingScreen._instance.LoadNextLevel();
+
+		}
+		public static void FinishedLoading()
+		{
+			_state = GameState.Running;
+		}
+
 		public static bool IsPaused
 		{
 			get { return _state.Equals(GameState.Paused); }
@@ -99,6 +111,10 @@ namespace Assets.Scripts.Data
 		{
 			get { return _shouldPause; }
 			set { _shouldPause = value; }
+		}
+		public static bool IsLoading
+		{
+			get { return _state.Equals(GameState.Loading); }
 		}
 	}
 }

@@ -33,7 +33,7 @@ namespace Assets.Scripts.UI.Menu
 
 		public void Continue()
 		{
-			Application.LoadLevel("Credits");
+			Data.GameManager.Load("Credits");
 			MenuManager.StateTransition(MenuManager.MenuState.Title, MenuManager.MenuState.Credits);
 			this.Deactivate();
 		}

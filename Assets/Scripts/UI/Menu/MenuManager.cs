@@ -38,13 +38,13 @@ namespace Assets.Scripts.UI.Menu
 				DontDestroyOnLoad(this.gameObject);
 				_currentState = MenuState.Title;
 				_previousState = MenuState.Title;
+				_menuElements = GameObject.FindObjectsOfType<MenuElement>();
 			}
 			else if(_instance != this) Destroy(this.gameObject);
 		}
 
 		void Start()
 		{
-			_menuElements = GameObject.FindObjectsOfType<MenuElement>();
 			StateTransition(_previousState, _currentState);
 		}
 
@@ -143,6 +143,15 @@ namespace Assets.Scripts.UI.Menu
 				break;
 			}
 		}
+
+		/*void OnLevelWasLoaded(int i)
+		{
+			if(i == 1)
+			{
+				MenuManager.StateTransition(MenuManager.MenuState.Title, MenuManager.MenuState.Title);
+				Debug.Log("Title");
+			}
+		}*/
 
 		public static MenuElement GetElement(Type _type)
 		{

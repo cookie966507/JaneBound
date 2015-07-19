@@ -33,28 +33,35 @@ namespace Assets.Scripts.UI.Menu
 		
 		void OnLevelWasLoaded(int i)
 		{
-			if(i == 0) _play.Select();
+			if(i == 1)
+			{
+				MenuManager.StateTransition(MenuManager.MenuState.Title, MenuManager.MenuState.Title);
+				_play.Select();
+			}
 		}
 
 		public void Play()
 		{
+			if(Data.GameManager.IsLoading) return;
 			MenuManager.StateTransition(_state, MenuManager.MenuState.Inactive);
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
-			Application.LoadLevel("FINALNPCLevel(for now...!)");
+			Data.GameManager.Load("FINALNPCLevel(for now...!)");
 		}
 
 		public void Settings()
 		{
+			if(Data.GameManager.IsLoading) return;
 			this.Deactivate();
 			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Settings);
 		}
 
 		public void Credits()
 		{
+			if(Data.GameManager.IsLoading) return;
 			MenuManager.StateTransition(_state, MenuManager.MenuState.Credits);
 			this.Deactivate();
-			Application.LoadLevel("Credits");
+			Data.GameManager.Load("Credits");
 		}
 	}
 }

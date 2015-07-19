@@ -27,7 +27,6 @@ public class GumPickup : MonoBehaviour
 		if(tag != "Pickup")
 		{
 			tag = "Pickup";
-			Debug.LogWarning ("'Coin' script attached to object not tagged 'Coin', tag added automatically", transform);
 		}
 		bubbleBlowing = GameObject.FindGameObjectWithTag("Player").GetComponent<BubbleBlowing>();
 		GetComponent<Collider>().isTrigger = true;
@@ -46,7 +45,6 @@ public class GumPickup : MonoBehaviour
 			triggerParent = GetComponentInChildren<TriggerParent>();
 			triggerParent.tagsToCheck = new string[1];
 			triggerParent.tagsToCheck[0] = "Player";
-			Debug.LogWarning ("No pickup radius 'bounds' trigger attached to coin: " + transform.name + ", one has been added automatically", bounds);
 		}
 	}
 	

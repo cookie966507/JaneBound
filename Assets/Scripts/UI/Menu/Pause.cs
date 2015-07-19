@@ -37,6 +37,7 @@ namespace Assets.Scripts.UI.Menu
 
 		public void Resume()
 		{
+			if(Data.GameManager.IsLoading) return;
 			GameManager.ShouldPause = false;
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
@@ -46,11 +47,13 @@ namespace Assets.Scripts.UI.Menu
 
 		public void Settings()
 		{
+			if(Data.GameManager.IsLoading) return;
 			MenuManager.StateTransition(MenuManager.MenuState.Pause, MenuManager.MenuState.Settings);
 		}
 
 		public void Restart()
 		{
+			if(Data.GameManager.IsLoading) return;
 			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Confirmation);
 			ConfirmationWindow.GetConfirmation(RestartLevel, ConfirmationWindow.ConfirmationType.AreYouSure, _state);
 		}
@@ -60,7 +63,7 @@ namespace Assets.Scripts.UI.Menu
 			{
 				this.Resume();
 
-				Application.LoadLevel(Application.loadedLevel);
+				Data.GameManager.Load(Application.loadedLevelName);
 				MenuManager.StateTransition(MenuManager.MenuState.Inactive, MenuManager.MenuState.Inactive);
 				this.Deactivate();
 			}
@@ -73,6 +76,7 @@ namespace Assets.Scripts.UI.Menu
 
 		public void Quit()
 		{
+			if(Data.GameManager.IsLoading) return;
 			MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, MenuManager.MenuState.Confirmation);
 			ConfirmationWindow.GetConfirmation(QuitLevel, ConfirmationWindow.ConfirmationType.AreYouSure, _state);
 		}
@@ -82,8 +86,7 @@ namespace Assets.Scripts.UI.Menu
 			if(_accept)
 			{
 				this.Resume();
-				Application.LoadLevel("Title");
-				MenuManager.StateTransition(MenuManager.MenuState.Title, MenuManager.MenuState.Title);
+				Data.GameManager.Load("Title");
 				Cursor.lockState = CursorLockMode.None;
 				Cursor.visible = true;
 			}

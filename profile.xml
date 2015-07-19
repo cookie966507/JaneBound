@@ -378,36 +378,6 @@
       <axis>8</axis>
       <joystick>0</joystick>
     </AxisConfiguration>
-    <AxisConfiguration name="MenuHorizontal">
-      <description />
-      <positive>None</positive>
-      <altPositive>None</altPositive>
-      <negative>None</negative>
-      <altNegative>None</altNegative>
-      <deadZone>0</deadZone>
-      <gravity>0</gravity>
-      <sensitivity>1000</sensitivity>
-      <snap>true</snap>
-      <invert>false</invert>
-      <type>AnalogAxis</type>
-      <axis>5</axis>
-      <joystick>0</joystick>
-    </AxisConfiguration>
-    <AxisConfiguration name="MenuVertical">
-      <description />
-      <positive>None</positive>
-      <altPositive>None</altPositive>
-      <negative>None</negative>
-      <altNegative>None</altNegative>
-      <deadZone>0</deadZone>
-      <gravity>0</gravity>
-      <sensitivity>1000</sensitivity>
-      <snap>true</snap>
-      <invert>false</invert>
-      <type>AnalogAxis</type>
-      <axis>6</axis>
-      <joystick>0</joystick>
-    </AxisConfiguration>
     <AxisConfiguration name="Shoot">
       <description />
       <positive>None</positive>
@@ -650,36 +620,6 @@
       <axis>4</axis>
       <joystick>0</joystick>
     </AxisConfiguration>
-    <AxisConfiguration name="MenuHorizontal">
-      <description />
-      <positive>Joystick1Button8</positive>
-      <altPositive>None</altPositive>
-      <negative>Joystick1Button7</negative>
-      <altNegative>None</altNegative>
-      <deadZone>0</deadZone>
-      <gravity>0</gravity>
-      <sensitivity>1000</sensitivity>
-      <snap>true</snap>
-      <invert>false</invert>
-      <type>Button</type>
-      <axis>0</axis>
-      <joystick>0</joystick>
-    </AxisConfiguration>
-    <AxisConfiguration name="MenuVertical">
-      <description />
-      <positive>Joystick1Button5</positive>
-      <altPositive>None</altPositive>
-      <negative>Joystick1Button6</negative>
-      <altNegative>None</altNegative>
-      <deadZone>0</deadZone>
-      <gravity>0</gravity>
-      <sensitivity>1000</sensitivity>
-      <snap>true</snap>
-      <invert>false</invert>
-      <type>Button</type>
-      <axis>0</axis>
-      <joystick>0</joystick>
-    </AxisConfiguration>
     <AxisConfiguration name="Shoot">
       <description />
       <positive>None</positive>
@@ -817,21 +757,6 @@
       <axis>0</axis>
       <joystick>0</joystick>
     </AxisConfiguration>
-    <AxisConfiguration name="MenuHorizontal">
-      <description />
-      <positive>None</positive>
-      <altPositive>None</altPositive>
-      <negative>None</negative>
-      <altNegative>None</altNegative>
-      <deadZone>0.2</deadZone>
-      <gravity>0</gravity>
-      <sensitivity>1</sensitivity>
-      <snap>false</snap>
-      <invert>false</invert>
-      <type>AnalogAxis</type>
-      <axis>6</axis>
-      <joystick>0</joystick>
-    </AxisConfiguration>
     <AxisConfiguration name="MenuVertical">
       <description />
       <positive>None</positive>
@@ -845,21 +770,6 @@
       <invert>false</invert>
       <type>AnalogAxis</type>
       <axis>1</axis>
-      <joystick>0</joystick>
-    </AxisConfiguration>
-    <AxisConfiguration name="MenuVertical">
-      <description />
-      <positive>None</positive>
-      <altPositive>None</altPositive>
-      <negative>None</negative>
-      <altNegative>None</altNegative>
-      <deadZone>0.2</deadZone>
-      <gravity>0</gravity>
-      <sensitivity>1</sensitivity>
-      <snap>false</snap>
-      <invert>false</invert>
-      <type>AnalogAxis</type>
-      <axis>7</axis>
       <joystick>0</joystick>
     </AxisConfiguration>
     <AxisConfiguration name="Jump">
@@ -980,21 +890,6 @@
       <invert>false</invert>
       <type>AnalogAxis</type>
       <axis>2</axis>
-      <joystick>0</joystick>
-    </AxisConfiguration>
-    <AxisConfiguration name="Shoot">
-      <description />
-      <positive>None</positive>
-      <altPositive>None</altPositive>
-      <negative>None</negative>
-      <altNegative>None</altNegative>
-      <deadZone>0</deadZone>
-      <gravity>0</gravity>
-      <sensitivity>1000</sensitivity>
-      <snap>true</snap>
-      <invert>false</invert>
-      <type>AnalogAxis</type>
-      <axis>5</axis>
       <joystick>0</joystick>
     </AxisConfiguration>
     <AxisConfiguration name="Sneak">

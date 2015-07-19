@@ -34,7 +34,7 @@ namespace Assets.Scripts.UI.Menu
 		public void Restart()
 		{
 			Data.GameManager.ShouldPause = false;
-			Application.LoadLevel(Application.loadedLevel);
+			Data.GameManager.Load(Application.loadedLevelName);
 			MenuManager.StateTransition(MenuManager.MenuState.Inactive, MenuManager.MenuState.Inactive);
 			this.Deactivate();
 			Cursor.lockState = CursorLockMode.Locked;
@@ -43,7 +43,7 @@ namespace Assets.Scripts.UI.Menu
 
 		public void Quit()
 		{
-			Application.LoadLevel("Title");
+			Data.GameManager.Load("Title");
 			MenuManager.StateTransition(MenuManager.MenuState.Title, MenuManager.MenuState.Title);
 			Cursor.lockState = CursorLockMode.None;
 			Cursor.visible = true;

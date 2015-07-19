@@ -29,7 +29,8 @@ namespace Assets.Scripts.UI.Menu
 		}
 		public void Back()
 		{
-			Application.LoadLevel("Title");
+			if(Data.GameManager.IsLoading) return;
+			Data.GameManager.Load("Title");
 			MenuManager.StateTransition(MenuManager.MenuState.Title, MenuManager.MenuState.Title);
 			this.Deactivate();
 		}

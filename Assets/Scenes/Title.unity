@@ -1408,34 +1408,6 @@ MonoBehaviour:
       type: 3
       axis: 8
       joystick: 0
-    - name: MenuHorizontal
-      description: 
-      positive: 0
-      negative: 0
-      altPositive: 0
-      altNegative: 0
-      deadZone: 0
-      gravity: 0
-      sensitivity: 1000
-      snap: 1
-      invert: 0
-      type: 3
-      axis: 5
-      joystick: 0
-    - name: MenuVertical
-      description: 
-      positive: 0
-      negative: 0
-      altPositive: 0
-      altNegative: 0
-      deadZone: 0
-      gravity: 0
-      sensitivity: 1000
-      snap: 1
-      invert: 0
-      type: 3
-      axis: 6
-      joystick: 0
     - name: Shoot
       description: 
       positive: 0
@@ -1663,34 +1635,6 @@ MonoBehaviour:
       type: 3
       axis: 4
       joystick: 0
-    - name: MenuHorizontal
-      description: 
-      positive: 358
-      negative: 357
-      altPositive: 0
-      altNegative: 0
-      deadZone: 0
-      gravity: 0
-      sensitivity: 1000
-      snap: 1
-      invert: 0
-      type: 0
-      axis: 0
-      joystick: 0
-    - name: MenuVertical
-      description: 
-      positive: 355
-      negative: 356
-      altPositive: 0
-      altNegative: 0
-      deadZone: 0
-      gravity: 0
-      sensitivity: 1000
-      snap: 1
-      invert: 0
-      type: 0
-      axis: 0
-      joystick: 0
     - name: Shoot
       description: 
       positive: 0
@@ -1820,20 +1764,6 @@ MonoBehaviour:
       type: 3
       axis: 0
       joystick: 0
-    - name: MenuHorizontal
-      description: 
-      positive: 0
-      negative: 0
-      altPositive: 0
-      altNegative: 0
-      deadZone: .200000003
-      gravity: 0
-      sensitivity: 1
-      snap: 0
-      invert: 0
-      type: 3
-      axis: 6
-      joystick: 0
     - name: MenuVertical
       description: 
       positive: 0
@@ -1847,20 +1777,6 @@ MonoBehaviour:
       invert: 0
       type: 3
       axis: 1
-      joystick: 0
-    - name: MenuVertical
-      description: 
-      positive: 0
-      negative: 0
-      altPositive: 0
-      altNegative: 0
-      deadZone: .200000003
-      gravity: 0
-      sensitivity: 1
-      snap: 0
-      invert: 0
-      type: 3
-      axis: 7
       joystick: 0
     - name: Jump
       description: 
@@ -1974,20 +1890,6 @@ MonoBehaviour:
       type: 3
       axis: 2
       joystick: 0
-    - name: Shoot
-      description: 
-      positive: 0
-      negative: 0
-      altPositive: 0
-      altNegative: 0
-      deadZone: 0
-      gravity: 0
-      sensitivity: 1000
-      snap: 1
-      invert: 0
-      type: 3
-      axis: 5
-      joystick: 0
     - name: Sneak
       description: 
       positive: 352
@@ -2002,7 +1904,7 @@ MonoBehaviour:
       type: 0
       axis: 0
       joystick: 0
-    isExpanded: 0
+    isExpanded: 1
   defaultConfiguration: KeyboardAndMouse
   dontDestroyOnLoad: 1
   ignoreTimescale: 0

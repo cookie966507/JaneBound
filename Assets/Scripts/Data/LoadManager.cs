@@ -21,7 +21,6 @@ namespace Assets.Scripts.Data
 			}
 			else if (_instance != this)
 			{
-				Debug.Log("Too many load managers");
 				Destroy(this.gameObject);
 			}
 		}

@@ -9,8 +9,8 @@ namespace Assets.Scripts.Player
 		private float _health = 100f;
 		private bool _alive = true;
 
-		private float _resetLevelTimer = 0f;
-		private float _resetLevelDelay = 5f;
+//		private float _resetLevelTimer = 0f;
+//		private float _resetLevelDelay = 5f;
 
 		//public delegate events to assign this controller to all listening components
 		public delegate void PlayerDeath();
