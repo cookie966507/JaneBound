@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class Navigator : MonoBehaviour {
-	
+
+	public Vector3 myVector;
+	public bool hasDestination = true;
 	public Transform destination;
 	private NavMeshAgent myAgent;
 
@@ -13,9 +15,8 @@ public class Navigator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(destination != null){
-			myAgent.SetDestination(destination.position);
-			print ("LETS GO");
+		if(hasDestination){
+			myAgent.SetDestination(myVector);
 		}
 	}
 }
