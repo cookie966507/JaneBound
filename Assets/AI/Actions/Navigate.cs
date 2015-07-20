@@ -5,10 +5,13 @@ using RAIN.Action;
 using RAIN.Core;
 
 [RAINAction]
-public class ayylmao : RAINAction
+public class Navigate : RAINAction
 {
     public override void Start(RAIN.Core.AI ai)
     {
+
+		Navigator nav = ai.Body.transform.GetComponent<Navigator>();
+		nav.destination = GameObject.Find("Player").transform;
         base.Start(ai);
     }
 
