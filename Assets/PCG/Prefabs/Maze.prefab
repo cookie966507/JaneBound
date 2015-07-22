@@ -43,22 +43,30 @@ MonoBehaviour:
   generationStepDelay: 0
   passagePrefab: {fileID: 11484492, guid: bbba21e3feafa4ffb8e90f1ca25d3726, type: 2}
   wallPrefabs:
-  - {fileID: 11404288, guid: 46447180aab9d4f578c074914423e57f, type: 2}
-  - {fileID: 11412446, guid: 2a20a9989084d4009a152a9c23c6dc38, type: 2}
+  - {fileID: 11438030, guid: 46447180aab9d4f578c074914423e57f, type: 2}
+  - {fileID: 11448872, guid: 2a20a9989084d4009a152a9c23c6dc38, type: 2}
   roomSettings:
-  - floorMaterial: {fileID: 2100000, guid: 39a4a9446a275cb4bb24859ea14bedc6, type: 2}
+  - floorMaterial: {fileID: 2100000, guid: 578dc0a0972a877468032fe8a5b06fc1, type: 2}
     wallMaterial: {fileID: 2100000, guid: 30512805ca4c0ec40935d3f0e73f5b28, type: 2}
-  - floorMaterial: {fileID: 2100000, guid: 39a4a9446a275cb4bb24859ea14bedc6, type: 2}
+  - floorMaterial: {fileID: 2100000, guid: 578dc0a0972a877468032fe8a5b06fc1, type: 2}
     wallMaterial: {fileID: 2100000, guid: 5ed79c3ca899fa9458cbeb11214af35d, type: 2}
-  - floorMaterial: {fileID: 2100000, guid: 39a4a9446a275cb4bb24859ea14bedc6, type: 2}
+  - floorMaterial: {fileID: 2100000, guid: 578dc0a0972a877468032fe8a5b06fc1, type: 2}
     wallMaterial: {fileID: 2100000, guid: d3efc7283dcb8094cba7708460fc0ec9, type: 2}
-  - floorMaterial: {fileID: 2100000, guid: 39a4a9446a275cb4bb24859ea14bedc6, type: 2}
+  - floorMaterial: {fileID: 2100000, guid: 578dc0a0972a877468032fe8a5b06fc1, type: 2}
     wallMaterial: {fileID: 2100000, guid: ce03475f882338244bd0eb4d4f408a76, type: 2}
-  doorPrefab: {fileID: 11466034, guid: 93e598c6b90214c61ba6c271d72bb0c1, type: 2}
-  doorProbability: .100000001
+  - floorMaterial: {fileID: 2100000, guid: 578dc0a0972a877468032fe8a5b06fc1, type: 2}
+    wallMaterial: {fileID: 2100000, guid: ce03475f882338244bd0eb4d4f408a76, type: 2}
+  - floorMaterial: {fileID: 2100000, guid: 578dc0a0972a877468032fe8a5b06fc1, type: 2}
+    wallMaterial: {fileID: 2100000, guid: ce03475f882338244bd0eb4d4f408a76, type: 2}
+  - floorMaterial: {fileID: 2100000, guid: 578dc0a0972a877468032fe8a5b06fc1, type: 2}
+    wallMaterial: {fileID: 2100000, guid: ce03475f882338244bd0eb4d4f408a76, type: 2}
+  - floorMaterial: {fileID: 2100000, guid: 578dc0a0972a877468032fe8a5b06fc1, type: 2}
+    wallMaterial: {fileID: 2100000, guid: ce03475f882338244bd0eb4d4f408a76, type: 2}
+  doorPrefab: {fileID: 11423712, guid: 93e598c6b90214c61ba6c271d72bb0c1, type: 2}
+  doorProbability: .200000003
   size:
-    x: 20
-    z: 20
+    x: 10
+    z: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -72,7 +80,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roomSettings.Array.size
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cellPrefab
@@ -89,11 +97,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: size.x
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: size.z
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
@@ -120,17 +128,17 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: wallPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 11404288, guid: 46447180aab9d4f578c074914423e57f,
+      objectReference: {fileID: 11438030, guid: 46447180aab9d4f578c074914423e57f,
         type: 2}
     - target: {fileID: 0}
       propertyPath: wallPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 11412446, guid: 2a20a9989084d4009a152a9c23c6dc38,
+      objectReference: {fileID: 11448872, guid: 2a20a9989084d4009a152a9c23c6dc38,
         type: 2}
     - target: {fileID: 0}
       propertyPath: roomSettings.Array.data[0].floorMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 39a4a9446a275cb4bb24859ea14bedc6, type: 2}
+      objectReference: {fileID: 2100000, guid: 578dc0a0972a877468032fe8a5b06fc1, type: 2}
     - target: {fileID: 0}
       propertyPath: roomSettings.Array.data[0].wallMaterial
       value: 
@@ -138,7 +146,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: roomSettings.Array.data[1].floorMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 39a4a9446a275cb4bb24859ea14bedc6, type: 2}
+      objectReference: {fileID: 2100000, guid: 578dc0a0972a877468032fe8a5b06fc1, type: 2}
     - target: {fileID: 0}
       propertyPath: roomSettings.Array.data[1].wallMaterial
       value: 
@@ -146,7 +154,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: roomSettings.Array.data[2].floorMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 39a4a9446a275cb4bb24859ea14bedc6, type: 2}
+      objectReference: {fileID: 2100000, guid: 578dc0a0972a877468032fe8a5b06fc1, type: 2}
     - target: {fileID: 0}
       propertyPath: roomSettings.Array.data[2].wallMaterial
       value: 
@@ -154,7 +162,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: roomSettings.Array.data[3].floorMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 39a4a9446a275cb4bb24859ea14bedc6, type: 2}
+      objectReference: {fileID: 2100000, guid: 578dc0a0972a877468032fe8a5b06fc1, type: 2}
     - target: {fileID: 0}
       propertyPath: roomSettings.Array.data[3].wallMaterial
       value: 
@@ -162,11 +170,11 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: doorPrefab
       value: 
-      objectReference: {fileID: 11466034, guid: 93e598c6b90214c61ba6c271d72bb0c1,
+      objectReference: {fileID: 11423712, guid: 93e598c6b90214c61ba6c271d72bb0c1,
         type: 2}
     - target: {fileID: 0}
       propertyPath: doorProbability
-      value: .100000001
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
