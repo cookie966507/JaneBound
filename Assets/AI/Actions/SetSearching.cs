@@ -5,14 +5,12 @@ using RAIN.Action;
 using RAIN.Core;
 
 [RAINAction]
-public class SetDestination : RAINAction
+public class SetSearching : RAINAction
 {
     public override void Start(RAIN.Core.AI ai)
     {
-		//Navigator nav = ai.Body.transform.GetComponent<Navigator>();
-		Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-		//Debug.Log("SET DESTINATION");
-		ai.WorkingMemory.SetItem<Vector3>("destination", playerPos);
+		bool currentSearchingness = ai.WorkingMemory.GetItem<bool>("isSearching");
+		ai.WorkingMemory.SetItem<bool>("isSearching", !currentSearchingness);
         base.Start(ai);
     }
 
