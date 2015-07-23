@@ -17,7 +17,8 @@ public class BubbleBlowing : MonoBehaviour {
 	public float start_scale = 0.1f; // how big does the bubble start out
 	public Texture2D bubble_texture;
 	public float bubble_force = 1000;
-
+	public AudioClip bubbleBlowing;
+	public AudioClip bubbleThrowing;
 	private GameObject bubble;
 	private PlayerMove playerMoveScript;
 	private bool shooting;
@@ -27,12 +28,18 @@ public class BubbleBlowing : MonoBehaviour {
 	private CameraFollow cameraFollowScript;
 
 	private bool _firstShot;
+	private AudioSource asBubbleBlow;
+	private AudioSource asBubbleThrow;
 
 	// Use this for initialization
 	void Start () {
 		playerMoveScript = GetComponent<PlayerMove>();
 		mainCam = GameObject.FindGameObjectWithTag("MainCamera");
 		cameraFollowScript = mainCam.GetComponent<CameraFollow>();
+		asBubbleBlow = gameObject.AddComponent<AudioSource>();
+		asBubbleBlow.clip = bubbleBlowing;
+		asBubbleThrow = gameObject.AddComponent<AudioSource>();
+		asBubbleThrow.clip = bubbleThrowing;
 	}
 
 	void Update () {
@@ -125,6 +132,7 @@ public class BubbleBlowing : MonoBehaviour {
 		
 		bubble.transform.position = currentLoc;
 		bubble.transform.localScale = Vector3.one;
+		SoundManager.PlaySFX(asBubbleBlow);
 	}
 
 
@@ -135,6 +143,10 @@ public class BubbleBlowing : MonoBehaviour {
 		Rigidbody bubble_body = bubble.AddComponent<Rigidbody>();
 		bubble_body.AddForce(mainCam.transform.forward * bubble_force);
 		bubble.GetComponent<Bounce>().collisionEnter = true;
+		if(bubble!=null)
+		{
+			SoundManager.PlaySFX(asBubbleThrow);
+		}
 	}
 
 

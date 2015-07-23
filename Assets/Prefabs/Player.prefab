@@ -2519,12 +2519,14 @@ MonoBehaviour:
   start_bubble_distance: 1
   current_bubble_distance: 1
   bubble_height: 1.70000005
-  max_scale: 3
+  max_scale: 5
   growth_rate: 6
   current_scale: .100000001
   start_scale: .100000001
   bubble_texture: {fileID: 0}
   bubble_force: 1000
+  bubbleBlowing: {fileID: 8300000, guid: 7d6ee89df6ece4e66accbbcb2d28fc3b, type: 3}
+  bubbleThrowing: {fileID: 8300000, guid: ffdb9b4eab8ee4bd991313bf63db7f5b, type: 3}
   number_of_bubbles: 0
 --- !u!114 &11458724
 MonoBehaviour:

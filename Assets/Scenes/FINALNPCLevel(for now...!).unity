@@ -15605,10 +15605,6 @@ Prefab:
       propertyPath: _ragdoll
       value: 
       objectReference: {fileID: 87602060}
-    - target: {fileID: 11437094, guid: 7d75bf7b3282feb4cb24a4e4fa1fb171, type: 2}
-      propertyPath: max_scale
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d75bf7b3282feb4cb24a4e4fa1fb171, type: 2}
   m_IsPrefabParent: 0

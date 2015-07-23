@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Assets.Scripts.Data;
 using System.Collections;
 
 //add this class to hazards such as lava or spikes, use "effectedTags" to choose which objects can be hurt by this hazard
@@ -10,37 +11,52 @@ public class Bounce : MonoBehaviour
 	public bool triggerEnter;								//are we checking for a trigger collision? (ie: hits a child trigger symbolising area of effect)
 	public bool collisionEnter = true;						//are we checking for collider collision? (ie: hits the actual collider of the object)
 	public string[] effectedTags = {"Player"};				//which objects are vulnerable to this hazard (tags)
-	public AudioClip hitSound;								//sound to play when an object is hurt by this hazard
+	public AudioClip hitSound;	
+	public AudioClip bubblePop;	
 
 	public ParticleSystem bubbleBurstSystem;
 
+	private AudioSource asBubbleBounce;
+	private AudioSource asBubblePop;
 	//setup
 	void Awake()
 	{
 		GetComponent<AudioSource>().playOnAwake = false;
+		asBubbleBounce = gameObject.AddComponent<AudioSource>();
+		asBubbleBounce.clip = hitSound;
+		asBubblePop = gameObject.AddComponent<AudioSource>();
+		asBubblePop.clip = bubblePop;
 	}
 	
+
 	//if were checking for a physical collision, attack what hits this object
 	void  OnCollisionEnter(Collision col)
 	{
 		if(!collisionEnter)
 			return;
 		foreach(string tag in effectedTags)
-			if(col.transform.tag == tag)
 		{
-			MakeBounce (col.gameObject, pushHeight, pushForce);
-			if (hitSound)
+			if(col.transform.tag == tag)
 			{
-				GetComponent<AudioSource>().clip = hitSound;
-				GetComponent<AudioSource>().Play();
+				MakeBounce (col.gameObject, pushHeight, pushForce);
+				if (hitSound)
+				{
+					asBubbleBounce.Play();
+				}
 			}
 		}
 		if(col.transform.tag.Equals("Janitor") || col.gameObject.layer == 13)
 		{
 			bubbleBurstSystem.Play();
+
+			if(asBubblePop!=null)
+				asBubblePop.Play();
+
 			GetComponent<MeshRenderer>().enabled = false;
 			GetComponent<SphereCollider>().enabled = false;
 			StartCoroutine(WaitToDestroy(1.0f));
+
+
 		}
 	}
 
