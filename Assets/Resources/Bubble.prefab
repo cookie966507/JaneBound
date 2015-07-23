@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc7db1f2e3584ae4ab311f3f9e8367b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 25
+  pushForce: 15
   pushHeight: 6
   triggerEnter: 0
   collisionEnter: 1
@@ -2499,6 +2499,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pushForce
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

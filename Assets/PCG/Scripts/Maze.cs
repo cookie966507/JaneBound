@@ -48,7 +48,7 @@ public class Maze : MonoBehaviour {
 	}
 	
 	public IEnumerator Generate () {
-		WaitForSeconds delay = new WaitForSeconds(generationStepDelay);
+		WaitForSeconds delay = new WaitForSeconds(0);
 		cells = new MazeCell[size.x, size.z];
 		List<MazeCell> activeCells = new List<MazeCell>();
 		DoFirstGenerationStep(activeCells);

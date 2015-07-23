@@ -29,6 +29,9 @@ public class BubbleColide : MonoBehaviour
 
 				Destroy (myBody);
 				Destroy(this.GetComponent<Assets.Scripts.Util.VelocityInfo>());
+
+				SphereCollider myCollider = this.transform.GetComponent<SphereCollider>();
+				myCollider.radius = 0.5f;
 				//this.transform.parent = go.transform;
 			}
 		}
