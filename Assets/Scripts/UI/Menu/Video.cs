@@ -62,13 +62,13 @@ namespace Assets.Scripts.UI.Menu
 			_fullscreen.isOn = false;
             _resolutionText.text = _res[(int)_resolution.value].width + "x" + _res[(int)_resolution.value].height;
 
-#if !UNITY_WEBPLAYER
+//#if !UNITY_WEBPLAYER
 			_quality.minValue = 0f;
 			_quality.maxValue = QualitySettings.names.Length - 1;
 
 			_quality.value = _data.QualityIndex;
             _qualityText.text = QualitySettings.names[(int)_quality.value];
-#else
+/*#else
 			_quality.interactable = false;
 			
 			Navigation _newNav = new Navigation();
@@ -80,7 +80,7 @@ namespace Assets.Scripts.UI.Menu
 			_newNav.selectOnUp = _resolution;
 			_newNav.selectOnDown = _fullscreen.navigation.selectOnDown;
 			_fullscreen.navigation = _newNav;
-#endif
+#endif*/
 			ApplySettings(true);
         }
 
@@ -140,9 +140,10 @@ namespace Assets.Scripts.UI.Menu
 				_res[(int)_resolution.value].height,
 				_fullscreen.isOn);
 			
-			FindObjectOfType<Camera>().ResetAspect();
-			
 			QualitySettings.SetQualityLevel((int)_quality.value);
+
+			FindObjectOfType<Camera>().ResetAspect();
+
 			SaveManager.SaveVideo((int)_resolution.value, (int)_quality.value, _fullscreen.isOn);
 			_update = false;
 			if(_back) this.GoBack();

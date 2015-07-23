@@ -47,8 +47,8 @@ namespace Assets.Scripts.UI.Menu
         }
         private static void doAnswer(bool yesNo)
         {
-			Menu.MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, _returnState);
 			confirmFunction(yesNo);
+			Menu.MenuManager.StateTransition(MenuManager.MenuState.NoStateOverride, _returnState);
 			_win.enabled = false;
         }
     }
