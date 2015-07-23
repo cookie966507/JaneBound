@@ -17,6 +17,7 @@ TagManager:
   - Janitor
   - CabbageGuy
   - Bubble
+  - NavPlayer
   layers:
   - Default
   - TransparentFX

@@ -5,10 +5,13 @@ using RAIN.Action;
 using RAIN.Core;
 
 [RAINAction]
-public class ayylmao : RAINAction
+public class SetSearching : RAINAction
 {
     public override void Start(RAIN.Core.AI ai)
     {
+		bool currentSearchingness = ai.WorkingMemory.GetItem<bool>("isSearching");
+		ai.WorkingMemory.SetItem<bool>("isSearching", !currentSearchingness);
+		//ai.WorkingMemory.SetItem<bool>("hasDestination", false);
         base.Start(ai);
     }
 
