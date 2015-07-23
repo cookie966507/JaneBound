@@ -5,12 +5,13 @@ using RAIN.Action;
 using RAIN.Core;
 
 [RAINAction]
-public class StartChasing : RAINAction
+public class SetHasDestination : RAINAction
 {
     public override void Start(RAIN.Core.AI ai)
     {
-		Debug.Log ("start chasing");
-		ai.WorkingMemory.SetItem<bool>("hasDestination", true);
+		//Debug.Log ("start chasing");
+		bool myHasDestination = ai.WorkingMemory.GetItem<bool>("hasDestination");
+		ai.WorkingMemory.SetItem<bool>("hasDestination", !myHasDestination);
         base.Start(ai);
     }
 

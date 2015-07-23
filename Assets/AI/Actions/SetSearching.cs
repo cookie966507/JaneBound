@@ -11,6 +11,7 @@ public class SetSearching : RAINAction
     {
 		bool currentSearchingness = ai.WorkingMemory.GetItem<bool>("isSearching");
 		ai.WorkingMemory.SetItem<bool>("isSearching", !currentSearchingness);
+		//ai.WorkingMemory.SetItem<bool>("hasDestination", false);
         base.Start(ai);
     }
 
