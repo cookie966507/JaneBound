@@ -1,4 +1,10 @@
-﻿#region Chris/Shawn
+﻿
+/*
+ * MazeDirections.cs
+ * Handles all actions done to singular maze directions.
+ */
+
+#region Chris/Shawn
 using UnityEngine;
 
 public static class MazeDirections {

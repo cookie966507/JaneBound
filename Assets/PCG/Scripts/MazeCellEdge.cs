@@ -1,4 +1,10 @@
-﻿#region Chris/Shawn
+﻿
+/*
+ * MazeCellEdge.cs
+ * Defines a single edge of a cell.
+ */
+
+#region Chris/Shawn
 using UnityEngine;
 
 public abstract class MazeCellEdge : MonoBehaviour{

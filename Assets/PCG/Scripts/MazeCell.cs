@@ -1,4 +1,10 @@
-﻿#region Chris/Shawn
+﻿
+/*
+ * MazeCell.cs
+ * Defines a single cell of the maze.
+ */
+
+#region Chris/Shawn
 using UnityEngine;
 using System.Collections;
 

@@ -1,3 +1,11 @@
+
+/*
+ * SetSearching.cs
+ * Rain AI action, toggles whether the NPC is searching for the player or not.
+ * If the NPC is not searching, then this means they are actively chasing the player.
+ */
+
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +21,6 @@ public class SetSearching : RAINAction
     {
 		bool currentSearchingness = ai.WorkingMemory.GetItem<bool>("isSearching");
 		ai.WorkingMemory.SetItem<bool>("isSearching", !currentSearchingness);
-		//ai.WorkingMemory.SetItem<bool>("hasDestination", false);
         base.Start(ai);
     }
 

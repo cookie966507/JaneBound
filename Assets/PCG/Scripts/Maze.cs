@@ -1,4 +1,10 @@
-﻿#region Chris/Shawn
+﻿
+/*
+ * Maze.cs
+ * Handles generating the maze as a whole.
+ */
+
+#region Chris/Shawn
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;

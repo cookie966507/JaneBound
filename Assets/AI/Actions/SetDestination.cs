@@ -1,3 +1,9 @@
+
+/*
+ * SetDestination.cs
+ * Rain AI action, sets the NPCs destination to where the player is.
+ */
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,9 +17,11 @@ public class SetDestination : RAINAction
 {
     public override void Start(RAIN.Core.AI ai)
     {
-		//Navigator nav = ai.Body.transform.GetComponent<Navigator>();
+		//set the FOV to ALERTS
+		FOV2DVisionCone FOV = ai.Body.transform.Find("FOV2D").GetComponent<FOV2DVisionCone>();
+		FOV.status = FOV2DVisionCone.Status.Alert;
+
 		Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-		//Debug.Log("SET DESTINATION");
 		ai.WorkingMemory.SetItem<Vector3>("destination", playerPos);
         base.Start(ai);
     }

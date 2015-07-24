@@ -43,6 +43,7 @@ public class Search : RAINAction
 
 		GameObject seePlayer = ai.WorkingMemory.GetItem<GameObject>("varPlayer");
 
+		//if we see the player while searching
 		if(seePlayer != null){
 			bool currentSearchingness = ai.WorkingMemory.GetItem<bool>("isSearching");
 			ai.WorkingMemory.SetItem<bool>("isSearching", !currentSearchingness);

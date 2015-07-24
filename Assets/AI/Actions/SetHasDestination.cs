@@ -1,3 +1,10 @@
+
+/*
+ * SetHasDestination.cs
+ * Rain AI action, toggels whether the AI has a destination or not (if they're chasing the player or not).
+ * If the NPC has no destination, they go back to patrolling.
+ */
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
