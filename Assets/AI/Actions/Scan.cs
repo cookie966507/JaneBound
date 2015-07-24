@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using RAIN.Action;
 using RAIN.Core;
 
+#region Chris
+
 [RAINAction]
 public class Scan : RAINAction
 {	
@@ -36,3 +38,5 @@ public class Scan : RAINAction
         base.Stop(ai);
     }
 }
+
+#endregion

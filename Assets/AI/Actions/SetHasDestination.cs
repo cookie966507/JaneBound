@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using RAIN.Action;
 using RAIN.Core;
 
+#region Chris
+
 [RAINAction]
 public class SetHasDestination : RAINAction
 {
@@ -25,3 +27,5 @@ public class SetHasDestination : RAINAction
         base.Stop(ai);
     }
 }
+
+#endregion

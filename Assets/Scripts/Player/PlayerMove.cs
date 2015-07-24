@@ -282,9 +282,6 @@ namespace Assets.Scripts.Player
 		//jumping
 		private void JumpCalculations()
 		{
-			if(InputManager.GetButtonDown ("Jump")){
-				Debug.Log("JUMP BUTTON DOWN");
-			}
 
 			//keep how long we have been on the ground
 			groundedCount = (grounded) ? groundedCount += Time.deltaTime : 0f;
@@ -331,7 +328,7 @@ namespace Assets.Scripts.Player
 				GetComponent<Rigidbody>().AddRelativeForce (jumpVelocity, ForceMode.Impulse);
 				airPressTime = 0f;
 			}
-			print ("jump");
+			//print ("jump");
 		}
 		
 		#region SABRINA

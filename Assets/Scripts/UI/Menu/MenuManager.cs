@@ -166,17 +166,20 @@ namespace Assets.Scripts.UI.Menu
 		}
 
 		public static void ActivateElement(Type _type)
-		{
-			MenuElement _element;
-			for(int i = 0; i < _menuElements.Length; i++)
-			{
-				if(_menuElements[i].GetType().Equals(_type))
+		{	
+			if(_menuElements != null){
+				MenuElement _element;
+				for(int i = 0; i < _menuElements.Length; i++)
 				{
-					_element = _menuElements[i];
-					_element.Activate();
-					break;
+					if(_menuElements[i].GetType().Equals(_type))
+					{
+						_element = _menuElements[i];
+						_element.Activate();
+						break;
+					}
 				}
 			}
+
 		}
 
 		public static void DeactivateAll()

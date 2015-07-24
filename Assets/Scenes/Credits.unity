@@ -1803,7 +1803,9 @@ TextMesh:
 
     Bubble Blowing
 
-    FOV Spotter Cop AI
+    FOV Projection
+
+    New Cop AI
 
 '
   m_OffsetZ: 0
@@ -5808,6 +5810,7 @@ TextMesh:
 
     AI
 
+    Procedural Generation
 
 '
   m_OffsetZ: 0

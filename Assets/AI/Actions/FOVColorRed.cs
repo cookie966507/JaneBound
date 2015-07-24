@@ -1,8 +1,16 @@
+
+/*
+ * FOVColorRed.cs
+ * Rain AI action, executed to change the NPCs FOV to ALERT color.
+ */
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RAIN.Action;
 using RAIN.Core;
+
+#region Chris
 
 [RAINAction]
 public class FOVColorRed : RAINAction
@@ -25,3 +33,5 @@ public class FOVColorRed : RAINAction
         base.Stop(ai);
     }
 }
+
+#endregion

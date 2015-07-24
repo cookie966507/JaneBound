@@ -31,14 +31,16 @@ MonoBehaviour:
       priority=&quot;&quot; name=&quot;if we''ve seen the player&quot; debugbreak=&quot;False&quot;
       constraint=&quot;hasDestination&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot;
       succeed=&quot;all&quot; repeatuntil=&quot;&quot; name=&quot;parallel&quot; fail=&quot;any&quot;
-      debugbreak=&quot;False&quot;&gt;&lt;selector usepriorities=&quot;False&quot;
+      debugbreak=&quot;False&quot;&gt;&lt;action repeatuntil=&quot;&quot; parametervalues=&quot;&quot;
+      parameters=&quot;&quot; namespace=&quot;&quot; name=&quot;action&quot; debugbreak=&quot;False&quot;
+      classname=&quot;BangAction&quot; /&gt;&lt;selector usepriorities=&quot;False&quot;
       repeatuntil=&quot;running&quot; name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
       repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;if we''re not searching,
       chase&quot; debugbreak=&quot;False&quot; constraint=&quot;!isSearching&quot;&gt;&lt;parallel
       tiebreaker=&quot;fail&quot; succeed=&quot;all&quot; repeatuntil=&quot;&quot;
       name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;move
       turnspeed=&quot;100&quot; repeatuntil=&quot;&quot; name=&quot;move towards player&quot;
-      movetarget=&quot;destination&quot; movespeed=&quot;4&quot; facetarget=&quot;destination&quot;
+      movetarget=&quot;destination&quot; movespeed=&quot;5&quot; facetarget=&quot;destination&quot;
       debugbreak=&quot;False&quot; closeenoughdistance=&quot;0&quot; closeenoughangle=&quot;0&quot;
       /&gt;&lt;action repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
       namespace=&quot;&quot; name=&quot;check to see if we''ve arrived&quot; debugbreak=&quot;False&quot;

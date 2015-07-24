@@ -1,11 +1,19 @@
+
+/*
+ * Navigate.cs
+ * This script detects if the cop has reached his destination (the last place he saw the player).
+ * If so, start searching
+ */
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RAIN.Action;
 using RAIN.Core;
 
-// This script detects if the cop has reached his destination (the last place he saw the player).
-// If so, look around, then go back to his spot.
+#region Chris
+
+
 
 [RAINAction]
 public class Navigate : RAINAction
@@ -48,3 +56,5 @@ public class Navigate : RAINAction
         base.Stop(ai);
     }
 }
+
+#endregion

@@ -1,8 +1,16 @@
+
+/*
+ * FOVColorChange.cs
+ * Rain AI action, executed to change the NPCs FOV to IDLE color.
+ */
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RAIN.Action;
 using RAIN.Core;
+
+#region Chris
 
 [RAINAction]
 public class FOVColorChange : RAINAction
@@ -25,3 +33,5 @@ public class FOVColorChange : RAINAction
         base.Stop(ai);
     }
 }
+
+#endregion
