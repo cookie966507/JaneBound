@@ -8,6 +8,7 @@ namespace Assets.Scripts.Data
 {
 	public class GameManager : MonoBehaviour
 	{
+
 		public enum GameState
 		{
 			Loading,
@@ -49,7 +50,7 @@ namespace Assets.Scripts.Data
 			{
 				Destroy(this.gameObject);
 			}
-
+			BeginGame();
 			_state = GameState.Running;
 		}
 
@@ -64,6 +65,9 @@ namespace Assets.Scripts.Data
 			{
 				_state = GameState.Running;
 				if(GameUnpause != null) GameUnpause();
+			}
+			if (Input.GetKeyDown(KeyCode.F)) {
+				RestartGame();
 			}
 		}
 
@@ -115,6 +119,27 @@ namespace Assets.Scripts.Data
 		public static bool IsLoading
 		{
 			get { return _state.Equals(GameState.Loading); }
+		}
+		/// <summary>
+		/// ////////////////////////////////////////////////////////////////
+		/// </summary>
+		private void Start () {
+			BeginGame();
+		}
+
+		public Maze mazePrefab;
+		
+		private Maze mazeInstance;
+		
+		private void BeginGame () {
+			mazeInstance = Instantiate(mazePrefab) as Maze;
+			StartCoroutine(mazeInstance.Generate());
+		}
+		
+		private void RestartGame () {
+			StopAllCoroutines();
+			Destroy(mazeInstance.gameObject);
+			BeginGame();
 		}
 	}
 }
