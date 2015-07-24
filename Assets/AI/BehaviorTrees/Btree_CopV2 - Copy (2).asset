@@ -9,17 +9,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1227330239, guid: 9fa2ecd1ff2ad394281dd3bf72c5b76e, type: 3}
-  m_Name: Btree_CopV2
+  m_Name: Btree_CopV2 - Copy (2)
   m_EditorClassIdentifier: 
   _dataSerializer:
     _serializedData: '<scriptableobject version="1.3" type="RAIN.BehaviorTrees.BTAsset"><fields><field
-      value="&lt;behaviortree version=&quot;1.1&quot; repeatuntil=&quot;&quot; name=&quot;Btree_CopV2&quot;
-      debugbreak=&quot;False&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;all&quot;
-      repeatuntil=&quot;&quot; name=&quot;root&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;detect
-      sensor=&quot;&amp;quot;eyes&amp;quot;&quot; repeatuntil=&quot;running&quot;
-      name=&quot;far&quot; matchtype=&quot;any&quot; entityobjectvariable=&quot;&quot;
-      debugbreak=&quot;False&quot; consistent=&quot;True&quot; aspectvariable=&quot;&quot;
-      aspectobjectvariable=&quot;varPlayer&quot; aspect=&quot;&amp;quot;aPlayer&amp;quot;&quot;
+      value="&lt;behaviortree version=&quot;1.1&quot; repeatuntil=&quot;&quot; name=&quot;Btree_CopV2
+      - Copy (2)&quot; debugbreak=&quot;False&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot;
+      succeed=&quot;all&quot; repeatuntil=&quot;&quot; name=&quot;root&quot; fail=&quot;any&quot;
+      debugbreak=&quot;False&quot;&gt;&lt;detect sensor=&quot;&amp;quot;eyes&amp;quot;&quot;
+      repeatuntil=&quot;running&quot; name=&quot;far&quot; matchtype=&quot;any&quot;
+      entityobjectvariable=&quot;&quot; debugbreak=&quot;False&quot; consistent=&quot;True&quot;
+      aspectvariable=&quot;&quot; aspectobjectvariable=&quot;varPlayer&quot; aspect=&quot;&amp;quot;aPlayer&amp;quot;&quot;
       /&gt;&lt;detect sensor=&quot;&amp;quot;close&amp;quot;&quot; repeatuntil=&quot;running&quot;
       name=&quot;near&quot; matchtype=&quot;best&quot; entityobjectvariable=&quot;&quot;
       debugbreak=&quot;False&quot; consistent=&quot;True&quot; aspectvariable=&quot;&quot;
@@ -86,7 +86,7 @@ MonoBehaviour:
       name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;action
       repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
       namespace=&quot;&quot; name=&quot;change FOV to idle&quot; debugbreak=&quot;False&quot;
-      classname=&quot;FOVColorChange&quot; /&gt;&lt;waypointpatrol waypointsetvariable=&quot;CopRoute&quot;
+      classname=&quot;FOVColorChange&quot; /&gt;&lt;waypointpatrol waypointsetvariable=&quot;CopRoute2&quot;
       waypointactiontype=&quot;patrol&quot; traversetype=&quot;loop&quot; traverseorder=&quot;forward&quot;
       repeatuntil=&quot;&quot; pathtargetvariable=&quot;&quot; name=&quot;Patrol&quot;
       movetargetvariable=&quot;nextStop&quot; debugbreak=&quot;False&quot;&gt;&lt;move

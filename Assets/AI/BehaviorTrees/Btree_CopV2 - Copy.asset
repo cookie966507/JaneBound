@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1227330239, guid: 9fa2ecd1ff2ad394281dd3bf72c5b76e, type: 3}
-  m_Name: Btree_CopV2
+  m_Name: Btree_CopV2 - Copy
   m_EditorClassIdentifier: 
   _dataSerializer:
     _serializedData: '<scriptableobject version="1.3" type="RAIN.BehaviorTrees.BTAsset"><fields><field
@@ -86,7 +86,7 @@ MonoBehaviour:
       name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;action
       repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
       namespace=&quot;&quot; name=&quot;change FOV to idle&quot; debugbreak=&quot;False&quot;
-      classname=&quot;FOVColorChange&quot; /&gt;&lt;waypointpatrol waypointsetvariable=&quot;CopRoute&quot;
+      classname=&quot;FOVColorChange&quot; /&gt;&lt;waypointpatrol waypointsetvariable=&quot;CopRoute1&quot;
       waypointactiontype=&quot;patrol&quot; traversetype=&quot;loop&quot; traverseorder=&quot;forward&quot;
       repeatuntil=&quot;&quot; pathtargetvariable=&quot;&quot; name=&quot;Patrol&quot;
       movetargetvariable=&quot;nextStop&quot; debugbreak=&quot;False&quot;&gt;&lt;move
