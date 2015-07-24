@@ -123,9 +123,9 @@ namespace Assets.Scripts.Data
 		/// <summary>
 		/// ////////////////////////////////////////////////////////////////
 		/// </summary>
-		private void Start () {
-			BeginGame();
-		}
+//		private void Start () {
+//			BeginGame();
+//		}
 
 		public Maze mazePrefab;
 		

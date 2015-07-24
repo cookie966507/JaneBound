@@ -43,14 +43,19 @@ MonoBehaviour:
       /&gt;&lt;action repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
       namespace=&quot;&quot; name=&quot;check to see if we''ve arrived&quot; debugbreak=&quot;False&quot;
       classname=&quot;Navigate&quot; /&gt;&lt;constraint repeatuntil=&quot;&quot;
-      name=&quot;if we see the player again&quot; debugbreak=&quot;False&quot; constraint=&quot;varPlayer
-      != None&quot;&gt;&lt;action repeatuntil=&quot;failure&quot; parametervalues=&quot;&quot;
-      parameters=&quot;&quot; namespace=&quot;&quot; name=&quot;reset destination&quot;
-      debugbreak=&quot;False&quot; classname=&quot;SetDestination&quot; /&gt;&lt;/constraint&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint
-      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;if we''re searching,
-      search&quot; debugbreak=&quot;False&quot; constraint=&quot;isSearching&quot;&gt;&lt;parallel
-      tiebreaker=&quot;fail&quot; succeed=&quot;any&quot; repeatuntil=&quot;success&quot;
-      name=&quot;scan for a time&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;timer
+      name=&quot;Caught&quot; debugbreak=&quot;False&quot; constraint=&quot;varNear!=null&quot;&gt;&lt;action
+      repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
+      namespace=&quot;&quot; name=&quot;action&quot; debugbreak=&quot;False&quot;
+      classname=&quot;Assets.Scripts.Player.Caught&quot; /&gt;&lt;/constraint&gt;&lt;constraint
+      repeatuntil=&quot;&quot; name=&quot;if we see the player again&quot; debugbreak=&quot;False&quot;
+      constraint=&quot;varPlayer != None&quot;&gt;&lt;action repeatuntil=&quot;failure&quot;
+      parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;&quot;
+      name=&quot;reset destination&quot; debugbreak=&quot;False&quot; classname=&quot;SetDestination&quot;
+      /&gt;&lt;/constraint&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
+      priority=&quot;&quot; name=&quot;if we''re searching, search&quot; debugbreak=&quot;False&quot;
+      constraint=&quot;isSearching&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot;
+      succeed=&quot;any&quot; repeatuntil=&quot;success&quot; name=&quot;scan for
+      a time&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;timer
       waitforsec=&quot;8&quot; returnvalue=&quot;success&quot; name=&quot;timer&quot;
       debugbreak=&quot;False&quot; /&gt;&lt;action repeatuntil=&quot;failure&quot;
       parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;(global)&quot;
