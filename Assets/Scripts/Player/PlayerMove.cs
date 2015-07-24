@@ -282,6 +282,10 @@ namespace Assets.Scripts.Player
 		//jumping
 		private void JumpCalculations()
 		{
+			if(InputManager.GetButtonDown ("Jump")){
+				Debug.Log("JUMP BUTTON DOWN");
+			}
+
 			//keep how long we have been on the ground
 			groundedCount = (grounded) ? groundedCount += Time.deltaTime : 0f;
 			

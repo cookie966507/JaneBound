@@ -15,6 +15,10 @@ public class Search : RAINAction
 	
 	public override void Start(RAIN.Core.AI ai)
 	{
+		//change fov color to idle
+		FOV2DVisionCone FOV = ai.Body.transform.Find("FOV2D").GetComponent<FOV2DVisionCone>();
+		FOV.status = FOV2DVisionCone.Status.Idle;
+
 		//Debug.Log("START!");
 		//myTransform = ai.Body.transform;
 		base.Start(ai);

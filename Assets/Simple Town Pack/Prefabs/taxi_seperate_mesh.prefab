@@ -78,6 +78,7 @@ GameObject:
   - 4: {fileID: 400008}
   - 33: {fileID: 3300008}
   - 23: {fileID: 2300008}
+  - 64: {fileID: 6493464}
   m_Layer: 0
   m_Name: taxi_seperate_mesh
   m_TagString: Untagged
@@ -139,8 +140,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.1658096, y: 862.332397, z: 45.838295}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400006}
@@ -303,6 +304,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
+  m_Mesh: {fileID: 4300000, guid: bcb34d510146bc747bbd5e5d4ae103a6, type: 3}
+--- !u!64 &6493464
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: bcb34d510146bc747bbd5e5d4ae103a6, type: 3}
 --- !u!1001 &100100000
 Prefab:
