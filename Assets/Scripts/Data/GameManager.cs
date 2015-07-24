@@ -8,7 +8,6 @@ namespace Assets.Scripts.Data
 {
 	public class GameManager : MonoBehaviour
 	{
-
 		public enum GameState
 		{
 			Loading,
@@ -39,6 +38,12 @@ namespace Assets.Scripts.Data
 			WinTrigger.PlayerWin -= Win;
 		}
 
+		void OnLevelWasLoaded(int level) {
+			if (level == 4)
+				BeginGame ();
+			
+		}
+
 		void Awake()
 		{
 			if(_instance == null)
@@ -50,7 +55,7 @@ namespace Assets.Scripts.Data
 			{
 				Destroy(this.gameObject);
 			}
-			BeginGame();
+//			BeginGame();
 			_state = GameState.Running;
 		}
 
@@ -120,12 +125,6 @@ namespace Assets.Scripts.Data
 		{
 			get { return _state.Equals(GameState.Loading); }
 		}
-		/// <summary>
-		/// ////////////////////////////////////////////////////////////////
-		/// </summary>
-//		private void Start () {
-//			BeginGame();
-//		}
 
 		public Maze mazePrefab;
 		

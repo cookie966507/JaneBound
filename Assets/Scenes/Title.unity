@@ -5778,6 +5778,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11450510, guid: cea0bc52ceb7e4a489c136bae119a6b5, type: 2}
+      propertyPath: mazePrefab
+      value: 
+      objectReference: {fileID: 11412278, guid: db7e7871d8edb4de982c02d876875979,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cea0bc52ceb7e4a489c136bae119a6b5, type: 2}
   m_IsPrefabParent: 0
@@ -7817,6 +7822,8 @@ MonoBehaviour:
   start_scale: .100000001
   bubble_texture: {fileID: 0}
   bubble_force: 1000
+  bubbleBlowing: {fileID: 0}
+  bubbleThrowing: {fileID: 0}
   number_of_bubbles: 5
 --- !u!54 &1272962741
 Rigidbody:

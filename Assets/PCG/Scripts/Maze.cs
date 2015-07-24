@@ -79,7 +79,7 @@ public class Maze : MonoBehaviour {
 	}
 	
 	private void CreateWall (MazeCell cell, MazeCell otherCell, MazeDirection direction) {
-		int randNum = Random.Range (0, 50);
+		int randNum = Random.Range (0, 20);
 		if (randNum == 0) {
 			randNum = 1;
 		} else {

@@ -46,7 +46,7 @@ namespace Assets.Scripts.UI.Menu
 			MenuManager.StateTransition(_state, MenuManager.MenuState.Inactive);
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
-			Data.GameManager.Load("FINALNPCLevel(for now...!)");
+			Data.GameManager.Load("NewFinalNPCLevel");
 		}
 
 		public void Settings()
