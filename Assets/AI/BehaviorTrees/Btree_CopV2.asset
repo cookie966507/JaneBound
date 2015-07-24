@@ -50,16 +50,13 @@ MonoBehaviour:
       repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;if we''re searching,
       search&quot; debugbreak=&quot;False&quot; constraint=&quot;isSearching&quot;&gt;&lt;parallel
       tiebreaker=&quot;fail&quot; succeed=&quot;any&quot; repeatuntil=&quot;success&quot;
-      name=&quot;scan for a time&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;action
-      repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
-      namespace=&quot;&quot; name=&quot;change FOV to idle&quot; debugbreak=&quot;False&quot;
-      classname=&quot;FOVColorChange&quot; /&gt;&lt;timer waitforsec=&quot;8&quot;
-      returnvalue=&quot;success&quot; name=&quot;timer&quot; debugbreak=&quot;False&quot;
-      /&gt;&lt;action repeatuntil=&quot;failure&quot; parametervalues=&quot;&quot;
-      parameters=&quot;&quot; namespace=&quot;(global)&quot; name=&quot;search&quot;
-      debugbreak=&quot;False&quot; classname=&quot;Search&quot; /&gt;&lt;/parallel&gt;&lt;parallel
-      tiebreaker=&quot;fail&quot; succeed=&quot;all&quot; repeatuntil=&quot;&quot;
-      name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;action
+      name=&quot;scan for a time&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;timer
+      waitforsec=&quot;8&quot; returnvalue=&quot;success&quot; name=&quot;timer&quot;
+      debugbreak=&quot;False&quot; /&gt;&lt;action repeatuntil=&quot;failure&quot;
+      parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;(global)&quot;
+      name=&quot;search&quot; debugbreak=&quot;False&quot; classname=&quot;Search&quot;
+      /&gt;&lt;/parallel&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;all&quot;
+      repeatuntil=&quot;&quot; name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;action
       repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
       namespace=&quot;(global)&quot; name=&quot;stop searching&quot; debugbreak=&quot;False&quot;
       classname=&quot;SetSearching&quot; /&gt;&lt;action repeatuntil=&quot;&quot;
