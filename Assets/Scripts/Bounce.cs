@@ -45,7 +45,7 @@ public class Bounce : MonoBehaviour
 				}
 			}
 		}
-		if(col.transform.tag.Equals("Janitor") || col.gameObject.layer == 13)
+		if(col.transform.tag.Equals("Janitor") || col.gameObject.layer == 13 || col.gameObject.tag == "Bubble")
 		{
 			bubbleBurstSystem.Play();
 

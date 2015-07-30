@@ -59,7 +59,7 @@ public class Maze : MonoBehaviour {
 		List<MazeCell> activeCells = new List<MazeCell>();
 		DoFirstGenerationStep(activeCells);
 		while (activeCells.Count > 0) {
-			yield return delay;
+			yield return null;
 			DoNextGenerationStep(activeCells);
 		}
 	}

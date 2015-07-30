@@ -82,14 +82,14 @@ public class BubbleBlowing : MonoBehaviour {
 			if (InputManager.GetAxis ("Shoot") > 0 && shooting){
 				//makes it so the bubble has to be max size
 				if(current_scale >= max_scale){
-					print ("FIRE");
+					//print ("FIRE");
 					shooting = false;
 					playerMoveScript.lockedMovement = false;
 					cameraFollowScript.aiming = false;
 					FireBubble();
 					ResetBubbleBlowing();
 					number_of_bubbles--;
-					print ("Number of bubbles left: " +number_of_bubbles);
+					//print ("Number of bubbles left: " +number_of_bubbles);
 				}
 			}
 		}
@@ -101,13 +101,13 @@ public class BubbleBlowing : MonoBehaviour {
 		shooting = !shooting;
 		_firstShot = true;
 		if(shooting){
-			print ("Shooting: ON");
+			//print ("Shooting: ON");
 			playerMoveScript.lockedMovement = true;
 			cameraFollowScript.aiming = true;
 			CreateNewBubble();
 		}
 		else{
-			print ("Shooting: OFF");
+			//print ("Shooting: OFF");
 			Destroy(bubble);
 			playerMoveScript.lockedMovement = false;
 			cameraFollowScript.aiming = false;

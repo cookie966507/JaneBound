@@ -14,7 +14,7 @@ namespace Assets.Scripts.Player
 		void OnCollisionEnter(Collision collider)
 		{
 			Debug.Log (cabbageBody.velocity.magnitude);
-			if(collider.transform.tag == "Player" &&(cabbageBody.transform.position.y - collider.transform.position.y)>0.7f)
+			if(collider.transform.tag == "Player" &&(cabbageBody.transform.position.y - collider.transform.position.y)>0.5f)
 			{
 				PlayerLife pl = collider.gameObject.GetComponent<PlayerLife>();
 				pl.Health=0f;

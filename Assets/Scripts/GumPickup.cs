@@ -37,7 +37,7 @@ public class GumPickup : MonoBehaviour
 			GameObject bounds = new GameObject();
 			bounds.name = "Bounds";
 			bounds.AddComponent<SphereCollider>();
-			bounds.GetComponent<SphereCollider>().radius = 7f;
+			bounds.GetComponent<SphereCollider>().radius = 3f;
 			bounds.GetComponent<SphereCollider>().isTrigger = true;
 			bounds.transform.parent = transform;
 			bounds.transform.position = transform.position;
