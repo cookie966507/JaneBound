@@ -27,6 +27,7 @@ public class GumPickup : MonoBehaviour
 		if(tag != "Pickup")
 		{
 			tag = "Pickup";
+
 		}
 		bubbleBlowing = GameObject.FindGameObjectWithTag("Player").GetComponent<BubbleBlowing>();
 		GetComponent<Collider>().isTrigger = true;
@@ -45,6 +46,10 @@ public class GumPickup : MonoBehaviour
 			triggerParent = GetComponentInChildren<TriggerParent>();
 			triggerParent.tagsToCheck = new string[1];
 			triggerParent.tagsToCheck[0] = "Player";
+		}
+		for(int i = 0; i < transform.childCount; i++)
+		{
+			this.transform.GetChild(i).gameObject.layer = LayerMask.NameToLayer("Items");
 		}
 	}
 	

@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3387796}
   - 65: {fileID: 6513464}
   - 23: {fileID: 2342238}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 4: {fileID: 416104}
   - 114: {fileID: 11449242}
   - 135: {fileID: 13510330}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GumPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - 33: {fileID: 3339346}
   - 65: {fileID: 6576198}
   - 23: {fileID: 2390184}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   - 33: {fileID: 3306254}
   - 65: {fileID: 6542166}
   - 23: {fileID: 2373476}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - 33: {fileID: 3323974}
   - 65: {fileID: 6513654}
   - 23: {fileID: 2365510}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - 33: {fileID: 3340644}
   - 65: {fileID: 6528020}
   - 23: {fileID: 2303028}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118042}
