@@ -8,7 +8,12 @@ namespace Assets.Scripts.UI.Menu
 	{
 		private static Lose _instance;
 		private Button _restart;
-		
+
+		void OnLevelWasLoaded(int i)
+		{
+			this.Deactivate();
+		}
+
 		protected override void Init ()
 		{
 			if(_instance == null)

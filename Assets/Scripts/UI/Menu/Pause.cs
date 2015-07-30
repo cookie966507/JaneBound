@@ -12,6 +12,11 @@ namespace Assets.Scripts.UI.Menu
 		private static Pause _instance;
 		private Button[] _buttons;
 
+		void OnLevelWasLoaded(int i)
+		{
+			this.Deactivate();
+		}
+
 		protected override void Init ()
 		{
 			if(_instance == null)

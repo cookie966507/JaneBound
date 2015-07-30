@@ -8,6 +8,11 @@ namespace Assets.Scripts.UI.Menu
 	{
 		private static Win _instance;
 		private Button _continue;
+
+		void OnLevelWasLoaded(int i)
+		{
+			this.Deactivate();
+		}
 		
 		protected override void Init ()
 		{
